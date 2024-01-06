@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_rock_small",
-    "path": "sprites/spr_rock_small/spr_rock_small.yy",
+    "name": "sprite_rock_small",
+    "path": "sprites/sprite_rock_small/sprite_rock_small.yy",
   },
   "spriteMaskId": null,
   "visible": true,
