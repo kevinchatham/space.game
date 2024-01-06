@@ -6,20 +6,20 @@ var _closest_rock = noone; // noone means no instance found
 with (object_rock) {
   var _distance = point_distance(x, y, object_arrow.x, object_arrow.y);
 
-  // If the rock is on-screen or at distance 0, skip to the next iteration
-  if (
-    _distance == 0 ||
-    point_in_rectangle(
-      x,
-      y,
-      view_xview - 50,
-      view_yview - 50,
-      view_xview + view_wview + 50,
-      view_yview + view_hview + 50
-    )
-  ) {
-    continue;
-  }
+  var _x_view = camera_get_view_x(view_camera);
+  var _y_view = camera_get_view_y(view_camera);
+  var _w_view = camera_get_view_width(view_camera);
+  var _h_view = camera_get_view_height(view_camera);
+  var _on_screen = point_in_rectangle(
+    x,
+    y,
+    _x_view - 50,
+    _y_view - 50,
+    _x_view + _w_view + 50,
+    _y_view + _h_view + 50
+  );
+
+  if (_distance == 0 || _on_screen) continue;
 
   // If _distance is closer than the current closest, update closest_rock
   if (_closest_distance == -1 || _distance < _closest_distance) {
