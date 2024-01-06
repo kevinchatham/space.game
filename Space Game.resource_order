@@ -1,4 +1,8 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"object_arrow","order":1,"path":"objects/object_arrow/object_arrow.yy",},
+    {"name":"object_rock_counter","order":2,"path":"objects/object_rock_counter/object_rock_counter.yy",},
+    {"name":"sprite_arrow","order":1,"path":"sprites/sprite_arrow/sprite_arrow.yy",},
+  ],
 }

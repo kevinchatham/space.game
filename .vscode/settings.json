@@ -1,1 +1,17 @@
-{}
+{
+  "files.trimTrailingWhitespace": true,
+  "prettier.documentSelectors": ["**/*.gml"],
+  "[gml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.enableFiletypes": ["gml-gms2"],
+  "cSpell.words": [
+    "despawn",
+    "despawned",
+    "fullscreen",
+    "noone",
+    "wview",
+    "xview",
+    "yview"
+  ]
+}
