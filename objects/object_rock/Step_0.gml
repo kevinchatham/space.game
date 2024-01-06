@@ -15,5 +15,5 @@ if _down
 
 if _up
 {
-	motion_add(obj_ship.image_angle + 270, _speed);
+	motion_add(object_ship.image_angle + 270, _speed);
 }
