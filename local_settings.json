@@ -1,0 +1,19 @@
+{
+    "machine.General Settings.Font": "FiraCode NF",
+    "machine.General Settings.DefaultAudioDevice": "C49RG9x (NVIDIA High Definition Audio)",
+    "machine.Object Editor.defaultcomment": "/// @description\r\n",
+    "machine.Script Editor.showdefaultcomment": false,
+    "machine.Script Editor.defaultcomment": "// Script assets have changed for v2.3.0 see\n// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information",
+    "cloud.General Settings.Confirm Dialogs.stopbeforerun": 0,
+    "cloud.General Settings.ExitConfirmation": 0,
+    "cloud.General Settings.ReloadChangedFiles": true,
+    "cloud.Text Editors.Visual Editor.Comments.style": -1,
+    "cloud.Languages.default_script_pref": 1,
+    "cloud.Start Page.RecentProjListStyle": 0,
+    "cloud.Feather Settings.Naming Rules.LocalVariableNameRule.Prefix": "_",
+    "cloud.Feather Settings.Naming Rules.SpriteNameRule.Prefix": "sprite_",
+    "cloud.Feather Settings.Naming Rules.SoundNameRule.Prefix": "sound_",
+    "cloud.Feather Settings.Naming Rules.FontNameRule.Prefix": "font_",
+    "cloud.Feather Settings.Naming Rules.ObjectNameRule.Prefix": "object_",
+    "version": "1.1"
+}

@@ -9,7 +9,7 @@ image_angle = (image_angle + 360) % 360; // lock rotation to 360 degree range
 // ! Movement
 if (_up) {
   if (speed < max_speed) {
-    // rocks moving opposite of ship angle
+    // moving opposite of ship angle
     motion_add(object_ship.image_angle + 270, acceleration);
   } else {
     speed -= deceleration;

@@ -9,9 +9,13 @@
     "despawn",
     "despawned",
     "fullscreen",
+    "irandom",
     "noone",
+    "respawn",
     "wview",
+    "xscale",
     "xview",
+    "yscale",
     "yview"
   ]
 }

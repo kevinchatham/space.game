@@ -1,4 +1,4 @@
-// Checks if the new rock is too close to other rocks
+// Checks if rock is too close to other rocks
 function too_close_to_other_rocks(x, y) {
     var _rocks = instance_nearest(x, y, object_rock);
 
@@ -33,7 +33,7 @@ while (position_meeting(_random_x, _random_y, object_rock) || too_close_to_other
 var _new_rock = instance_create_layer(
   _random_x,
   _random_y,
-  "Instances",
+  object_game.main_layer,
   object_rock
 );
 

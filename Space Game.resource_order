@@ -1,8 +1,11 @@
 {
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"object_star","order":4,"path":"objects/object_star/object_star.yy",},
     {"name":"object_arrow","order":1,"path":"objects/object_arrow/object_arrow.yy",},
     {"name":"object_rock_counter","order":2,"path":"objects/object_rock_counter/object_rock_counter.yy",},
     {"name":"sprite_arrow","order":1,"path":"sprites/sprite_arrow/sprite_arrow.yy",},
+    {"name":"object_star_spawner","order":3,"path":"objects/object_star_spawner/object_star_spawner.yy",},
+    {"name":"sprite_star","order":2,"path":"sprites/sprite_star/sprite_star.yy",},
   ],
 }
