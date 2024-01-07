@@ -36,7 +36,9 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"object_display_manager","path":"objects/object_display_manager/object_display_manager.yy",},},
     {"id":{"name":"object_star","path":"objects/object_star/object_star.yy",},},
+    {"id":{"name":"DisplayManager","path":"rooms/DisplayManager/DisplayManager.yy",},},
     {"id":{"name":"sprite_ship","path":"sprites/sprite_ship/sprite_ship.yy",},},
     {"id":{"name":"object_arrow","path":"objects/object_arrow/object_arrow.yy",},},
     {"id":{"name":"object_rock_counter","path":"objects/object_rock_counter/object_rock_counter.yy",},},
@@ -54,6 +56,7 @@
     {"id":{"name":"Room","path":"rooms/Room/Room.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"DisplayManager","path":"rooms/DisplayManager/DisplayManager.yy",},},
     {"roomId":{"name":"Room","path":"rooms/Room/Room.yy",},},
   ],
   "templateType": "game",
