@@ -6,10 +6,10 @@ var _closest_rock = noone; // noone means no instance found
 with (object_rock) {
   var _distance = point_distance(x, y, object_arrow.x, object_arrow.y);
 
-  var _x_view = camera_get_view_x(view_camera);
-  var _y_view = camera_get_view_y(view_camera);
-  var _w_view = camera_get_view_width(view_camera);
-  var _h_view = camera_get_view_height(view_camera);
+  var _x_view = camera_get_view_x(view_camera[0]);
+  var _y_view = camera_get_view_y(view_camera[0]);
+  var _w_view = camera_get_view_width(view_camera[0]);
+  var _h_view = camera_get_view_height(view_camera[0]);
   var _on_screen = point_in_rectangle(
     x,
     y,

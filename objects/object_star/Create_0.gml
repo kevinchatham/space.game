@@ -9,5 +9,7 @@ max_rotation_speed = 1;
 rotation_speed =
   choose(1, -1) * random_range(min_rotation_speed, max_rotation_speed);
 
-image_xscale = random_range(0.1, 1);
-image_yscale = random_range(0.1, 1);
+scale = random_range(0.1, 0.25);
+
+image_xscale = scale;
+image_yscale = scale;

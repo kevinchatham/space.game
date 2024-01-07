@@ -36,9 +36,7 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
-    {"id":{"name":"object_display_manager","path":"objects/object_display_manager/object_display_manager.yy",},},
     {"id":{"name":"object_star","path":"objects/object_star/object_star.yy",},},
-    {"id":{"name":"DisplayManager","path":"rooms/DisplayManager/DisplayManager.yy",},},
     {"id":{"name":"sprite_ship","path":"sprites/sprite_ship/sprite_ship.yy",},},
     {"id":{"name":"object_arrow","path":"objects/object_arrow/object_arrow.yy",},},
     {"id":{"name":"object_rock_counter","path":"objects/object_rock_counter/object_rock_counter.yy",},},
@@ -48,7 +46,9 @@
     {"id":{"name":"sprite_arrow","path":"sprites/sprite_arrow/sprite_arrow.yy",},},
     {"id":{"name":"object_rock","path":"objects/object_rock/object_rock.yy",},},
     {"id":{"name":"object_ship","path":"objects/object_ship/object_ship.yy",},},
+    {"id":{"name":"sound_collision","path":"sounds/sound_collision/sound_collision.yy",},},
     {"id":{"name":"object_rock_spawner","path":"objects/object_rock_spawner/object_rock_spawner.yy",},},
+    {"id":{"name":"object_camera","path":"objects/object_camera/object_camera.yy",},},
     {"id":{"name":"object_star_spawner","path":"objects/object_star_spawner/object_star_spawner.yy",},},
     {"id":{"name":"sprite_rock_small","path":"sprites/sprite_rock_small/sprite_rock_small.yy",},},
     {"id":{"name":"sprite_star","path":"sprites/sprite_star/sprite_star.yy",},},
@@ -56,7 +56,6 @@
     {"id":{"name":"Room","path":"rooms/Room/Room.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"DisplayManager","path":"rooms/DisplayManager/DisplayManager.yy",},},
     {"roomId":{"name":"Room","path":"rooms/Room/Room.yy",},},
   ],
   "templateType": "game",
