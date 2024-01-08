@@ -10,3 +10,7 @@ if (_right) {
 if (_left) {
   image_angle += 4;
 }
+
+global.particle1 = part_type_create();
+
+part_particles_create_color(ParticleSystem1.id,x,y,global.particle1,c_red,1)
