@@ -25,10 +25,10 @@ if (_down) {
 // ! Despawn
 var _despawn_distance = object_rock_spawner.spawn_distance * 1.25; // Always larger than the spawn_distance
 
-var _x_view = camera_get_view_x(view_camera);
-var _y_view = camera_get_view_y(view_camera);
-var _w_view = camera_get_view_width(view_camera);
-var _h_view = camera_get_view_height(view_camera);
+var _x_view = camera_get_view_x(view_camera[0]);
+var _y_view = camera_get_view_y(view_camera[0]);
+var _w_view = camera_get_view_width(view_camera[0]);
+var _h_view = camera_get_view_height(view_camera[0]);
 var _off_screen = !point_in_rectangle(
   x,
   y,
