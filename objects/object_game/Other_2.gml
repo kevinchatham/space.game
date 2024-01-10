@@ -1,29 +1,29 @@
-/// @description Game Start
+global.thruster_particle_emitter_particle_count = 3;
+global.draw_particle_emitter_regions = false;
 
 global.particle_system = part_system_create_layer(layer, true);
-global.particles = part_type_create();
-
 part_system_global_space(global.particle_system, true);
 part_system_depth(global.particle_system, 1);
 
-part_type_alpha3(global.particles, 1, 0, 0);
-part_type_color2(global.particles, c_aqua, c_blue);
-part_type_shape(global.particles, pt_shape_pixel);
-part_type_size(global.particles, 1, 1, 0, 0);
-part_type_speed(global.particles, 0.5, 1, 0.01, 0);
+global.thruster_particle_emitter = part_emitter_create(global.particle_system);
 
-global.emitter_2 = part_emitter_create(global.particle_system);
+global.thruster_particle_type = part_type_create();
+part_type_color2(global.thruster_particle_type, c_aqua, c_blue);
+part_type_shape(global.thruster_particle_type, pt_shape_pixel);
+part_type_size(global.thruster_particle_type, 1, 1, 0, 0);
+
+// TRYING TO GET THIS WORKING WITH MOTION
+//part_type_speed(global.thruster_particle_type, 0.5, 1, 0.01, 0);
+//part_type_alpha3(global.thruster_particle_type, 1, 0, 0);
 
 part_emitter_stream(
   global.particle_system,
-  global.emitter_2,
-  global.particles,
-  2
+  global.thruster_particle_emitter,
+  global.thruster_particle_type,
+  global.thruster_particle_emitter_particle_count
 );
 
 // ! Destroy particle systems
-// part_type_destroy(global.particles);
-// part_emitter_destroy(global.particle_system, global.emitter_1);
-// part_emitter_destroy(global.particle_system, global.emitter_2);
+// part_type_destroy(global.thruster_particle_type);
+// part_emitter_destroy(global.particle_system, global.thruster_particle_emitter);
 // part_system_destroy(global.particle_system);
-// game_restart();

@@ -48,7 +48,6 @@
     {"id":{"name":"script_chain_init","path":"scripts/script_chain_init/script_chain_init.yy",},},
     {"id":{"name":"sprite_chain_link","path":"sprites/sprite_chain_link/sprite_chain_link.yy",},},
     {"id":{"name":"sprite_new_ship","path":"sprites/sprite_new_ship/sprite_new_ship.yy",},},
-    {"id":{"name":"ParticleSystem1","path":"particles/ParticleSystem1/ParticleSystem1.yy",},},
     {"id":{"name":"object_rock","path":"objects/object_rock/object_rock.yy",},},
     {"id":{"name":"object_ship","path":"objects/object_ship/object_ship.yy",},},
     {"id":{"name":"sound_collision","path":"sounds/sound_collision/sound_collision.yy",},},
