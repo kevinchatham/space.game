@@ -24,14 +24,6 @@ if (_down) {
   }
 }
 
-// if (speed > min_speed) {
-//   part_type_speed(global.thruster_particle_type, 0, speed, acceleration, 0);
-//   part_type_alpha3(global.thruster_particle_type, 1, 0, 0);
-// } else {
-//   part_type_speed(global.thruster_particle_type, 0, 0, acceleration, 0);
-//   part_type_alpha1(global.thruster_particle_type, _i);
-// }
-
 // ! GPT
 // Smoothly transition alpha value based on speed
 if (speed > min_speed) {

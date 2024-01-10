@@ -12,10 +12,6 @@ part_type_color2(global.thruster_particle_type, c_aqua, c_blue);
 part_type_shape(global.thruster_particle_type, pt_shape_pixel);
 part_type_size(global.thruster_particle_type, 1, 1, 0, 0);
 
-// TRYING TO GET THIS WORKING WITH MOTION
-//part_type_speed(global.thruster_particle_type, 0.5, 1, 0.01, 0);
-//part_type_alpha3(global.thruster_particle_type, 1, 0, 0);
-
 part_emitter_stream(
   global.particle_system,
   global.thruster_particle_emitter,
