@@ -24,21 +24,6 @@ if (_down) {
   }
 }
 
-// ! GPT
-// Smoothly transition alpha value based on speed
-if (speed > min_speed) {
-  part_type_speed(global.thruster_particle_type, 0, speed, acceleration, 0);
-  target_alpha = lerp(min_alpha, max_alpha, speed / max_speed);
-} else {
-  part_type_speed(global.thruster_particle_type, 0, 0, acceleration, 0);
-  target_alpha = 0; // Fully transparent
-}
-
-// Adjust alpha gradually using lerp
-current_alpha = lerp(current_alpha, target_alpha, lerp_speed);
-part_type_alpha3(global.thruster_particle_type, current_alpha, min_alpha, 0);
-// !
-
 // ! Despawn
 var _despawn_distance = object_rock_spawner.spawn_distance * 1.25; // Always larger than the spawn_distance
 
