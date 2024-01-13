@@ -1,4 +1,5 @@
 // GPT for creating a fake infinite room
+
 if (obj_ship.x < view_xview[0] + camera_border) {
     obj_ship.x = view_xview[0] + camera_border;
 }
