@@ -1,7 +1,3 @@
-acceleration = 0.0001;
-deceleration = 0.001;
-max_speed = 0.025;
-min_speed = 0.01;
 min_rotation_speed = 0.1;
 max_rotation_speed = 1;
 

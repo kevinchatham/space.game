@@ -1,6 +1,4 @@
-/// @description Spawn Stars
-
-max_stars = 15;
+max_stars = 1500;
 spawn_distance = 10;
 
 for (var _i = 0; _i < max_stars; _i++) {

@@ -3,6 +3,23 @@ var _down = keyboard_check(ord("S"));
 var _left = keyboard_check(ord("A"));
 var _right = keyboard_check(ord("D"));
 
+// ! Movement
+if (_up) {
+  if (speed < max_speed) {
+    motion_add(image_angle + 90, acceleration);
+  }else{
+    speed-=deceleration
+  }
+}
+
+if (_down) {
+  if (speed > min_speed) {
+    speed -= deceleration;
+  } else {
+    motion_set(direction, min_speed);
+  }
+}
+
 if (_right) {
   image_angle -= 1;
 }
@@ -46,50 +63,15 @@ part_emitter_region(
   ps_distr_linear
 );
 
-// ! Begin fuckery
-// ! This maintains a fake speed dependent upon the speed of the first rock found.
-// ! It allows the thruster particles to maintain a constant speed and alpha value.
-// ! Otherwise the speed / alpha values are reset every time a rock is destroyed.
-// ! If that happens the thruster is not constant and it looks very strange.
-var _obj = noone;
-
-with (obj_rock) {
-  _obj = obj_rock;
-  break;
+// Smoothly transition alpha value based on speed
+if (speed > min_speed) {
+  part_type_speed(global.thruster_particle_type, 0, speed, acceleration, 0);
+  target_alpha = lerp(min_alpha, max_alpha, speed / max_speed);
+} else {
+  part_type_speed(global.thruster_particle_type, 0, 0, acceleration, 0);
+  target_alpha = 0; // Fully transparent
 }
 
-if (_obj != noone) {
-  if (_up) {
-    if (fake_speed < _obj.max_speed) {
-      fake_speed += _obj.acceleration;
-    }
-  }
-
-  if (_down) {
-    if (fake_speed > _obj.min_speed) {
-      fake_speed -= _obj.deceleration;
-    } else {
-      fake_speed = _obj.min_speed;
-    }
-  }
-
-  // Smoothly transition alpha value based on speed
-  if (_obj.speed > _obj.min_speed) {
-    part_type_speed(
-      global.thruster_particle_type,
-      0,
-      _obj.speed,
-      _obj.acceleration,
-      0
-    );
-    target_alpha = lerp(min_alpha, max_alpha, _obj.speed / _obj.max_speed);
-  } else {
-    part_type_speed(global.thruster_particle_type, 0, 0, _obj.acceleration, 0);
-    target_alpha = 0; // Fully transparent
-  }
-
-  // Adjust alpha gradually using lerp
-  current_alpha = lerp(current_alpha, target_alpha, lerp_speed);
-  part_type_alpha3(global.thruster_particle_type, current_alpha, min_alpha, 0);
-}
-// !
+// Adjust alpha gradually using lerp
+current_alpha = lerp(current_alpha, target_alpha, lerp_speed);
+part_type_alpha3(global.thruster_particle_type, current_alpha, min_alpha, 0);

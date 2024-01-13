@@ -1,8 +1,5 @@
-acceleration = 0.01;
-deceleration = 0.01;
 initial_direction = random(360);
 max_rotation_speed = 0.1;
-max_speed = 1;
 min_rotation_speed = 0.01;
 min_speed = 0.1;
 collision_volume = 0.25;
