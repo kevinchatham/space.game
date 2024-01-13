@@ -1,11 +1,14 @@
-var _camera_speed = 1;
+var _camera_speed = 0.015;
 
 camera_set_view_size(view_camera[0], view_width, view_height);
 
-if (!instance_exists(obj_ship)) return;
+var _x = obj_ship.x - view_width / 2;
+var _y = obj_ship.y - view_height / 2;
 
-var _x = clamp(obj_ship.x - view_width / 2, 0, room_width - view_width);
-var _y = clamp(obj_ship.y - view_height / 2, 0, room_height - view_height);
+// this doesn't work because the room is huge.
+// fix in future if needed.
+// var _x = clamp(obj_ship.x - view_width / 2, 0, room_width / 2);
+// var _y = clamp(obj_ship.y - view_height / 2, 0, room_height / 2);
 
 var _cur_x = camera_get_view_x(view_camera[0]);
 var _cur_y = camera_get_view_y(view_camera[0]);

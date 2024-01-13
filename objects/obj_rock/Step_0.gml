@@ -22,5 +22,5 @@ var _off_screen = !point_in_rectangle(
 // Check if the rock is off-screen before despawn
 if (_off_screen) {
   instance_destroy();
-  show_debug_message("Destroyed rock at x: " + string(x) + ", y: " + string(y));
+  // show_debug_message("Destroyed rock at x: " + string(x) + ", y: " + string(y));
 }

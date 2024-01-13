@@ -9,14 +9,18 @@
     "despawn",
     "despawned",
     "fullscreen",
+    "hport",
     "irandom",
     "lengthdir",
     "lerp",
     "noone",
     "respawn",
+    "wport",
     "wview",
+    "xport",
     "xscale",
     "xview",
+    "yport",
     "yscale",
     "yview"
   ]

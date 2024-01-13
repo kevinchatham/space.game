@@ -1,40 +1,25 @@
-// Padding around the room
-var _padding = 5;
+var _x_min = obj_ship.x - obj_camera.view_width;
+var _x_max = obj_ship.x + obj_camera.view_width;
+var _y_min = obj_ship.y - obj_camera.view_height;
+var _y_max = obj_ship.y + obj_camera.view_height;
 
-// Despawn stars outside the room
 with (obj_star) {
-  if (
-    x < -_padding * 2 ||
-    x > room_width + _padding * 2 ||
-    y < -_padding * 2 ||
-    y > room_height + _padding * 2
-  ) {
+  var _outside_view_port = x < _x_min || x > _x_max || y < _y_min || y > _y_max;
+  if (_outside_view_port) {
     instance_destroy();
-    show_debug_message(
-      "Destroyed star at x: " + string(x) + ", y: " + string(y)
-    );
+    show_debug_message("Destroyed star at x: " + string(x) + ", y: " + string(y));
   }
 }
 
-var _stars_to_respawn = max_stars - instance_number(obj_star);
+var _respawn_count = max_stars - instance_number(obj_star);
 
-for (var _i = 0; _i < _stars_to_respawn; _i++) {
-   var _random_x;
-   var _random_y;
+for (var _i = 0; _i < _respawn_count; _i++) {
+  var _x = random_range(_x_min, _x_max);
+  var _y = random_range(_y_min, _y_max);
 
-   do {
-    _random_x = random_range(-spawn_distance, room_width + spawn_distance);
-    _random_y = random_range(-spawn_distance, room_height + spawn_distance);
-  } until (!point_in_rectangle(_random_x, _random_y, 0, 0, room_width, room_height));
-
-  var _new_star = instance_create_layer(
-    _random_x,
-    _random_y,
-    obj_game.main_layer,
-    obj_star
-  );
+  var _new_star = instance_create_layer(_x, _y, global.background_layer, obj_star);
 
   if (_new_star != noone) {
-    show_debug_message("Created star at x: " + string(_random_x) + ", y: " + string(_random_y));
+    show_debug_message("Spawn star at x: " + string(_x) + ", y: " + string(_y));
   }
 }

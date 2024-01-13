@@ -75,11 +75,3 @@ if (speed > min_speed) {
 // Adjust alpha gradually using lerp
 current_alpha = lerp(current_alpha, target_alpha, lerp_speed);
 part_type_alpha3(global.thruster_particle_type, current_alpha, min_alpha, 0);
-
-if(y+10 > room_height){
-	y = 0;
-	// room_goto_next();
-}
-
-show_debug_message(string(x) + ":" + string(room_height));
-show_debug_message(string(y) + ":" + string(room_height));

@@ -44,6 +44,7 @@
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"spr_ship","path":"sprites/spr_ship/spr_ship.yy",},},
+    {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"obj_ship","path":"objects/obj_ship/obj_ship.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
@@ -53,10 +54,11 @@
     {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},},
     {"id":{"name":"spr_star","path":"sprites/spr_star/spr_star.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
-    {"id":{"name":"Room","path":"rooms/Room/Room.yy",},},
+    {"id":{"name":"rm_space","path":"rooms/rm_space/rm_space.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room","path":"rooms/Room/Room.yy",},},
+    {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
+    {"roomId":{"name":"rm_space","path":"rooms/rm_space/rm_space.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

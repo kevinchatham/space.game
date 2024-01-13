@@ -33,10 +33,10 @@ while (position_meeting(_random_x, _random_y, obj_rock) || too_close_to_other_ro
 var _new_rock = instance_create_layer(
   _random_x,
   _random_y,
-  obj_game.main_layer,
+  global.main_layer,
   obj_rock
 );
 
 if (_new_rock != noone) {
-  show_debug_message("Created rock at x: " + string(_random_x) + ", y: " + string(_random_y));
+  // show_debug_message("Created rock at x: " + string(_random_x) + ", y: " + string(_random_y));
 }
