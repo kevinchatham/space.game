@@ -1,5 +1,6 @@
-draw_view_port = true;
-draw_spawn_port = true;
+draw_view_port = false;
+draw_spawn_port = false;
+draw_particle_emitter_regions = false;
 
 camera = view_camera[0];
 camera_speed = 0.015;

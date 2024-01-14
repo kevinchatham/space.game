@@ -37,6 +37,7 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"obj_worm_hole_spawner","path":"objects/obj_worm_hole_spawner/obj_worm_hole_spawner.yy",},},
     {"id":{"name":"obj_star","path":"objects/obj_star/obj_star.yy",},},
     {"id":{"name":"obj_arrow","path":"objects/obj_arrow/obj_arrow.yy",},},
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},},
@@ -48,7 +49,9 @@
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"obj_ship","path":"objects/obj_ship/obj_ship.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
+    {"id":{"name":"spr_worm_hole","path":"sprites/spr_worm_hole/spr_worm_hole.yy",},},
     {"id":{"name":"obj_rock_spawner","path":"objects/obj_rock_spawner/obj_rock_spawner.yy",},},
+    {"id":{"name":"obj_worm_hole","path":"objects/obj_worm_hole/obj_worm_hole.yy",},},
     {"id":{"name":"obj_space_camera","path":"objects/obj_space_camera/obj_space_camera.yy",},},
     {"id":{"name":"obj_star_spawner","path":"objects/obj_star_spawner/obj_star_spawner.yy",},},
     {"id":{"name":"view_port","path":"scripts/view_port/view_port.yy",},},

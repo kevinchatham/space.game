@@ -22,4 +22,4 @@ current_alpha = min_alpha; // Initial alpha value (adjust as needed)
 target_alpha = 0; // Target alpha value
 lerp_speed = 0.05; // Adjust the speed of the transition
 emitter_radius = 4;
-base_offset = 5;
+base_offset = 0;

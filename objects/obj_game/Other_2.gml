@@ -10,11 +10,10 @@ global.main_layer = "Main";
 global.background_layer = "Background";
 
 global.thruster_particle_emitter_particle_count = 3;
-global.draw_particle_emitter_regions = false;
 
 global.particle_system = part_system_create_layer(layer, true);
 part_system_global_space(global.particle_system, true);
-part_system_depth(global.particle_system, 1);
+part_system_depth(global.particle_system, 0);
 
 global.thruster_particle_emitter = part_emitter_create(global.particle_system);
 
@@ -31,15 +30,22 @@ part_emitter_stream(
 );
 
 // ! Room Configuration
-var _space_size = 1_000_000;
+var _space_size = 5000;
 room_set_width(rm_space, _space_size);
 room_set_height(rm_space, _space_size);
-room_set_persistent(rm_space, true);
-room_instance_add(rm_space, 0, 0, obj_space_camera);
-room_instance_add(rm_space, 0, 0, obj_rock_spawner);
-room_instance_add(rm_space, 0, 0, obj_star_spawner);
-room_instance_add(rm_space, 0, 0, obj_arrow);
-room_instance_add(rm_space, _space_size / 2, _space_size / 2, obj_ship);
+var _space_camera_id = room_instance_add(rm_space, 0, 0, obj_space_camera);
+var _rock_spawner_id = room_instance_add(rm_space, 0, 0, obj_rock_spawner);
+var _star_spawner_id = room_instance_add(rm_space, 0, 0, obj_star_spawner);
+var _obj_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow);
+var _worm_hole_id = room_instance_add(rm_space, _space_size / 2, _space_size / 2, obj_worm_hole);
+var _ship_id = room_instance_add(rm_space, _space_size / 2, _space_size / 2, obj_ship);
+
+layer_set_target_room(rm_space);
+var _main_layer_id = layer_get_id(global.main_layer);
+var _background_layer_id = layer_get_id(global.main_layer);
+layer_add_instance(_main_layer_id, _ship_id);
+layer_add_instance(_background_layer_id, _ship_id);
+layer_reset_target_room();
 
 room_goto_next();
 

@@ -7,8 +7,8 @@ var _right = keyboard_check(ord("D"));
 if (_up) {
   if (speed < max_speed) {
     motion_add(image_angle + 90, acceleration);
-  }else{
-    speed-=deceleration
+  } else {
+    speed -= deceleration;
   }
 }
 
@@ -44,13 +44,7 @@ emitter_right = center_x + emitter_radius;
 emitter_top = center_y - emitter_radius;
 emitter_bottom = center_y + emitter_radius;
 
-part_type_direction(
-  global.thruster_particle_type,
-  base_angle,
-  base_angle,
-  0,
-  0
-);
+part_type_direction(global.thruster_particle_type, base_angle, base_angle, 0, 0);
 
 part_emitter_region(
   global.particle_system,
