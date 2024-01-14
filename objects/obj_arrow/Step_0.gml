@@ -7,7 +7,7 @@ var _rotation_speed = 50; // higher is slower
 var _closest_distance = -1;
 var _closest_rock = noone; // noone means no instance found
 
-with (obj_rock) {
+with (obj_asteroid) {
   var _distance = point_distance(x, y, obj_arrow.x, obj_arrow.y);
 
   var _x_view = camera_get_view_x(view_camera[0]);

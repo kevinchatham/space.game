@@ -1,5 +1,5 @@
 function too_close_to_other_rocks(_x, _y) {
-  var _rock = instance_nearest(_x, _y, obj_rock);
+  var _rock = instance_nearest(_x, _y, obj_asteroid);
 
   if (_rock == noone) return false;
 
@@ -10,14 +10,14 @@ function too_close_to_other_rocks(_x, _y) {
   return false; // Safe distance
 }
 
-with (obj_rock) {
+with (obj_asteroid) {
   if (outside_spawn_port(obj_space_camera.camera, x, y)) {
     instance_destroy();
     show_debug_message("Destroyed rock at x: " + string(x) + ", y: " + string(y));
   }
 }
 
-var _respawn_count = max_rocks - instance_number(obj_rock);
+var _respawn_count = max_rocks - instance_number(obj_asteroid);
 
 for (var _i = 0; _i < _respawn_count; _i++) {
   var _x = obj_ship.x;
@@ -29,7 +29,7 @@ for (var _i = 0; _i < _respawn_count; _i++) {
     _y = random_range(obj_space_camera.spawn_port_min_y, obj_space_camera.spawn_port_max_y);
   }
 
-  var _new_rock = instance_create_layer(_x, _y, global.main_layer, obj_rock);
+  var _new_rock = instance_create_layer(_x, _y, global.main_layer, obj_asteroid);
 
   if (_new_rock != noone) {
     show_debug_message("Spawned rock at x: " + string(_x) + ", y: " + string(_y));

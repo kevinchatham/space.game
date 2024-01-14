@@ -1,8 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_arrow",
+  "name": "obj_asteroid_explosion",
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
@@ -28,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_arrow",
-    "path": "sprites/spr_arrow/spr_arrow.yy",
+    "name": "spr_asteroid_explosion",
+    "path": "sprites/spr_asteroid_explosion/spr_asteroid_explosion.yy",
   },
   "spriteMaskId": null,
   "visible": true,
