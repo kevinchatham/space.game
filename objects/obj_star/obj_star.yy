@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_star",
-    "path": "sprites/spr_star/spr_star.yy",
+    "name": "spr_star_shine_blue_mini",
+    "path": "sprites/spr_star_shine_blue_mini/spr_star_shine_blue_mini.yy",
   },
   "spriteMaskId": null,
   "visible": true,
