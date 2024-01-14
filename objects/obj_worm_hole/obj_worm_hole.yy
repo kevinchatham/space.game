@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_worm_hole",
-    "path": "sprites/spr_worm_hole/spr_worm_hole.yy",
+    "name": "spr_planet",
+    "path": "sprites/spr_planet/spr_planet.yy",
   },
   "spriteMaskId": {
     "name": "spr_worm_hole",
