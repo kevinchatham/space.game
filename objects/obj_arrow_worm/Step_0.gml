@@ -1,12 +1,12 @@
 var _camera_padding = 25;
 x = obj_space_camera.view_port_max_x - _camera_padding;
-y = obj_space_camera.view_port_min_y + _camera_padding;
+y = obj_space_camera.view_port_min_y + _camera_padding * 3;
 
 var _rotation_speed = 50; // higher is slower
 var _closest_distance = -1;
 var _closest_id = noone;
 
-with (obj_asteroid) {
+with (obj_worm_hole) {
   if (inside_view_port(obj_space_camera.camera,x,y)) continue;
 
   var _distance = point_distance(x, y, obj_ship.x, obj_ship.y);

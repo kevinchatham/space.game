@@ -1,11 +1,7 @@
-initial_direction = random(360);
-rotation_speed = 0.01;
-min_speed = 0.1;
-min_image_scale = 2;
-max_image_scale = 2;
-scale_rate = 0.02;
+rotation_speed = 0.5;
+scale = 2;
 
-motion_set(initial_direction, min_speed);
+image_xscale = scale;
+image_yscale =  scale;
 
-image_xscale = min_image_scale;
-image_yscale = min_image_scale;
+motion_set(random(360) ,0.1);

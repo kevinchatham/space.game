@@ -3,7 +3,7 @@ window_set_cursor(cr_none);
 cursor_sprite = spr_cursor;
 
 // Start background music
-// audio_play_sound(snd_ambiance, 1, true);
+audio_play_sound(snd_ambiance, 1, true);
 
 // ! Layers
 global.main_layer = "Main";
@@ -35,16 +35,18 @@ room_set_width(rm_space, _space_size);
 room_set_height(rm_space, _space_size);
 var _space_camera_id = room_instance_add(rm_space, 0, 0, obj_space_camera);
 var _rock_spawner_id = room_instance_add(rm_space, 0, 0, obj_rock_spawner);
-var _star_spawner_id = room_instance_add(rm_space, 0, 0, obj_star_spawner);
-var _obj_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow);
-var _worm_hole_id = room_instance_add(rm_space, _space_size / 2, _space_size / 2, obj_worm_hole);
+var _star_spawner_id = room_instance_add(rm_space, 0, 0, obj_background_spawner);
+var _worm_hole_spawner_id = room_instance_add(rm_space, 0, 0, obj_worm_hole_spawner);
+var _arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow);
+var _arrow_worm_id = room_instance_add(rm_space, 0, 0, obj_arrow_worm);
 var _ship_id = room_instance_add(rm_space, _space_size / 2, _space_size / 2, obj_ship);
 
 layer_set_target_room(rm_space);
 var _main_layer_id = layer_get_id(global.main_layer);
 var _background_layer_id = layer_get_id(global.main_layer);
 layer_add_instance(_main_layer_id, _ship_id);
-layer_add_instance(_background_layer_id, _ship_id);
+layer_add_instance(_main_layer_id, _arrow_id);
+layer_add_instance(_main_layer_id, _arrow_worm_id);
 layer_reset_target_room();
 
 room_goto_next();

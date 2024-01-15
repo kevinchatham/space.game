@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_worm_hole",
+  "name": "obj_planet",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -29,12 +29,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_work_hole_0",
-    "path": "sprites/spr_work_hole_0/spr_work_hole_0.yy",
+    "name": "spr_planet",
+    "path": "sprites/spr_planet/spr_planet.yy",
   },
-  "spriteMaskId": {
-    "name": "spr_worm_hole",
-    "path": "sprites/spr_worm_hole/spr_worm_hole.yy",
-  },
+  "spriteMaskId": null,
   "visible": true,
 }
