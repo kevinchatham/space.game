@@ -1,6 +1,6 @@
 var _up = keyboard_check(ord("W"));
-var _down = keyboard_check(ord("S"));
 var _left = keyboard_check(ord("A"));
+var _down = keyboard_check(ord("S"));
 var _right = keyboard_check(ord("D"));
 
 // ! Movement
@@ -28,6 +28,7 @@ if (_left) {
   image_angle += 1;
 }
 
+// ! Particles
 base_angle = (image_angle + 270) % 360;
 
 // Calculate the offset from the ship's center to the bottom center with horizontal adjustment
@@ -59,7 +60,7 @@ part_emitter_region(
 
 // Smoothly transition alpha value based on speed
 if (speed > min_speed) {
-  part_type_speed(global.thruster_particle_type, 0, speed, acceleration, 0);
+  part_type_speed(global.thruster_particle_type, min_speed, speed, acceleration, 0);
   target_alpha = lerp(min_alpha, max_alpha, speed / max_speed);
 } else {
   part_type_speed(global.thruster_particle_type, 0, 0, acceleration, 0);

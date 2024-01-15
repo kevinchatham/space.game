@@ -1,4 +1,8 @@
-// spawn any number of an object within the spawn port, outside of the view port
+/// @description Spawn any number of an object within the spawn port, outside of the view port.
+/// @param {Asset.GMObject} _obj
+/// @param {Real} _count
+/// @param {Real} _padding
+/// @param {String} _layer
 function spawn_at_random(_obj, _count, _padding, _layer) {
   for (var _i = 0; _i < _count; _i++) {
     var _colliding = true;
@@ -10,8 +14,8 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
       _y = irandom_range(obj_space_camera.spawn_port_min_y, obj_space_camera.spawn_port_max_y);
       _colliding =
         inside_view_port(obj_space_camera.camera, _x, _y) ||
-        place_meeting(_x, _y, _obj) ||
-        too_close(_x, _y, _obj, _padding);
+        too_close(_x, _y, _obj, _padding) ||
+        place_meeting(_x, _y, _obj);
     }
 
     var _new = instance_create_layer(_x, _y, _layer, _obj);
@@ -22,6 +26,10 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
   }
 }
 
+/// @param {Asset.GMObject} _obj
+/// @param {Real} _count
+/// @param {Real} _padding
+/// @param {String} _layer
 function safely_despawn(_obj) {
   with (_obj) {
     if (outside_spawn_port(obj_space_camera.camera, x, y)) {
@@ -31,6 +39,10 @@ function safely_despawn(_obj) {
   }
 }
 
+/// @param {Real} _x
+/// @param {Real} _y
+/// @param {Asset.GMObject} _obj
+/// @param {Real} _padding
 function too_close(_x, _y, _obj, _padding) {
   var _closest = instance_nearest(_x, _y, _obj);
 

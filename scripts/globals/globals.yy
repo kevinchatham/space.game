@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "global_variables",
+  "name": "globals",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
