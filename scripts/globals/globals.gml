@@ -4,7 +4,7 @@ function build_layer_info() {
 }
 
 function build_options() {
-  global.despawn_lifetime = 240;
+  global.despawn_lifetime = 1;
   global.thruster_particle_emitter_particle_count = 3;
   global.volume = 0;
 

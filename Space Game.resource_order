@@ -26,7 +26,6 @@
     {"name":"obj_asteroid_explosion","order":11,"path":"objects/obj_asteroid_explosion/obj_asteroid_explosion.yy",},
     {"name":"spr_star_shine_green_mini","order":9,"path":"sprites/spr_star_shine_green_mini/spr_star_shine_green_mini.yy",},
     {"name":"obj_arrow_worm","order":12,"path":"objects/obj_arrow_worm/obj_arrow_worm.yy",},
-    {"name":"global_variables","order":2,"path":"scripts/global_variables/global_variables.yy",},
     {"name":"spr_star_shine_blue","order":10,"path":"sprites/spr_star_shine_blue/spr_star_shine_blue.yy",},
     {"name":"obj_space_camera","order":3,"path":"objects/obj_space_camera/obj_space_camera.yy",},
     {"name":"spr_star_shine_orange_mini","order":14,"path":"sprites/spr_star_shine_orange_mini/spr_star_shine_orange_mini.yy",},
