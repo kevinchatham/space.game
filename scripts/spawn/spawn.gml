@@ -26,14 +26,11 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
   }
 }
 
-/// @param {Asset.GMObject} _obj
-/// @param {Real} _count
-/// @param {Real} _padding
-/// @param {String} _layer
-function safely_despawn(_obj) {
-  with (_obj) {
+function safely_despawn() {
+  with (all) {
+    if (!visible) continue;
     if (outside_spawn_port(obj_space_camera.camera, x, y)) {
-      show_debug_message("Despawned " + object_get_name(_obj) + " x: " + string(x) + ", y: " + string(y));
+      show_debug_message("Despawned " + object_get_name(object_index) + " x: " + string(x) + ", y: " + string(y));
       instance_destroy(id);
     }
   }

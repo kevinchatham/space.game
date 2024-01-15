@@ -3,30 +3,14 @@
   "resourceVersion": "1.0",
   "name": "obj_planet",
   "eventList": [
-    {
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": "",
-      "collisionObjectId": null,
-      "eventNum": 0,
-      "eventType": 0,
-      "isDnD": false
-    },
-    {
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": "",
-      "collisionObjectId": null,
-      "eventNum": 0,
-      "eventType": 3,
-      "isDnD": false
-    }
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/Objects.yy"
+    "path": "folders/Objects.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -46,8 +30,8 @@
   "solid": false,
   "spriteId": {
     "name": "spr_planet",
-    "path": "sprites/spr_planet/spr_planet.yy"
+    "path": "sprites/spr_planet/spr_planet.yy",
   },
   "spriteMaskId": null,
-  "visible": true
+  "visible": true,
 }

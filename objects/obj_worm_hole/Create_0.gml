@@ -5,3 +5,5 @@ image_xscale = scale;
 image_yscale = scale;
 
 motion_set(random(360), 0.1);
+
+progress = 0;

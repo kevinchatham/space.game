@@ -3,5 +3,3 @@ min_distance_between = 350;
 max_count = 30;
 
 spawn_at_random(obj_star, max_count, min_distance_between, global.background_layer);
-
-alarm[0] = global.despawn_lifetime;
