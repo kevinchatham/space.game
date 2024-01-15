@@ -3,14 +3,30 @@
   "resourceVersion": "1.0",
   "name": "obj_worm_hole",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 0,
+      "isDnD": false
+    },
+    {
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 3,
+      "isDnD": false
+    }
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/Objects.yy",
+    "path": "folders/Objects.yy"
   },
   "parentObjectId": null,
   "persistent": false,
@@ -30,11 +46,11 @@
   "solid": false,
   "spriteId": {
     "name": "spr_work_hole_0",
-    "path": "sprites/spr_work_hole_0/spr_work_hole_0.yy",
+    "path": "sprites/spr_work_hole_0/spr_work_hole_0.yy"
   },
   "spriteMaskId": {
     "name": "spr_worm_hole",
-    "path": "sprites/spr_worm_hole/spr_worm_hole.yy",
+    "path": "sprites/spr_worm_hole/spr_worm_hole.yy"
   },
-  "visible": true,
+  "visible": true
 }

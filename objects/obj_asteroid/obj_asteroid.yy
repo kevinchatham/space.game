@@ -3,16 +3,50 @@
   "resourceVersion": "1.0",
   "name": "obj_asteroid",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_ship","path":"objects/obj_ship/obj_ship.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","eventNum":0,"eventType":4,"isDnD":false,},
+    {
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 3,
+      "isDnD": false
+    },
+    {
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 0,
+      "isDnD": false
+    },
+    {
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": "",
+      "collisionObjectId": {
+        "name": "obj_ship",
+        "path": "objects/obj_ship/obj_ship.yy"
+      },
+      "eventNum": 0,
+      "eventType": 4,
+      "isDnD": false
+    },
+    {
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": "",
+      "eventNum": 0,
+      "eventType": 4,
+      "isDnD": false
+    }
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/Objects.yy",
+    "path": "folders/Objects.yy"
   },
   "parentObjectId": null,
   "persistent": false,
@@ -32,8 +66,8 @@
   "solid": false,
   "spriteId": {
     "name": "spr_asteroid",
-    "path": "sprites/spr_asteroid/spr_asteroid.yy",
+    "path": "sprites/spr_asteroid/spr_asteroid.yy"
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": true
 }

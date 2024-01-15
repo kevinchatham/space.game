@@ -1,12 +1,12 @@
 sprites = [
-	spr_star_shine_blue,
-	spr_star_shine_blue_mini,
-	spr_star_shine_green,
-	spr_star_shine_green_mini,
-	spr_star_shine_orange,
-	spr_star_shine_orange_mini,
-	spr_star_shine_pink,
-	spr_star_shine_pink_mini
+  spr_star_shine_blue,
+  spr_star_shine_blue_mini,
+  spr_star_shine_green,
+  spr_star_shine_green_mini,
+  spr_star_shine_orange,
+  spr_star_shine_orange_mini,
+  spr_star_shine_pink,
+  spr_star_shine_pink_mini
 ];
 
 index = irandom(array_length(sprites) - 1);

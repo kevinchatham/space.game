@@ -7,7 +7,7 @@ var _closest_distance = -1;
 var _closest_id = noone;
 
 with (obj_worm_hole) {
-  if (inside_view_port(obj_space_camera.camera,x,y)) continue;
+  if (inside_view_port(obj_space_camera.camera, x, y)) continue;
 
   var _distance = point_distance(x, y, obj_ship.x, obj_ship.y);
 
