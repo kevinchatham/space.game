@@ -21,7 +21,7 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
     var _new = instance_create_layer(_x, _y, _layer, _obj);
 
     if (_new != noone) {
-      show_debug_message("Spawned " + object_get_name(_obj) + " x: " + string(_new.x) + ", y: " + string(_new.y));
+      // show_debug_message("Spawned " + object_get_name(_obj) + " x: " + string(_new.x) + ", y: " + string(_new.y));
     }
   }
 }

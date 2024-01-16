@@ -1,3 +1,9 @@
+sprites = [spr_asteroid, spr_asteroid_ice];
+
+index = irandom(array_length(sprites) - 1);
+
+sprite_index = sprites[index];
+
 initial_direction = random(360);
 max_rotation_speed = 0.1;
 min_rotation_speed = 0.01;
