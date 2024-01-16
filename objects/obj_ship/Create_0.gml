@@ -2,6 +2,8 @@ acceleration = 0.01;
 deceleration = 0.01;
 min_speed = 0.1;
 max_speed = 1;
+target_angle= 0;
+rotation_speed = 1;
 
 // updated by Step event
 // shared with Draw event

@@ -1,13 +1,13 @@
 {
   "FolderOrderSettings": [
     {"name":"Global","order":9,"path":"folders/Objects/Global.yy",},
+    {"name":"Arrows","order":24,"path":"folders/Sprites/Arrows.yy",},
+    {"name":"Asteroids","order":27,"path":"folders/Sprites/Asteroids.yy",},
+    {"name":"Cursors","order":25,"path":"folders/Sprites/Cursors.yy",},
     {"name":"Planets","order":22,"path":"folders/Sprites/Planets.yy",},
     {"name":"Ships","order":23,"path":"folders/Sprites/Ships.yy",},
-    {"name":"Arrows","order":24,"path":"folders/Sprites/Arrows.yy",},
-    {"name":"Cursors","order":25,"path":"folders/Sprites/Cursors.yy",},
-    {"name":"Worm Holes","order":26,"path":"folders/Sprites/Worm Holes.yy",},
-    {"name":"Asteroids","order":27,"path":"folders/Sprites/Asteroids.yy",},
     {"name":"Stars","order":28,"path":"folders/Sprites/Stars.yy",},
+    {"name":"Worm Holes","order":26,"path":"folders/Sprites/Worm Holes.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_worm_hole_spawner","order":4,"path":"objects/obj_worm_hole_spawner/obj_worm_hole_spawner.yy",},
