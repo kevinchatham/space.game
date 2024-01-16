@@ -21,3 +21,18 @@
 💪 Make bullets fireable and they should destroy asteroids. This means asteroids need health and healing. 
 
 💪 Add 5 more planets to spawner to decrease the chance of two of them spawning together.
+
+💪 Replace arrow with compass with single arrow. Layer them on top of each other and point them in different directions toward different resources. 
+
+💪 Make a cooler ship.
+
+💪 Allow swapping between different ships.
+
+💪 Allow flipping between bullets and tractor beam. 
+
+💪 Create inventory for ship.
+
+💪 Create a weighted system to allow rarity among spawning asteroid types.
+
+💪 Build save and load system.
+
