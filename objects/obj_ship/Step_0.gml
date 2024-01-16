@@ -21,12 +21,15 @@ if (_down) {
 }
 
 if (_right) {
-  image_angle -= 1;
+  image_angle -= rotation_speed;
 }
 
 if (_left) {
-  image_angle += 1;
+  image_angle += rotation_speed;
 }
+
+target_angle = point_direction(x, y, mouse_x, mouse_y) + 270;
+image_angle = lerp(image_angle, target_angle, rotation_speed / 50);
 
 // ! Particles
 base_angle = (image_angle + 270) % 360;

@@ -9,20 +9,25 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
     var _x = 0;
     var _y = 0;
 
+var _c = 0;
+
     while (_colliding) {
+		// TODO
+		// SOMETIMES THE PROGRAM GETS CAUGHT IN THIS FUNCTION
+		// I DON'T FULLY UNDERSTAND THE CIRCUMSTANCES
+		// JUST SOMETIMES IT HAPPENS
+		// THEN THE GAME FREEZES AND YOU HAVE TO FORCE QUIT :(
       _x = irandom_range(obj_space_camera.spawn_port_min_x, obj_space_camera.spawn_port_max_x);
       _y = irandom_range(obj_space_camera.spawn_port_min_y, obj_space_camera.spawn_port_max_y);
       _colliding =
         inside_view_port(obj_space_camera.camera, _x, _y) ||
         too_close(_x, _y, _obj, _padding) ||
         place_meeting(_x, _y, _obj);
+		_c+=1;
+		show_debug_message("colliding: " + string(_c));
     }
 
     var _new = instance_create_layer(_x, _y, _layer, _obj);
-
-    if (_new != noone) {
-      // show_debug_message("Spawned " + object_get_name(_obj) + " x: " + string(_new.x) + ", y: " + string(_new.y));
-    }
   }
 }
 
@@ -30,7 +35,6 @@ function safely_despawn() {
   with (all) {
     if (!visible) continue;
     if (outside_spawn_port(obj_space_camera.camera, x, y)) {
-      show_debug_message("Despawned " + object_get_name(object_index) + " x: " + string(x) + ", y: " + string(y));
       instance_destroy(id);
     }
   }

@@ -1,3 +1,4 @@
+randomize();
 build_layer_info();
 build_options();
 build_particle_systems(layer);
