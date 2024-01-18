@@ -22,10 +22,12 @@ if (_down) {
 
 if (_right) {
   image_angle -= rotation_speed;
+  motion_set(image_angle + 90,  speed)
 }
 
 if (_left) {
   image_angle += rotation_speed;
+  motion_set(image_angle + 90,  speed)
 }
 
 if (!keyboard_controlled) {
@@ -33,8 +35,10 @@ if (!keyboard_controlled) {
   var _diff = angle_difference(image_angle, _target_angle);
   if (_diff > rotation_speed) {
     image_angle += rotation_speed;
+	motion_set(image_angle + 90,  speed)
   } else if (_diff < -rotation_speed) {
     image_angle -= rotation_speed;
+	motion_set(image_angle + 90,  speed)
   }
 }
 
