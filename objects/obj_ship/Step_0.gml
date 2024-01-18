@@ -28,8 +28,15 @@ if (_left) {
   image_angle += rotation_speed;
 }
 
-target_angle = point_direction(x, y, mouse_x, mouse_y) + 270;
-image_angle = lerp(image_angle, target_angle, rotation_speed / 50);
+if (!keyboard_controlled) {
+  var _target_angle = point_direction(x, y, mouse_x, mouse_y) + 90;
+  var _diff = angle_difference(image_angle, _target_angle);
+  if (_diff > rotation_speed) {
+    image_angle += rotation_speed;
+  } else if (_diff < -rotation_speed) {
+    image_angle -= rotation_speed;
+  }
+}
 
 // ! Particles
 base_angle = (image_angle + 270) % 360;

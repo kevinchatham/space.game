@@ -9,7 +9,8 @@ function build_options() {
   global.volume = 0;
 
   window_set_cursor(cr_none);
-  cursor_sprite = spr_cursor;
+  cursor_sprite = cr_none;
+
   audio_play_sound(snd_ambiance, 1, true, global.volume);
 }
 

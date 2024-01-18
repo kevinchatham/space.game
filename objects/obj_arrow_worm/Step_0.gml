@@ -7,15 +7,9 @@ var _closest_distance = -1;
 var _closest_id = noone;
 
 with (obj_worm_hole) {
-  if (inside_view_port(obj_space_camera.camera, x, y)) continue;
-
   var _distance = point_distance(x, y, obj_ship.x, obj_ship.y);
-
-  // If _distance is closer than the current closest, update closest_rock
-  if (_closest_distance == -1 || _distance < _closest_distance) {
-    _closest_distance = _distance;
-    _closest_id = id;
-  }
+  _closest_distance = _distance;
+  _closest_id = id;
 }
 
 if (_closest_id == noone) return;
