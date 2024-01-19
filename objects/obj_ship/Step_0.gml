@@ -20,33 +20,28 @@ if (_down) {
   }
 }
 
-if (_right) {
+if (_right && keyboard_controlled) {
   image_angle -= rotation_speed;
   motion_set(image_angle + 90, speed);
 }
 
-if (_left) {
+if (_left && keyboard_controlled) {
   image_angle += rotation_speed;
   motion_set(image_angle + 90, speed);
 }
 
+// This allows the ship to smoothly follow the mouse cursor.
+// There is a deadzone so the ship doesn't wiggle when pointing directly at the cursor.
 if (!keyboard_controlled) {
+  var _dead_zone = 5;
+
   var _target_angle = point_direction(x, y, mouse_x, mouse_y);
   var _diff = angle_difference(image_angle + 270, _target_angle);
 
-  show_debug_message("Target Angle: " + string(_target_angle));
-  show_debug_message("Diff: " + string(_diff));
-
+  var _can_turn = abs(_diff) + _dead_zone < 180 || abs(_diff) - _dead_zone > 180;
   var _turning_left = _diff > 0;
   var _turning_right = !_turning_left;
 
-  var _dead_zone = 5;
-
-  var _can_turn = abs(_diff) + _dead_zone < 180 || abs(_diff) - _dead_zone > 180;
-
-  show_debug_message("Turn: " + string(_can_turn));
-
-  // Use angle_difference to determine the direction of rotation
   if (_can_turn) {
     if (_turning_left) {
       image_angle += rotation_speed;
@@ -56,8 +51,6 @@ if (!keyboard_controlled) {
       motion_set(image_angle + 90, speed);
     }
   }
-
-  last_diff = _diff;
 }
 
 // ! Particles
