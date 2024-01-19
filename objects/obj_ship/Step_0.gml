@@ -22,43 +22,41 @@ if (_down) {
 
 if (_right) {
   image_angle -= rotation_speed;
-  motion_set(image_angle + 90,  speed)
+  motion_set(image_angle + 90, speed);
 }
 
 if (_left) {
   image_angle += rotation_speed;
-  motion_set(image_angle + 90,  speed)
+  motion_set(image_angle + 90, speed);
 }
 
 if (!keyboard_controlled) {
   var _target_angle = point_direction(x, y, mouse_x, mouse_y);
   var _diff = angle_difference(image_angle + 270, _target_angle);
 
-  show_debug_message("Target Angle: "+string(_target_angle));
-  show_debug_message("Diff: "+string(_diff));
-    show_debug_message("Last Diff: "+string(last_diff));
-	
-	var _turning_left = _diff > 0;
-	var _turning_right = !_turning_left;
+  show_debug_message("Target Angle: " + string(_target_angle));
+  show_debug_message("Diff: " + string(_diff));
 
-  // Define dead zone and tolerance threshold (adjust as needed)
-  var _dead_zone = 1;
+  var _turning_left = _diff > 0;
+  var _turning_right = !_turning_left;
 
-	var _can_turn = abs(_diff)-abs(last_diff) > _dead_zone;
+  var _dead_zone = 5;
 
-	show_debug_message("Turn: "+ string(_can_turn));
+  var _can_turn = abs(_diff) + _dead_zone < 180 || abs(_diff) - _dead_zone > 180;
+
+  show_debug_message("Turn: " + string(_can_turn));
 
   // Use angle_difference to determine the direction of rotation
-  if(_can_turn){
-	  if ( _turning_left) {
-	    image_angle += rotation_speed;
-		motion_set(image_angle + 90,speed);
-	  } else if (_turning_right) {
-	    image_angle -= rotation_speed;
-		motion_set(image_angle + 90,speed);
-	  }
+  if (_can_turn) {
+    if (_turning_left) {
+      image_angle += rotation_speed;
+      motion_set(image_angle + 90, speed);
+    } else if (_turning_right) {
+      image_angle -= rotation_speed;
+      motion_set(image_angle + 90, speed);
+    }
   }
-  
+
   last_diff = _diff;
 }
 

@@ -9,7 +9,10 @@
 
 🐞 Find a way to dynamically assign the right sprite and sprite animation when an asteroid is created. Alternatively, an asteroids animation should be stopped on creation. Then on collision it should play the animation before destroy. You'll still run into this problem when you want to spawn the appropriate resource for collection.
 
-🐞 Mouse movement isn't smooth enough. The ship shakes.
+🧪 Mouse movement isn't smooth enough. The ship shakes.
+
+- Fixed but needs clean up.
+- Implemented a proper dead zone since 180 degrees means the ship is pointed straight at the cursor.
 
 💪 Find animated bullet sprite or use a scaled down version of meteor sprites?
 
