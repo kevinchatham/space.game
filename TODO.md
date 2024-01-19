@@ -7,7 +7,7 @@
 💪 Enhancement
 ```
 
-🐞 Find a way to dynamically assign the right sprite and sprite animation when an asteroid is created. Alternatively, an asteroids animation should be stopped on creation. Then on collision it should play the animation before destroy. You'll still run into this problem when you want to spawn the appropriate resource for collection.
+💪 Make asteroid death spawn a certain resource by expanding asteroid type.
 
 💪 Find animated bullet sprite or use a scaled down version of meteor sprites?
 
@@ -54,3 +54,7 @@
 ✅🐞 `spawn_randomly_at()` while loop may still have a bug where every once in a while `_colliding` is always true so the loop never exits. Since simplifying the conditional it has made some improvement.
 
 - Simplifying the condition and introducing an upper limit seems to do the trick.
+
+✅🐞 Find a way to dynamically assign the right sprite and sprite animation when an asteroid is created. Alternatively, an asteroids animation should be stopped on creation. Then on collision it should play the animation before destroy. You'll still run into this problem when you want to spawn the appropriate resource for collection.
+
+- I figured out how to use structs here and added one for asteroid and another function to create a random asteroid struct for reference in the asteroid object.

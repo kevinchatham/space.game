@@ -54,6 +54,7 @@
     {"id":{"name":"spr_star_shine_pink","path":"sprites/spr_star_shine_pink/spr_star_shine_pink.yy",},},
     {"id":{"name":"spr_planet_ring_1","path":"sprites/spr_planet_ring_1/spr_planet_ring_1.yy",},},
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},},
+    {"id":{"name":"asteroid_struct","path":"scripts/asteroid_struct/asteroid_struct.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"spr_ship","path":"sprites/spr_ship/spr_ship.yy",},},
     {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
