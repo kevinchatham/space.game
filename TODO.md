@@ -9,11 +9,6 @@
 
 🐞 Find a way to dynamically assign the right sprite and sprite animation when an asteroid is created. Alternatively, an asteroids animation should be stopped on creation. Then on collision it should play the animation before destroy. You'll still run into this problem when you want to spawn the appropriate resource for collection.
 
-🧪 Mouse movement isn't smooth enough. The ship shakes.
-
-- Fixed but needs clean up.
-- Implemented a proper dead zone since 180 degrees means the ship is pointed straight at the cursor.
-
 💪 Find animated bullet sprite or use a scaled down version of meteor sprites?
 
 💪 Make worm hole progress bar shrink when not clicking it.
@@ -38,8 +33,6 @@
 
 💪 Build save and load system.
 
-🧪 `spawn_randomly_at()` while loop may still have a bug where every once in a while `_colliding` is always true so the loop never exits. Since simplifying the conditional it has made some improvement.
-
 ---
 
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
@@ -53,3 +46,11 @@
 ✅🐞 The ship slides around when using keyboard or following the cursor.
 
 - The control mechanism for keyboard and mouse steering was drastically improved. The ship no longer slides around
+
+✅🐞 Mouse movement isn't smooth enough. The ship shakes.
+
+- Implemented a proper dead zone since 180 degrees means the ship is pointed straight at the cursor.
+
+✅🐞 `spawn_randomly_at()` while loop may still have a bug where every once in a while `_colliding` is always true so the loop never exits. Since simplifying the conditional it has made some improvement.
+
+- Simplifying the condition and introducing an upper limit seems to do the trick.
