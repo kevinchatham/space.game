@@ -2,6 +2,7 @@ var _up = keyboard_check(ord("W"));
 var _left = keyboard_check(ord("A"));
 var _down = keyboard_check(ord("S"));
 var _right = keyboard_check(ord("D"));
+var _shoot = mouse_check_button(mb_left);
 
 // ! Movement
 if (_up) {
@@ -28,6 +29,19 @@ if (_right && keyboard_controlled) {
 if (_left && keyboard_controlled) {
   image_angle += rotation_speed;
   motion_set(image_angle + 90, speed);
+}
+
+var _fire_rate = 5; // per second
+
+if (_shoot && can_shoot) {
+  instance_create_layer(x, y, global.main_layer, obj_bullet, {
+    speed: 3,
+    image_angle: image_angle + 90,
+    image_xscale: 0.25,
+    image_yscale: 0.25
+  });
+  can_shoot = false;
+  alarm[0] = round(60 / _fire_rate);
 }
 
 // This allows the ship to smoothly follow the mouse cursor.

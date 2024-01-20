@@ -1,32 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_asteroid_explosion",
+  "name": "obj_resource",
   "eventList": [
-    {
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": "",
-      "collisionObjectId": null,
-      "eventNum": 0,
-      "eventType": 0,
-      "isDnD": false
-    },
-    {
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": "",
-      "collisionObjectId": null,
-      "eventNum": 0,
-      "eventType": 3,
-      "isDnD": false
-    }
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/Objects.yy"
+    "path": "folders/Objects.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -45,9 +30,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_asteroid_explosion",
-    "path": "sprites/spr_asteroid_explosion/spr_asteroid_explosion.yy"
+    "name": "spr_coal_ore",
+    "path": "sprites/spr_coal_ore/spr_coal_ore.yy",
   },
   "spriteMaskId": null,
-  "visible": true
+  "visible": true,
 }

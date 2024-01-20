@@ -5,6 +5,7 @@ min_speed = 0.1;
 max_speed = 1;
 target_angle = 0;
 rotation_speed = 1;
+can_shoot = true;
 
 // updated by Step event
 // shared with Draw event
