@@ -11,8 +11,6 @@
 
 🐞 `spawn_randomly_at()` sometimes spawns large objects just inside of the viewport. It needs to be padded.
 
-💪 Asteroids need health and healing.
-
 💪 Create inventory for ship.
 
 💪 Build save and load system.
@@ -64,3 +62,5 @@
 ✅💪 Find bullet sprite
 
 ✅💪 Replace arrow with compass with single arrow. Layer them on top of each other and point them in different directions toward different resources.
+
+✅💪 Asteroids need health and healing.
