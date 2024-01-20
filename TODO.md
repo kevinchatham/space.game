@@ -7,25 +7,27 @@
 💪 Enhancement
 ```
 
-💪 Make worm hole spawn you into a new room when progress hits 100%
+🐞 `spawn_randomly_at()` bug is still present and will cause the game to freeze occasionally.
 
-💪 This means asteroids need health and healing.
+🐞 `spawn_randomly_at()` sometimes spawns large objects just inside of the viewport. It needs to be padded.
+
+💪 Asteroids need health and healing.
+
+💪 Create inventory for ship.
+
+💪 Build save and load system.
+
+💪 Create a weighted system to allow rarity among spawning asteroid types.
 
 💪 Add 5 more planets to spawner to decrease the chance of two of them spawning together.
 
-💪 Replace arrow with compass with single arrow. Layer them on top of each other and point them in different directions toward different resources.
+💪 Allow flipping between bullets and tractor beam.
+
+💪 Make worm hole spawn you into a new room when progress hits 100%
 
 💪 Make a cooler ship.
 
 💪 Allow swapping between different ships.
-
-💪 Allow flipping between bullets and tractor beam.
-
-💪 Create inventory for ship.
-
-💪 Create a weighted system to allow rarity among spawning asteroid types.
-
-💪 Build save and load system.
 
 ---
 
@@ -60,3 +62,5 @@
 ✅💪 Make bullets fire from ship and they should destroy asteroids.
 
 ✅💪 Find bullet sprite
+
+✅💪 Replace arrow with compass with single arrow. Layer them on top of each other and point them in different directions toward different resources.

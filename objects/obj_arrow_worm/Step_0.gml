@@ -1,6 +1,6 @@
 var _camera_padding = 25;
 x = obj_space_camera.view_port_max_x - _camera_padding;
-y = obj_space_camera.view_port_min_y + _camera_padding * 3;
+y = obj_space_camera.view_port_min_y + _camera_padding;
 
 var _rotation_speed = 50; // higher is slower
 var _closest_distance = -1;

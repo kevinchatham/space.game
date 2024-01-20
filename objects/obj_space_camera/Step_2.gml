@@ -3,11 +3,6 @@ camera_set_view_size(camera, view_width, view_height);
 var _x = obj_ship.x - view_width / 2;
 var _y = obj_ship.y - view_height / 2;
 
-// this doesn't work because the room is huge.
-// fix in future if needed.
-// var _x = clamp(obj_ship.x - view_width / 2, 0, room_width / 2);
-// var _y = clamp(obj_ship.y - view_height / 2, 0, room_height / 2);
-
 var _cur_x = camera_get_view_x(camera);
 var _cur_y = camera_get_view_y(camera);
 

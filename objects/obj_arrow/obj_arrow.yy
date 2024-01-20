@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_arrow",
-    "path": "sprites/spr_arrow/spr_arrow.yy",
+    "name": "spr_compass_arrow",
+    "path": "sprites/spr_compass_arrow/spr_compass_arrow.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_arrow",
-    "path": "sprites/spr_arrow/spr_arrow.yy",
+    "name": "spr_compass_arrow_worm_hole",
+    "path": "sprites/spr_compass_arrow_worm_hole/spr_compass_arrow_worm_hole.yy",
   },
   "spriteMaskId": null,
   "visible": true,
