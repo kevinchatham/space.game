@@ -29,10 +29,6 @@
 
 ---
 
-✅💪 Use Tab to switch between keyboard control and mouse cursor control.
-
-- Done, is very nice.
-
 ✅🐞 The ship randomly swings around when moving in a circle.
 
 - A better directional mechanism was calculated so the ship swings smoothly in all rotations.
@@ -52,6 +48,8 @@
 ✅🐞 Find a way to dynamically assign the right sprite and sprite animation when an asteroid is created. Alternatively, an asteroids animation should be stopped on creation. Then on collision it should play the animation before destroy. You'll still run into this problem when you want to spawn the appropriate resource for collection.
 
 - I figured out how to use structs here and added one for asteroid and another function to create a random asteroid struct for reference in the asteroid object.
+
+✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 
 ✅💪 Make asteroid death spawn a certain resource by expanding asteroid type.
 
