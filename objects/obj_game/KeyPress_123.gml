@@ -1,4 +1,4 @@
-/// @description Debug
+/// @description F12 Debug
 
 with (obj_space_camera) {
   draw_view_port = !draw_view_port;

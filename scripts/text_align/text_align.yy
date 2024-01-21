@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "Inventory",
+  "name": "text_align",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

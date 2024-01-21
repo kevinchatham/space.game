@@ -21,7 +21,7 @@ global.asteroid_types = [
 
 /// global.asteroid_types[i] _this
 /// @param {Any} _this
-function Asteroid (_this) constructor {
+function Asteroid(_this) constructor {
   /// @type {Asset.GMSprite}
   sprite_index = _this.base;
   /// @type {Asset.GMSprite}

@@ -1,4 +1,4 @@
-/// @description Full Screen
+/// @description F11 Full Screen
 
 if (window_get_fullscreen()) {
   window_set_fullscreen(false);

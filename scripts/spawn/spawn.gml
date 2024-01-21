@@ -22,22 +22,15 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
 }
 
 function safely_despawn() {
-	var _destroyable = [
-		obj_asteroid,
-		obj_bullet,
-		obj_planet,
-		obj_resource,
-		obj_star,
-		obj_worm_hole
-	];
-	
-	for(var _i = 0; _i < array_length(_destroyable) - 1; _i++){
-		with (_destroyable[_i]) {
-		    if (outside_spawn_port(obj_space_camera.camera, x, y)) {
-		      instance_destroy(id);
-			}
-		}	
-	}
+  var _destroyable = [obj_asteroid, obj_bullet, obj_planet, obj_resource, obj_star, obj_worm_hole];
+
+  for (var _i = 0; _i < array_length(_destroyable) - 1; _i++) {
+    with (_destroyable[_i]) {
+      if (outside_spawn_port(obj_space_camera.camera, x, y)) {
+        instance_destroy(id);
+      }
+    }
+  }
 }
 
 /// @param {Real} _x

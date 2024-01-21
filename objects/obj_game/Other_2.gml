@@ -1,3 +1,5 @@
+/// @description Game Start
+
 randomize();
 build_layer_info();
 build_options();

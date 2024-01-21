@@ -1,2 +1,2 @@
-/// @description Close Game
+/// @description Esc Close Game
 game_end();
