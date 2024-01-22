@@ -27,6 +27,10 @@
 
 💪 Allow swapping between different ships.
 
+💪 Add pause feature.
+
+💪 Add main menu.
+
 ---
 
 ✅🐞 The ship randomly swings around when moving in a circle.
