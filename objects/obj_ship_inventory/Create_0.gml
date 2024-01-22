@@ -2,25 +2,33 @@ visible=false;
 
 inventory = new Inventory();
 
+// * TESTING ONLY
 inventory.item_add("Coal", 3, spr_coal_ore);
 inventory.item_add("Coal", 2, spr_coal_ore);
-
+inventory.item_add("Ice", 2, spr_ice_ore);
 show_debug_message(inventory);
+// *
 
-// UI INFORMATION //
+display_set_gui_size(
+    obj_space_camera.view_port_max_x - obj_space_camera.view_port_min_x,
+    obj_space_camera.view_port_max_y - obj_space_camera.view_port_min_y
+);
 
-display_set_gui_size(1280, 720);
+g_width = display_get_gui_width();
+g_height = display_get_gui_height();
 
-inventory_columns = 9;
-inventory_rows = 5;
+inventory_columns = 4;
+inventory_rows = 4;
 
-ui_padding_x = 64;
-ui_padding_y = 64;
-ui_panel_left = 320;
-ui_border_size = 8;
-ui_inventory_padding = 48;
-ui_inventory_box = 64;
-ui_inventory_margin = 16;
+window_offset = 32;
+sprite_padding = 8;
+sprite_padding_x = sprite_get_width(spr_inventory_slot) + sprite_padding;
+sprite_padding_y = sprite_get_height(spr_inventory_slot) + sprite_padding;
+
+// ui_padding_x = (g_width / 3) - sprite_get_width(spr_inventory_slot);
+// ui_padding_y = (g_height / 3) - sprite_get_height(spr_inventory_slot);
+// ui_inventory_padding = 24;
+// ui_inventory_margin = 4;
 
 color_background = #55507a;
 color_border = #36234a;
