@@ -20,10 +20,10 @@ g_height = display_get_gui_height();
 inventory_columns = 4;
 inventory_rows = 4;
 
-window_offset = 32;
-sprite_padding = 8;
-sprite_padding_x = sprite_get_width(spr_inventory_slot) + sprite_padding;
-sprite_padding_y = sprite_get_height(spr_inventory_slot) + sprite_padding;
+window_padding_x = 32;
+window_padding_y = 32;
+sprite_padding_x = 8;
+sprite_padding_y = 8;
 
 // ui_padding_x = (g_width / 3) - sprite_get_width(spr_inventory_slot);
 // ui_padding_y = (g_height / 3) - sprite_get_height(spr_inventory_slot);

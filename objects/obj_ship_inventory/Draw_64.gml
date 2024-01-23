@@ -3,16 +3,20 @@ if (visible) {
   draw_sprite_stretched(
     spr_inventory_box,
     0,
-    window_offset,
-    window_offset,
-    window_offset + sprite_padding_x * inventory_columns,
-    window_offset + sprite_padding_y * inventory_rows
+    window_padding_x,
+    window_padding_y,
+    window_padding_x + sprite_get_width(spr_inventory_slot) + sprite_padding_x * inventory_columns,
+    window_padding_y + sprite_get_width(spr_inventory_slot) + sprite_padding_y * inventory_rows
   );
 
-  for (var _row = 0; _row < inventory_rows; _row++) {
-    for (var _column = 0; _column < inventory_columns; _column++) {
-      var _pos_x = (window_offset + sprite_padding) * _column;
-      var _pos_y = window_offset + sprite_padding_y * _row;
+  for (var _column = 0; _column < inventory_columns; _column++) {
+    for (var _row = 0; _row < inventory_rows; _row++) {
+      var _sprite_width = sprite_get_width(spr_inventory_slot);
+      var _sprite_height = sprite_get_height(spr_inventory_slot);
+      var _initial_padding_x = window_padding_x + sprite_padding_x;
+      var _initial_padding_y = window_padding_y + sprite_padding_y;
+      var _pos_x = _initial_padding_x + (_sprite_width + sprite_padding_x * _row);
+      var _pos_y = _initial_padding_y + (_sprite_height + sprite_padding_y * _column);
       draw_sprite(spr_inventory_slot, 0, _pos_x, _pos_y);
     }
   }
