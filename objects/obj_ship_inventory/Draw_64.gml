@@ -1,22 +1,20 @@
 if (visible) {
-  // draw inventory box
-  draw_sprite_stretched(
-    spr_inventory_box,
-    0,
-    window_padding_x,
-    window_padding_y,
-    window_padding_x + sprite_get_width(spr_inventory_slot) + sprite_padding_x * inventory_columns,
-    window_padding_y + sprite_get_width(spr_inventory_slot) + sprite_padding_y * inventory_rows
-  );
+  var _sprite_width = sprite_get_width(spr_inventory_slot);
+  var _sprite_height = sprite_get_height(spr_inventory_slot);
+  var _initial_padding_x = window_padding_x + sprite_padding_x;
+  var _initial_padding_y = window_padding_y + sprite_padding_y;
+  var _inventory_width =
+    window_padding_x + sprite_padding_x * (inventory_columns + 1) + _sprite_width * (inventory_columns - 1);
+  var _inventory_height =
+    window_padding_y + sprite_padding_y * (inventory_rows + 1) + _sprite_height * (inventory_rows - 1);
 
-  for (var _column = 0; _column < inventory_columns; _column++) {
-    for (var _row = 0; _row < inventory_rows; _row++) {
-      var _sprite_width = sprite_get_width(spr_inventory_slot);
-      var _sprite_height = sprite_get_height(spr_inventory_slot);
-      var _initial_padding_x = window_padding_x + sprite_padding_x;
-      var _initial_padding_y = window_padding_y + sprite_padding_y;
-      var _pos_x = _initial_padding_x + (_sprite_width + sprite_padding_x * _row);
-      var _pos_y = _initial_padding_y + (_sprite_height + sprite_padding_y * _column);
+  // draw inventory box
+  draw_sprite_stretched(spr_inventory_box, 0, window_padding_x, window_padding_y, _inventory_width, _inventory_height);
+
+  for (var _row = 0; _row < inventory_rows; _row++) {
+    for (var _column = 0; _column < inventory_columns; _column++) {
+      var _pos_x = _initial_padding_x + (_sprite_width + sprite_padding_x) * _column;
+      var _pos_y = _initial_padding_y + (_sprite_height + sprite_padding_y) * _row;
       draw_sprite(spr_inventory_slot, 0, _pos_x, _pos_y);
     }
   }

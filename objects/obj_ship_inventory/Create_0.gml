@@ -17,18 +17,12 @@ display_set_gui_size(
 g_width = display_get_gui_width();
 g_height = display_get_gui_height();
 
-inventory_columns = 4;
-inventory_rows = 4;
-
+inventory_columns = 5;
+inventory_rows = 5;
 window_padding_x = 32;
 window_padding_y = 32;
-sprite_padding_x = 8;
-sprite_padding_y = 8;
-
-// ui_padding_x = (g_width / 3) - sprite_get_width(spr_inventory_slot);
-// ui_padding_y = (g_height / 3) - sprite_get_height(spr_inventory_slot);
-// ui_inventory_padding = 24;
-// ui_inventory_margin = 4;
+sprite_padding_x = 16;
+sprite_padding_y = 16;
 
 color_background = #55507a;
 color_border = #36234a;
