@@ -3,9 +3,6 @@ visible=false;
 inventory = new Inventory();
 
 // * TESTING ONLY
-inventory.item_add("Coal", 3, spr_coal_ore);
-inventory.item_add("Coal", 2, spr_coal_ore);
-inventory.item_add("Ice", 2, spr_ice_ore);
 show_debug_message(inventory);
 // *
 
