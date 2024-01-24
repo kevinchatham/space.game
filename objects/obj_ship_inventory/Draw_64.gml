@@ -13,9 +13,36 @@ if (visible) {
 
   for (var _row = 0; _row < inventory_rows; _row++) {
     for (var _column = 0; _column < inventory_columns; _column++) {
+      // draw inventory slots
       var _pos_x = _initial_padding_x + (_sprite_width + sprite_padding_x) * _column;
       var _pos_y = _initial_padding_y + (_sprite_height + sprite_padding_y) * _row;
       draw_sprite(spr_inventory_slot, 0, _pos_x, _pos_y);
+
+      // draw inventory sprite
+      var _inventory_index = _row * inventory_columns + _column;
+      if (_inventory_index <= array_length(inventory_items) - 1) {
+        var _item_pos_x = _pos_x + _sprite_width / 2;
+        var _item_pos_y = _pos_y + _sprite_height / 2;
+        draw_sprite(inventory_items[_inventory_index].sprite, 0, _item_pos_x, _item_pos_y);
+
+        // draw counter / text
+        var _counter_position_x = _pos_x + _sprite_width;
+        var _counter_position_y = _pos_y + _sprite_height;
+        var _counter_radius = _sprite_width / 3;
+        draw_circle_color(_counter_position_x, _counter_position_y, _counter_radius, c_black, c_black, false);
+        text_align(fa_center, fa_middle);
+        draw_set_font(fnt_default);
+        draw_text_color(
+          _counter_position_x,
+          _counter_position_y,
+          inventory_items[_inventory_index].quantity,
+          c_white,
+          c_white,
+          c_white,
+          c_white,
+          1
+        );
+      }
     }
   }
 }

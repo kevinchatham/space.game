@@ -9,6 +9,8 @@ inventory.item_add("Ice", 2, spr_ice_ore);
 show_debug_message(inventory);
 // *
 
+inventory_items = inventory.get_all_items();
+
 display_set_gui_size(
     obj_space_camera.view_port_max_x - obj_space_camera.view_port_min_x,
     obj_space_camera.view_port_max_y - obj_space_camera.view_port_min_y

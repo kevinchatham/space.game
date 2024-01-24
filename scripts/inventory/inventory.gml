@@ -77,9 +77,9 @@ function Inventory() constructor {
   };
 
   /// @description Returns array of inventory items.
-  /// @returns {Array}
-  item_get = function () {
-    return _inventory_items;
+  /// @returns {Array<Struct>}
+  get_all_items = function () {
+	return _inventory_items;
   };
 
   /// @description Print inventory items to console.
