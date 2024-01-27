@@ -7,11 +7,6 @@
 💪 Enhancement
 ```
 
-💪 Destroy items when dragged outside of inventory.
-
-- This should spawn the number of resources where the mouse cursor is when the mouse is released.
-- The resources should destroy themselves after some time. This allows the player to pick them back up.
-
 💪 Create a weighted system to allow rarity among spawning asteroid types.
 
 💪 Bullet sounds
@@ -79,3 +74,8 @@
 ✅💪 Create inventory for ship.
 
 ✅💪 Build ship inventory save and load system.
+
+✅💪 Destroy items when dragged outside of inventory.
+
+- This should spawn the number of resources where the mouse cursor is when the mouse is released.
+- The resources should destroy themselves after some time. This allows the player to pick them back up.

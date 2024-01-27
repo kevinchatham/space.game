@@ -51,11 +51,20 @@ function state_free() {
 
 function state_drag() {
   mouse_over();
+  var _mx = device_mouse_x_to_gui(0);
+  var _my = device_mouse_y_to_gui(0);
+
   if (!mouse_check_button(mb_left)) {
     if (slot_hover != -1) obj_ship_inventory.inventory.item_swap(slot_drag, slot_hover);
     if (!hovering_inventory) {
+      for (var _i = 0; _i < inventory_items[slot_drag].quantity; _i++) {
+        var _x = x + irandom(20);
+        var _y = y + irandom(20);
+        var _id = instance_create_layer(mouse_x, mouse_y, global.main_layer, obj_resource, {
+          sprite_index: inventory_items[slot_drag].sprite
+        });
+      }
       array_delete(inventory_items, slot_drag, 1);
-      // TODO spawn the items out at mouse cursor, they should delete themselves
     }
 
     state = state_free;
