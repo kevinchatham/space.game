@@ -23,10 +23,6 @@
 
 💪 Add main menu.
 
-🐞 Asteroid collision sound sometimes plays outside of viewport.
-
-🐞 Planets sometimes spawn inside of view port.
-
 ---
 
 ✅🐞 Collision sound plays multiple times and is very annoying.
@@ -54,6 +50,14 @@
 ✅🐞 `spawn_randomly_at()` bug is still present and will cause the game to freeze occasionally.
 
 - Yea I'm dumb and the spawner wasn't actually hitting the loop limiting condition.
+
+✅🐞 Asteroid collision sound sometimes plays outside of viewport.
+
+- Added optional padding to `inside_view_port()` function.
+
+✅🐞 Planets sometimes spawn inside of view port.
+
+- Added optional padding to `inside_view_port()` function.
 
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 
