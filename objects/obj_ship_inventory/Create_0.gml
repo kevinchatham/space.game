@@ -2,6 +2,8 @@ visible = false;
 
 inventory = new Inventory();
 
+inventory.load();
+
 // * TESTING ONLY
 show_debug_message(inventory);
 // *

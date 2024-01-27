@@ -79,20 +79,42 @@ function Inventory() constructor {
   /// @description Swaps two inventory slots
   /// @param {Real} _index_from
   /// @param {Real} _index_to
-  item_swap = function(_index_from, _index_to){
+  item_swap = function (_index_from, _index_to) {
     var _item_from = _inventory_items[_index_from];
     _inventory_items[_index_from] = _inventory_items[_index_to];
     _inventory_items[_index_to] = _item_from;
-  }
+  };
 
   /// @description Returns array of inventory items.
   /// @returns {Array<Struct>}
   get_all_items = function () {
-	return _inventory_items;
+    return _inventory_items;
   };
 
   /// @description Print inventory items to console.
   log = function () {
     show_debug_message(json_stringify(_inventory_items));
+  };
+
+  save = function () {
+    var _json_string = json_stringify(_inventory_items);
+    var _buffer = buffer_create(string_byte_length(_json_string) + 1, buffer_fixed, 1);
+    buffer_write(_buffer, buffer_string, _json_string);
+    buffer_save(_buffer, "inventory.json");
+    buffer_delete(_buffer);
+  };
+
+  load = function () {
+    var _buffer = buffer_load("inventory.json");
+
+    if (_buffer != -1) {
+      var _json_string = buffer_read(_buffer, buffer_string);
+
+      buffer_delete(_buffer);
+
+      var _json = json_parse(_json_string);
+
+      _inventory_items = _json;
+    }
   };
 }

@@ -7,13 +7,10 @@
 💪 Enhancement
 ```
 
-🐞 `spawn_randomly_at()` bug is still present and will cause the game to freeze occasionally.
+💪 Destroy items when dragged outside of inventory.
 
-🐞 `spawn_randomly_at()` sometimes spawns large objects just inside of the viewport. It needs to be padded.
-
-💪 Create inventory for ship.
-
-💪 Build save and load system.
+- This should spawn the number of resources where the mouse cursor is when the mouse is released.
+- The resources should destroy themselves after some time. This allows the player to pick them back up.
 
 💪 Create a weighted system to allow rarity among spawning asteroid types.
 
@@ -36,6 +33,10 @@
 💪 Add pause feature.
 
 💪 Add main menu.
+
+🐞 `spawn_randomly_at()` bug is still present and will cause the game to freeze occasionally.
+
+🐞 `spawn_randomly_at()` sometimes spawns large objects just inside of the viewport. It needs to be padded.
 
 ---
 
@@ -74,3 +75,7 @@
 ✅💪 Replace arrow with compass with single arrow. Layer them on top of each other and point them in different directions toward different resources.
 
 ✅💪 Asteroids need health and healing.
+
+✅💪 Create inventory for ship.
+
+✅💪 Build ship inventory save and load system.
