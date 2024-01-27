@@ -76,6 +76,15 @@ function Inventory() constructor {
     array_delete(_inventory_items, _index, 1);
   };
 
+  /// @description Swaps two inventory slots
+  /// @param {Real} _index_from
+  /// @param {Real} _index_to
+  item_swap = function(_index_from, _index_to){
+    var _item_from = _inventory_items[_index_from];
+    _inventory_items[_index_from] = _inventory_items[_index_to];
+    _inventory_items[_index_to] = _item_from;
+  }
+
   /// @description Returns array of inventory items.
   /// @returns {Array<Struct>}
   get_all_items = function () {

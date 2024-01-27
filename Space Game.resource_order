@@ -37,6 +37,7 @@
     {"name":"spr_asteroid_ice_explosion","order":3,"path":"sprites/spr_asteroid_ice_explosion/spr_asteroid_ice_explosion.yy",},
     {"name":"spr_star_shine_pink_mini","order":7,"path":"sprites/spr_star_shine_pink_mini/spr_star_shine_pink_mini.yy",},
     {"name":"snd_collision","order":1,"path":"sounds/snd_collision/snd_collision.yy",},
+    {"name":"obj_mouse","order":6,"path":"objects/obj_mouse/obj_mouse.yy",},
     {"name":"spr_worm_hole_0","order":1,"path":"sprites/spr_worm_hole_0/spr_worm_hole_0.yy",},
     {"name":"spr_worm_hole_1","order":2,"path":"sprites/spr_worm_hole_1/spr_worm_hole_1.yy",},
     {"name":"is_between","order":4,"path":"scripts/is_between/is_between.yy",},

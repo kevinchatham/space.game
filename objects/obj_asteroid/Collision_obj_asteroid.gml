@@ -1,6 +1,7 @@
 /// @description Asteroid Collision
 
-if (inside_view_port(obj_space_camera.camera, x, y)) {
+if (inside_view_port(obj_space_camera.camera, x, y) && !playing_sound) {
+  playing_sound = true;
   audio_play_sound(snd_collision, 1, false, global.volume);
 }
 

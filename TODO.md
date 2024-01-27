@@ -17,6 +17,12 @@
 
 💪 Create a weighted system to allow rarity among spawning asteroid types.
 
+💪 Bullet sounds
+
+💪 Resource pickup sounds
+
+💪 Better collision sounds
+
 💪 Add 5 more planets to spawner to decrease the chance of two of them spawning together.
 
 💪 Allow flipping between bullets and tractor beam.
@@ -32,6 +38,8 @@
 💪 Add main menu.
 
 ---
+
+✅🐞 Collision sound plays multiple times and is very annoying.
 
 ✅🐞 The ship randomly swings around when moving in a circle.
 

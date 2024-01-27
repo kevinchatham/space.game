@@ -73,6 +73,7 @@
     {"id":{"name":"spr_planet","path":"sprites/spr_planet/spr_planet.yy",},},
     {"id":{"name":"spr_star_shine_pink_mini","path":"sprites/spr_star_shine_pink_mini/spr_star_shine_pink_mini.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
+    {"id":{"name":"obj_mouse","path":"objects/obj_mouse/obj_mouse.yy",},},
     {"id":{"name":"spr_worm_hole_0","path":"sprites/spr_worm_hole_0/spr_worm_hole_0.yy",},},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},},
     {"id":{"name":"spr_worm_hole","path":"sprites/spr_worm_hole/spr_worm_hole.yy",},},
