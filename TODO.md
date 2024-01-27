@@ -7,8 +7,6 @@
 💪 Enhancement
 ```
 
-💪 Make worm hole spawn you into a new room when progress hits 100%
-
 💪 Make a cooler ship.
 
 💪 Allow swapping between different ships.
@@ -89,3 +87,9 @@
 ✅💪 Better collision sounds
 
 ✅💪 Create an effect volume option to pair with global volume.
+
+✅💪 Make worm hole spawn you into a new room when progress hits 100%.
+
+✅💪 Add worm hole sound effects.
+
+✅💪 Make worm hole progress bar rounded.
