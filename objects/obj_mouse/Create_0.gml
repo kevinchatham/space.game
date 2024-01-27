@@ -4,6 +4,7 @@ inventory_drag = -1;
 slot_drag = -1;
 item_drag = -1;
 inventory_items = obj_ship_inventory.inventory.get_all_items();
+hovering_inventory = false;
 
 display_set_gui_size(
   obj_space_camera.view_port_max_x - obj_space_camera.view_port_min_x,
@@ -30,7 +31,8 @@ function mouse_over() {
           if (_inventory_index <= array_length(inventory_items) - 1) {
             slot_hover = _inventory_index;
             inventory_hover = obj_ship_inventory.id;
-          }
+            hovering_inventory = true;
+          } else hovering_inventory = false;
         }
       }
     }
@@ -51,6 +53,10 @@ function state_drag() {
   mouse_over();
   if (!mouse_check_button(mb_left)) {
     if (slot_hover != -1) obj_ship_inventory.inventory.item_swap(slot_drag, slot_hover);
+    if (!hovering_inventory) {
+      array_delete(inventory_items, slot_drag, 1);
+      // TODO spawn the items out at mouse cursor, they should delete themselves
+    }
 
     state = state_free;
     item_drag = -1;
