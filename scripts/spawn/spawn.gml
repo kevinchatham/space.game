@@ -14,7 +14,8 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
       _x = irandom_range(obj_space_camera.spawn_port_min_x, obj_space_camera.spawn_port_max_x);
       _y = irandom_range(obj_space_camera.spawn_port_min_y, obj_space_camera.spawn_port_max_y);
       _colliding = inside_view_port(obj_space_camera.camera, _x, _y) || too_close(_x, _y, _obj, _padding);
-      if (_c > 100) _colliding = false;
+      if (_c > 500) _colliding = false;
+      _c += 1;
     }
 
     var _new = instance_create_layer(_x, _y, _layer, _obj);

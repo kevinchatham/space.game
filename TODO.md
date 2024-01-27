@@ -15,8 +15,6 @@
 
 💪 Better collision sounds
 
-💪 Add 5 more planets to spawner to decrease the chance of two of them spawning together.
-
 💪 Allow flipping between bullets and tractor beam.
 
 💪 Make worm hole spawn you into a new room when progress hits 100%
@@ -29,9 +27,9 @@
 
 💪 Add main menu.
 
-🐞 `spawn_randomly_at()` bug is still present and will cause the game to freeze occasionally.
+🐞 Asteroid collision sound sometimes plays outside of viewport.d
 
-🐞 `spawn_randomly_at()` sometimes spawns large objects just inside of the viewport. It needs to be padded.
+🐞 Planets sometimes spawn inside of view port.
 
 ---
 
@@ -57,6 +55,10 @@
 
 - I figured out how to use structs here and added one for asteroid and another function to create a random asteroid struct for reference in the asteroid object.
 
+✅🐞 `spawn_randomly_at()` bug is still present and will cause the game to freeze occasionally.
+
+- Yea I'm dumb and the spawner wasn't actually hitting the loop limiting condition.
+
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 
 ✅💪 Make asteroid death spawn a certain resource by expanding asteroid type.
@@ -79,3 +81,5 @@
 
 - This should spawn the number of resources where the mouse cursor is when the mouse is released.
 - The resources should destroy themselves after some time. This allows the player to pick them back up.
+
+✅💪 Add 5 more planets to spawner to decrease the chance of two of them spawning together.
