@@ -7,8 +7,6 @@
 💪 Enhancement
 ```
 
-💪 Create a weighted system to allow rarity among spawning asteroid types.
-
 💪 Bullet sounds
 
 💪 Resource pickup sounds
@@ -83,3 +81,7 @@
 - The resources should destroy themselves after some time. This allows the player to pick them back up.
 
 ✅💪 Add 5 more planets to spawner to decrease the chance of two of them spawning together.
+
+✅💪 Create a weighted system to allow rarity among spawning asteroid types.
+
+- Added rarity value to Asteroid struct that corresponds to the percent chance that asteroid type has a chance to spawn.
