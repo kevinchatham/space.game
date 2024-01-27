@@ -7,12 +7,14 @@ function build_layer_info() {
 function build_options() {
   global.despawn_lifetime = 60;
   global.thruster_particle_emitter_particle_count = 3;
-  global.volume = 0.2;
+  global.master_volume = 1;
+  global.music_volume = 0.2 * global.master_volume;
+  global.effect_volume = 0.2 * global.master_volume;
 
   window_set_cursor(cr_none);
   cursor_sprite = cr_none;
 
-  audio_play_sound(snd_ambiance, 1, true, global.volume);
+  audio_play_sound(snd_ambiance, 1, true, global.music_volume);
 }
 
 /// @param {Id.Layer} _layer

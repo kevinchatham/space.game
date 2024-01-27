@@ -1,7 +1,9 @@
 /// @description Bullet Collision
 
+var _i = irandom(array_length(sounds) - 1);
+
 if (inside_view_port(obj_space_camera.camera, x, y)) {
-  audio_play_sound(snd_collision, 1, false, global.volume);
+  audio_play_sound(sounds[_i], 1, false, global.effect_volume);
 }
 
 asteroid.max_health -= other.damage;

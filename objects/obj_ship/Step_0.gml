@@ -34,6 +34,7 @@ if (_left && keyboard_controlled) {
 var _fire_rate = 5; // per second
 
 if (_shoot && can_shoot) {
+  audio_play_sound(snd_blaster, 1, false, global.effect_volume);
   instance_create_layer(x, y, global.main_layer, obj_bullet, {
     speed: 3,
     image_angle: image_angle + 90,

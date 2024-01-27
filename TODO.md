@@ -7,12 +7,6 @@
 💪 Enhancement
 ```
 
-💪 Bullet sounds
-
-💪 Resource pickup sounds
-
-💪 Better collision sounds
-
 💪 Make worm hole spawn you into a new room when progress hits 100%
 
 💪 Make a cooler ship.
@@ -87,3 +81,11 @@
 ✅💪 Create a weighted system to allow rarity among spawning asteroid types.
 
 - Added rarity value to Asteroid struct that corresponds to the percent chance that asteroid type has a chance to spawn.
+
+✅💪 Bullet sounds
+
+✅💪 Resource pickup sounds
+
+✅💪 Better collision sounds
+
+✅💪 Create an effect volume option to pair with global volume.
