@@ -13,8 +13,6 @@
 
 💪 Better collision sounds
 
-💪 Allow flipping between bullets and tractor beam.
-
 💪 Make worm hole spawn you into a new room when progress hits 100%
 
 💪 Make a cooler ship.
@@ -25,7 +23,7 @@
 
 💪 Add main menu.
 
-🐞 Asteroid collision sound sometimes plays outside of viewport.d
+🐞 Asteroid collision sound sometimes plays outside of viewport.
 
 🐞 Planets sometimes spawn inside of view port.
 
