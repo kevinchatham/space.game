@@ -64,6 +64,7 @@
     {"name":"snd_asteroid_hit_0","order":4,"path":"sounds/snd_asteroid_hit_0/snd_asteroid_hit_0.yy",},
     {"name":"text_align","order":7,"path":"scripts/text_align/text_align.yy",},
     {"name":"obj_space_camera","order":3,"path":"objects/obj_space_camera/obj_space_camera.yy",},
+    {"name":"snd_worm_hole_charging","order":9,"path":"sounds/snd_worm_hole_charging/snd_worm_hole_charging.yy",},
     {"name":"spr_star_shine_orange_mini","order":5,"path":"sprites/spr_star_shine_orange_mini/spr_star_shine_orange_mini.yy",},
     {"name":"snd_blaster","order":2,"path":"sounds/snd_blaster/snd_blaster.yy",},
     {"name":"obj_background_spawner","order":1,"path":"objects/obj_background_spawner/obj_background_spawner.yy",},

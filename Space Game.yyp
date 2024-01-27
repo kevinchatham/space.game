@@ -105,6 +105,7 @@
     {"id":{"name":"text_align","path":"scripts/text_align/text_align.yy",},},
     {"id":{"name":"obj_space_camera","path":"objects/obj_space_camera/obj_space_camera.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
+    {"id":{"name":"snd_worm_hole_charging","path":"sounds/snd_worm_hole_charging/snd_worm_hole_charging.yy",},},
     {"id":{"name":"spr_star_shine_orange_mini","path":"sprites/spr_star_shine_orange_mini/spr_star_shine_orange_mini.yy",},},
     {"id":{"name":"snd_blaster","path":"sounds/snd_blaster/snd_blaster.yy",},},
     {"id":{"name":"obj_background_spawner","path":"objects/obj_background_spawner/obj_background_spawner.yy",},},

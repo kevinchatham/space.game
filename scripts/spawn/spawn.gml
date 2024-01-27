@@ -1,9 +1,10 @@
 /// @description Spawn any number of an object within the spawn port, outside of the view port.
 /// @param {Asset.GMObject} _obj
 /// @param {Real} _count
-/// @param {Real} _padding
+/// @param {Real} _object_padding
 /// @param {String} _layer
-function spawn_at_random(_obj, _count, _padding, _layer) {
+/// @param {Real} _view_port_padding
+function spawn_at_random(_obj, _count, _object_padding, _layer, _view_port_padding = 0) {
   for (var _i = 0; _i < _count; _i++) {
     var _colliding = true;
     var _x = 0;
@@ -13,7 +14,7 @@ function spawn_at_random(_obj, _count, _padding, _layer) {
     while (_colliding) {
       _x = irandom_range(obj_space_camera.spawn_port_min_x, obj_space_camera.spawn_port_max_x);
       _y = irandom_range(obj_space_camera.spawn_port_min_y, obj_space_camera.spawn_port_max_y);
-      _colliding = inside_view_port(obj_space_camera.camera, _x, _y) || too_close(_x, _y, _obj, _padding);
+      _colliding = inside_view_port(obj_space_camera.camera, _x, _y, _view_port_padding) || too_close(_x, _y, _obj, _object_padding);
       if (_c > 500) _colliding = false;
       _c += 1;
     }
