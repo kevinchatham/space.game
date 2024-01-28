@@ -15,3 +15,7 @@ Game Sounds
 - https://openGameArt.org
 
 - https://raisedbeaches.com
+
+Enemy AI Starter
+
+- https://cydonian.games/development/how-to-ship-ai-1/
