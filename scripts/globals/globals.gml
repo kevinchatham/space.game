@@ -50,7 +50,7 @@ function build_rm_space(_size) {
   var _arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow);
   var _arrow_worm_id = room_instance_add(rm_space, 0, 0, obj_arrow_worm);
   var _ship_id = room_instance_add(rm_space, _size / 2, _size / 2, obj_ship);
-  var _enemy_ship_id = room_instance_add(rm_space, _size / 2, _size / 2, obj_enemy);
+  var _enemy_ship_id = room_instance_add(rm_space, _size / 2, (_size / 2) - 500, obj_enemy);
   var _ship_inventory_id = room_instance_add(rm_space, 0, 0, obj_ship_inventory);
   var _mouse_id = room_instance_add(rm_space, 0, 0, obj_mouse);
 

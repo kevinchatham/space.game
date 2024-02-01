@@ -1,27 +1,41 @@
-//// In the Step Event of your enemy object
+var _distance_to_player = point_distance(x, y, obj_ship.x, obj_ship.y);
+var _distance_to_origin = point_distance(x, y, origin_x, origin_y);
 
-//// Calculate direction to the player
-var directionToPlayer = point_direction(x, y, obj_ship.x, obj_ship.y);
+if (_distance_to_player < 200) {
+  state = "attack";
+} else if (_distance_to_origin > 500) {
+  state = "retreat";
+} else {
+  state = "idle";
+}
 
-//// Calculate distance to the player
-var distanceToPlayer = point_distance(x, y, obj_ship.x, obj_ship.y);
+if (state == "idle") {
+  if (path_position == 1) {
+    var _i = irandom(array_length(idle_manuvers) - 1);
+    path_start(idle_manuvers[_i], max_speed, path_action_stop, false);
+  }
 
-//// Initialize steering direction
-var steeringDirection;
+  image_angle += angle_difference(direction - 90, image_angle) * 0.1;
+}
 
-//// Check if the player is within the pursuit distance
-//if (distanceToPlayer > maxDistance) {
-////    // Pursuit behavior: move towards the player
-//    steeringDirection = directionToPlayer;
-//} else {
-////    // Evasion behavior: move away from the player
-//    steeringDirection = directionToPlayer + 180;
-//}
+if (state == "attack") {
+  var _direction_to_player = point_direction(x, y, obj_ship.x, obj_ship.y);
 
-//// Add some noise to the steering direction
-//steeringDirection += random_range(-10, 10);
+  image_angle += angle_difference(direction - 90, image_angle) * turn_speed;
 
-//// Turn towards the calculated steering direction
-image_angle = (directionToPlayer + 270)%360; //angle_difference(direction, directionToPlayer) * turnSpeed;
+  if (speed < max_speed) {
+    motion_add(image_angle + 90, acceleration);
+    motion_add(random(360), 0.025);
+  } else {
+    speed -= deceleration;
+  }
 
-move_towards_point(obj_ship.x, obj_ship.y, max_speed);
+  friction = 0.001;
+}
+
+if (state == "retreat") {
+  move_towards_point(origin_x, origin_y, max_speed);
+  if (x == origin_x && y == origin_y) {
+    state = "idle";
+  }
+}

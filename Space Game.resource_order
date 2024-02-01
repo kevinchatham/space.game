@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings": [
     {"name":"Global","order":9,"path":"folders/Objects/Global.yy",},
+    {"name":"Paths","order":2,"path":"folders/Paths.yy",},
     {"name":"Arrows","order":24,"path":"folders/Sprites/Arrows.yy",},
     {"name":"Asteroids","order":27,"path":"folders/Sprites/Asteroids.yy",},
     {"name":"Bullets","order":31,"path":"folders/Sprites/Bullets.yy",},
@@ -48,6 +49,7 @@
     {"name":"obj_mouse","order":6,"path":"objects/obj_mouse/obj_mouse.yy",},
     {"name":"spr_worm_hole_0","order":1,"path":"sprites/spr_worm_hole_0/spr_worm_hole_0.yy",},
     {"name":"spr_enemy","order":1,"path":"sprites/spr_enemy/spr_enemy.yy",},
+    {"name":"pth_enemy_idle_2","order":2,"path":"paths/pth_enemy_idle_2/pth_enemy_idle_2.yy",},
     {"name":"spr_worm_hole_1","order":2,"path":"sprites/spr_worm_hole_1/spr_worm_hole_1.yy",},
     {"name":"is_between","order":4,"path":"scripts/is_between/is_between.yy",},
     {"name":"spr_star_shine_green","order":2,"path":"sprites/spr_star_shine_green/spr_star_shine_green.yy",},
@@ -70,6 +72,7 @@
     {"name":"snd_worm_hole_charging","order":9,"path":"sounds/snd_worm_hole_charging/snd_worm_hole_charging.yy",},
     {"name":"spr_star_shine_orange_mini","order":5,"path":"sprites/spr_star_shine_orange_mini/spr_star_shine_orange_mini.yy",},
     {"name":"snd_blaster","order":2,"path":"sounds/snd_blaster/snd_blaster.yy",},
+    {"name":"pth_enemy_idle_1","order":1,"path":"paths/pth_enemy_idle_1/pth_enemy_idle_1.yy",},
     {"name":"obj_background_spawner","order":1,"path":"objects/obj_background_spawner/obj_background_spawner.yy",},
     {"name":"spr_compass_arrow_worm_hole","order":2,"path":"sprites/spr_compass_arrow_worm_hole/spr_compass_arrow_worm_hole.yy",},
     {"name":"room_change","order":9,"path":"scripts/room_change/room_change.yy",},
