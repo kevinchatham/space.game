@@ -1,7 +1,8 @@
+var _direction_to_player = point_direction(x, y, obj_ship.x, obj_ship.y);
 var _distance_to_player = point_distance(x, y, obj_ship.x, obj_ship.y);
 var _distance_to_origin = point_distance(x, y, origin_x, origin_y);
 
-if (_distance_to_player < 200) {
+if (_distance_to_player < 150) {
   state = "attack";
 } else if (_distance_to_origin > 500) {
   state = "retreat";
@@ -19,9 +20,7 @@ if (state == "idle") {
 }
 
 if (state == "attack") {
-  var _direction_to_player = point_direction(x, y, obj_ship.x, obj_ship.y);
-
-  image_angle += angle_difference(direction - 90, image_angle) * turn_speed;
+  image_angle = (_direction_to_player + 270) % 360; // += angle_difference(direction - 90, image_angle) * turn_speed;
 
   if (speed < max_speed) {
     motion_add(image_angle + 90, acceleration);
