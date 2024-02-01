@@ -16,20 +16,15 @@ if (state == "idle") {
     path_start(idle_manuvers[_i], max_speed, path_action_stop, false);
   }
 
-  image_angle += angle_difference(direction - 90, image_angle) * 0.1;
+  image_angle += angle_difference(direction - 90, image_angle) * turn_speed; //= lerp(image_angle, direction - 90, turn_speed);
 }
 
 if (state == "attack") {
-  image_angle = (_direction_to_player + 270) % 360; // += angle_difference(direction - 90, image_angle) * turn_speed;
+  var _target_angle = (_direction_to_player + 270) % 360;
 
-  if (speed < max_speed) {
-    motion_add(image_angle + 90, acceleration);
-    motion_add(random(360), 0.025);
-  } else {
-    speed -= deceleration;
-  }
+  image_angle += angle_difference(_target_angle, image_angle) * turn_speed; //= lerp(image_angle, _target_angle, turn_speed);
 
-  friction = 0.001;
+  move_towards_point(obj_ship.x, obj_ship.y, max_speed);
 }
 
 if (state == "retreat") {
