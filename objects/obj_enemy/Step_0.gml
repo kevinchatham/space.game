@@ -15,8 +15,7 @@ if (state == "idle") {
     var _i = irandom(array_length(idle_manuvers) - 1);
     path_start(idle_manuvers[_i], max_speed, path_action_stop, false);
   }
-
-  image_angle += angle_difference(direction - 90, image_angle) * turn_speed; //= lerp(image_angle, direction - 90, turn_speed);
+  image_angle = direction - 90;
 }
 
 if (state == "attack") {
