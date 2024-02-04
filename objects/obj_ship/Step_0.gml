@@ -42,7 +42,7 @@ if (_shoot && can_shoot) {
     image_yscale: 0.25
   });
   can_shoot = false;
-  alarm[0] = round(60 / _fire_rate);
+  alarm[1] = round(60 / _fire_rate);
 }
 
 // This allows the ship to smoothly follow the mouse cursor.

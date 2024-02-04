@@ -7,6 +7,14 @@
 💪 Enhancement
 ```
 
+💪 Improve enemy attack movement / logic.
+
+💪 Improve enemy idle patterns.
+
+💪 Add enemy spawning.
+
+💪 Add UI for ship energy and health.
+
 💪 Make a cooler ship.
 
 💪 Allow swapping between different ships.
@@ -63,7 +71,7 @@
 
 ✅💪 Replace arrow with compass with single arrow. Layer them on top of each other and point them in different directions toward different resources.
 
-✅💪 Asteroids need health and healing.
+✅💪 Asteroids need current_health and healing.
 
 ✅💪 Create inventory for ship.
 
@@ -93,3 +101,7 @@
 ✅💪 Add worm hole sound effects.
 
 ✅💪 Make worm hole progress bar rounded.
+
+✅💪 Add enemy / bullets / health / healing.
+
+✅💪 Add ship health.

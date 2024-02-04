@@ -26,7 +26,7 @@ function spawn_at_random(_obj, _count, _object_padding, _layer, _view_port_paddi
 }
 
 function safely_despawn() {
-  var _destroyable = [obj_asteroid, obj_bullet, obj_planet, obj_resource, obj_star, obj_worm_hole];
+  var _destroyable = [obj_asteroid, obj_bullet, obj_enemy, obj_planet, obj_resource, obj_star, obj_worm_hole];
 
   for (var _i = 0; _i < array_length(_destroyable) - 1; _i++) {
     with (_destroyable[_i]) {

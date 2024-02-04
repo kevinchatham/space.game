@@ -1,3 +1,6 @@
+max_health = 100;
+current_health = max_health;
+
 acceleration = 0.01;
 deceleration = 0.01;
 keyboard_controlled = true;
