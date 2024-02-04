@@ -1,5 +1,5 @@
 max_speed = 0.75;
-turn_speed = 0.1;
+turn_speed = 0.05;
 max_distance = 300;
 acceleration = 0.01;
 deceleration = 0.01;

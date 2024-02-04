@@ -80,6 +80,7 @@
     {"id":{"name":"snd_asteroid_hit_2","path":"sounds/snd_asteroid_hit_2/snd_asteroid_hit_2.yy",},},
     {"id":{"name":"snd_pickup","path":"sounds/snd_pickup/snd_pickup.yy",},},
     {"id":{"name":"spr_planet_ring_2","path":"sprites/spr_planet_ring_2/spr_planet_ring_2.yy",},},
+    {"id":{"name":"log","path":"scripts/log/log.yy",},},
     {"id":{"name":"spr_star_shine_pink_mini","path":"sprites/spr_star_shine_pink_mini/spr_star_shine_pink_mini.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
     {"id":{"name":"spr_planet_lava_2","path":"sprites/spr_planet_lava_2/spr_planet_lava_2.yy",},},
