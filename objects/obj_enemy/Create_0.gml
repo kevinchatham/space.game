@@ -1,4 +1,4 @@
-max_health = irandom_range(10, 20);
+max_health = irandom_range(100, 200);
 current_health = max_health;
 can_shoot = true;
 
