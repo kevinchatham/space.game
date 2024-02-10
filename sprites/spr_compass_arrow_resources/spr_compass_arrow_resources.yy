@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_arrow",
-  "bbox_bottom": 31,
-  "bbox_left": 0,
-  "bbox_right": 31,
+  "name": "spr_compass_arrow_resources",
+  "bbox_bottom": 8,
+  "bbox_left": 10,
+  "bbox_right": 21,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8adc5188-acff-4597-a936-4eef809b8f20",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"58fcdf27-da2e-40ad-b2fa-db1b67100bde",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f0c8a6e8-33b6-4d77-b97c-9b0b750d731f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a100b3ee-18da-4346-aee0-611828049a2a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_arrow",
+    "name": "spr_compass_arrow_resources",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8adc5188-acff-4597-a936-4eef809b8f20","path":"sprites/spr_arrow/spr_arrow.yy",},},},"Disabled":false,"id":"20efb36e-1faf-4721-ae34-ba4f76c3b0cd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"58fcdf27-da2e-40ad-b2fa-db1b67100bde","path":"sprites/spr_compass_arrow_resources/spr_compass_arrow_resources.yy",},},},"Disabled":false,"id":"cc9de819-5c4e-492e-8aba-3de19fe17250","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

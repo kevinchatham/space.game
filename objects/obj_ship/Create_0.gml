@@ -12,7 +12,7 @@ can_shoot = true;
 
 // updated by Step event
 // shared with Draw event
-base_angle = 0;
+image_angle = 0;
 offset_x = 0;
 offset_y = 0;
 center_x = 0;

@@ -7,11 +7,7 @@
 💪 Enhancement
 ```
 
-💪 Improve enemy attack movement / logic.
-
-💪 Improve enemy idle patterns.
-
-💪 Add enemy spawning.
+💪 Add some noise to enemy movement... maybe based on sin wave, perlin noise, etc.
 
 💪 Add UI for ship energy and health.
 
@@ -105,3 +101,11 @@
 ✅💪 Add enemy / bullets / health / healing.
 
 ✅💪 Add ship health.
+
+✅💪 Improve enemy attack movement / logic.
+
+✅💪 Improve enemy idle patterns.
+
+✅💪 Add enemy spawning.
+
+✅💪 Add arrow for nearest offscreen enemy.

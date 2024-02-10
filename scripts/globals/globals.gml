@@ -46,11 +46,12 @@ function build_rm_space(_size) {
   var _space_camera_id = room_instance_add(rm_space, 0, 0, obj_space_camera);
   var _rock_spawner_id = room_instance_add(rm_space, 0, 0, obj_asteroid_spawner);
   var _star_spawner_id = room_instance_add(rm_space, 0, 0, obj_background_spawner);
+  var _enemy_spawner_id = room_instance_add(rm_space, 0, 0, obj_enemy_spawner);
   var _worm_hole_spawner_id = room_instance_add(rm_space, 0, 0, obj_worm_hole_spawner);
-  var _arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow);
-  var _arrow_worm_id = room_instance_add(rm_space, 0, 0, obj_arrow_worm);
+  var _resource_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_resource);
+  var _worm_hole_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_worm_hole);
+  var _enemy_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_enemy);
   var _ship_id = room_instance_add(rm_space, _size / 2, _size / 2, obj_ship);
-  var _enemy_ship_id = room_instance_add(rm_space, _size / 2, (_size / 2) - 500, obj_enemy);
   var _ship_inventory_id = room_instance_add(rm_space, 0, 0, obj_ship_inventory);
   var _mouse_id = room_instance_add(rm_space, 0, 0, obj_mouse);
 
@@ -58,9 +59,9 @@ function build_rm_space(_size) {
   var _main_layer_id = layer_get_id(global.main_layer);
   var _ui_layer_id = layer_get_id(global.ui_layer);
   layer_add_instance(_main_layer_id, _ship_id);
-  layer_add_instance(_main_layer_id, _enemy_ship_id);
-  layer_add_instance(_ui_layer_id, _arrow_id);
-  layer_add_instance(_ui_layer_id, _arrow_worm_id);
+  layer_add_instance(_ui_layer_id, _resource_arrow_id);
+  layer_add_instance(_ui_layer_id, _worm_hole_arrow_id);
+  layer_add_instance(_ui_layer_id, _enemy_arrow_id);
   layer_add_instance(_ui_layer_id, _ship_inventory_id);
   layer_reset_target_room();
 

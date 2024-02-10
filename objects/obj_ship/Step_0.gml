@@ -7,7 +7,7 @@ var _shoot = mouse_check_button(mb_left);
 // ! Movement
 if (_up) {
   if (speed < max_speed) {
-    motion_add(image_angle + 90, acceleration);
+    motion_add(image_angle, acceleration);
   } else {
     speed -= deceleration;
   }
@@ -23,12 +23,12 @@ if (_down) {
 
 if (_right && keyboard_controlled) {
   image_angle -= rotation_speed;
-  motion_set(image_angle + 90, speed);
+  motion_set(image_angle, speed);
 }
 
 if (_left && keyboard_controlled) {
   image_angle += rotation_speed;
-  motion_set(image_angle + 90, speed);
+  motion_set(image_angle, speed);
 }
 
 var _fire_rate = 5; // per second
@@ -37,7 +37,7 @@ if (_shoot && can_shoot) {
   audio_play_sound(snd_blaster, 1, false, global.effect_volume);
   instance_create_layer(x, y, global.main_layer, obj_bullet, {
     speed: 3,
-    image_angle: image_angle + 90,
+    image_angle: image_angle,
     image_xscale: 0.25,
     image_yscale: 0.25
   });
@@ -51,7 +51,7 @@ if (!keyboard_controlled) {
   var _dead_zone = 5;
 
   var _target_angle = point_direction(x, y, mouse_x, mouse_y);
-  var _diff = angle_difference(image_angle + 270, _target_angle);
+  var _diff = angle_difference(image_angle, _target_angle);
 
   var _can_turn = abs(_diff) + _dead_zone < 180 || abs(_diff) - _dead_zone > 180;
   var _turning_left = _diff > 0;
@@ -60,24 +60,22 @@ if (!keyboard_controlled) {
   if (_can_turn) {
     if (_turning_left) {
       image_angle += rotation_speed;
-      motion_set(image_angle + 90, speed);
+      motion_set(image_angle, speed);
     } else if (_turning_right) {
       image_angle -= rotation_speed;
-      motion_set(image_angle + 90, speed);
+      motion_set(image_angle, speed);
     }
   }
 }
 
 // ! Particles
-base_angle = (image_angle + 270) % 360;
-
 // Calculate the offset from the ship's center to the bottom center with horizontal adjustment
-offset_x = lengthdir_x(sprite_width / 2 + base_offset, base_angle);
-offset_y = lengthdir_y(sprite_height / 2 + base_offset, base_angle);
+offset_x = lengthdir_x(sprite_width / 2 + base_offset, image_angle);
+offset_y = lengthdir_y(sprite_height / 2 + base_offset, image_angle);
 
 // Calculate the coordinates of the center of the circle
-center_x = x + offset_x;
-center_y = y + offset_y;
+center_x = x - offset_x;
+center_y = y - offset_y;
 
 // Calculate bounding box of the circle
 emitter_left = center_x - emitter_radius;
@@ -85,7 +83,7 @@ emitter_right = center_x + emitter_radius;
 emitter_top = center_y - emitter_radius;
 emitter_bottom = center_y + emitter_radius;
 
-part_type_direction(global.thruster_particle_type, base_angle, base_angle, 0, 0);
+part_type_direction(global.thruster_particle_type, image_angle + 180, image_angle + 180, 0, 0);
 
 part_emitter_region(
   global.particle_system,

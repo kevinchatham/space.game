@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_compass_arrow",
+  "name": "spr_compass_arrow_enemy",
   "bbox_bottom": 8,
   "bbox_left": 10,
   "bbox_right": 21,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"58fcdf27-da2e-40ad-b2fa-db1b67100bde",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"09f15d5d-7fb4-48f6-bf64-2d0547114361",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a100b3ee-18da-4346-aee0-611828049a2a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dc8dac5d-73d5-4ce7-83ed-a1d54714b556","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_compass_arrow",
+    "name": "spr_compass_arrow_enemy",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"58fcdf27-da2e-40ad-b2fa-db1b67100bde","path":"sprites/spr_compass_arrow/spr_compass_arrow.yy",},},},"Disabled":false,"id":"cc9de819-5c4e-492e-8aba-3de19fe17250","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"09f15d5d-7fb4-48f6-bf64-2d0547114361","path":"sprites/spr_compass_arrow_enemy/spr_compass_arrow_enemy.yy",},},},"Disabled":false,"id":"2cc17f3b-aecb-4964-bffa-53b06845027a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

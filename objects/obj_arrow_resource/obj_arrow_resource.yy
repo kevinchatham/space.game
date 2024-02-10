@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_arrow",
+  "name": "obj_arrow_resource",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_compass_arrow",
-    "path": "sprites/spr_compass_arrow/spr_compass_arrow.yy",
+    "name": "spr_compass_arrow_resources",
+    "path": "sprites/spr_compass_arrow_resources/spr_compass_arrow_resources.yy",
   },
   "spriteMaskId": null,
   "visible": true,
