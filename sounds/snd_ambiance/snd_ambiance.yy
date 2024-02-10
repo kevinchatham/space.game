@@ -4,7 +4,7 @@
   "name": "snd_ambiance",
   "audioGroupId": {
     "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "path": "audiogroups/audiogroup_default"
   },
   "bitDepth": 1,
   "bitRate": 128,
@@ -13,11 +13,11 @@
   "duration": 940.536,
   "parent": {
     "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "path": "folders/Sounds.yy"
   },
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "snd_ambiance.mp3",
   "type": 1,
-  "volume": 1.0,
+  "volume": 1.0
 }

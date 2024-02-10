@@ -1,25 +1,78 @@
 var _up = keyboard_check(ord("W"));
-var _down = keyboard_check(ord("S"));
 var _left = keyboard_check(ord("A"));
+var _down = keyboard_check(ord("S"));
 var _right = keyboard_check(ord("D"));
+var _shoot = mouse_check_button(mb_left);
 
-if (_right) {
-  image_angle -= 1;
+// ! Movement
+if (_up) {
+  if (speed < max_speed) {
+    motion_add(image_angle, acceleration);
+  } else {
+    speed -= deceleration;
+  }
 }
 
-if (_left) {
-  image_angle += 1;
+if (_down) {
+  if (speed > min_speed) {
+    speed -= deceleration;
+  } else {
+    motion_set(direction, min_speed);
+  }
 }
 
-base_angle = (image_angle + 270) % 360;
+if (_right && keyboard_controlled) {
+  image_angle -= turn_speed;
+  motion_set(image_angle, speed);
+}
 
+if (_left && keyboard_controlled) {
+  image_angle += turn_speed;
+  motion_set(image_angle, speed);
+}
+
+if (_shoot && can_shoot) {
+  audio_play_sound(snd_blaster, 1, false, global.effect_volume);
+  instance_create_layer(x, y, global.main_layer, obj_bullet, {
+    image_angle: image_angle,
+    image_xscale: 0.25,
+    image_yscale: 0.25
+  });
+  can_shoot = false;
+  alarm[1] = round(60 / fire_rate);
+}
+
+// This allows the ship to smoothly follow the mouse cursor.
+// There is a deadzone so the ship doesn't wiggle when pointing directly at the cursor.
+if (!keyboard_controlled) {
+  var _dead_zone = 5;
+
+  var _target_angle = point_direction(x, y, mouse_x, mouse_y) + 180;
+  var _diff = angle_difference(image_angle, _target_angle);
+
+  var _can_turn = abs(_diff) + _dead_zone < 180 || abs(_diff) - _dead_zone > 180;
+  var _turning_left = _diff > 0;
+  var _turning_right = !_turning_left;
+
+  if (_can_turn) {
+    if (_turning_left) {
+      image_angle += turn_speed;
+      motion_set(image_angle, speed);
+    } else if (_turning_right) {
+      image_angle -= turn_speed;
+      motion_set(image_angle, speed);
+    }
+  }
+}
+
+// ! Particles
 // Calculate the offset from the ship's center to the bottom center with horizontal adjustment
-offset_x = lengthdir_x(sprite_width / 2 + base_offset, base_angle);
-offset_y = lengthdir_y(sprite_height / 2 + base_offset, base_angle);
+offset_x = lengthdir_x(sprite_width / 2 + base_offset, image_angle);
+offset_y = lengthdir_y(sprite_height / 2 + base_offset, image_angle);
 
 // Calculate the coordinates of the center of the circle
-center_x = x + offset_x;
-center_y = y + offset_y;
+center_x = x - offset_x;
+center_y = y - offset_y;
 
 // Calculate bounding box of the circle
 emitter_left = center_x - emitter_radius;
@@ -27,13 +80,7 @@ emitter_right = center_x + emitter_radius;
 emitter_top = center_y - emitter_radius;
 emitter_bottom = center_y + emitter_radius;
 
-part_type_direction(
-  global.thruster_particle_type,
-  base_angle,
-  base_angle,
-  0,
-  0
-);
+part_type_direction(global.thruster_particle_type, image_angle + 180, image_angle + 180, 0, 0);
 
 part_emitter_region(
   global.particle_system,
@@ -46,50 +93,15 @@ part_emitter_region(
   ps_distr_linear
 );
 
-// ! Begin fuckery
-// ! This maintains a fake speed dependent upon the speed of the first rock found.
-// ! It allows the thruster particles to maintain a constant speed and alpha value.
-// ! Otherwise the speed / alpha values are reset every time a rock is destroyed.
-// ! If that happens the thruster is not constant and it looks very strange.
-var _obj = noone;
-
-with (obj_rock) {
-  _obj = obj_rock;
-  break;
+// Smoothly transition alpha value based on speed
+if (speed > min_speed) {
+  part_type_speed(global.thruster_particle_type, min_speed, speed, acceleration, 0);
+  target_alpha = lerp(min_alpha, max_alpha, speed / max_speed);
+} else {
+  part_type_speed(global.thruster_particle_type, 0, 0, acceleration, 0);
+  target_alpha = 0; // Fully transparent
 }
 
-if (_obj != noone) {
-  if (_up) {
-    if (fake_speed < _obj.max_speed) {
-      fake_speed += _obj.acceleration;
-    }
-  }
-
-  if (_down) {
-    if (fake_speed > _obj.min_speed) {
-      fake_speed -= _obj.deceleration;
-    } else {
-      fake_speed = _obj.min_speed;
-    }
-  }
-
-  // Smoothly transition alpha value based on speed
-  if (_obj.speed > _obj.min_speed) {
-    part_type_speed(
-      global.thruster_particle_type,
-      0,
-      _obj.speed,
-      _obj.acceleration,
-      0
-    );
-    target_alpha = lerp(min_alpha, max_alpha, _obj.speed / _obj.max_speed);
-  } else {
-    part_type_speed(global.thruster_particle_type, 0, 0, _obj.acceleration, 0);
-    target_alpha = 0; // Fully transparent
-  }
-
-  // Adjust alpha gradually using lerp
-  current_alpha = lerp(current_alpha, target_alpha, lerp_speed);
-  part_type_alpha3(global.thruster_particle_type, current_alpha, min_alpha, 0);
-}
-// !
+// Adjust alpha gradually using lerp
+current_alpha = lerp(current_alpha, target_alpha, lerp_speed);
+part_type_alpha3(global.thruster_particle_type, current_alpha, min_alpha, 0);

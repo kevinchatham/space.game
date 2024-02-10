@@ -1,9 +1,9 @@
-/// @description Full Screen
+/// @description F11 Full Screen
 
 if (window_get_fullscreen()) {
   window_set_fullscreen(false);
-  window_set_size(obj_camera.scaled_width, obj_camera.scaled_height);
-  camera_set_view_size(view_camera[0], room_width, room_height);
+  window_set_size(obj_space_camera.scaled_view_width, obj_space_camera.scaled_view_height);
+  camera_set_view_size(obj_space_camera.camera, room_width, room_height);
 } else {
   window_set_fullscreen(true);
 }

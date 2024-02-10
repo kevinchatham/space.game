@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_ship",
-  "bbox_bottom": 62,
-  "bbox_left": 1,
-  "bbox_right": 62,
-  "bbox_top": 1,
+  "bbox_bottom": 60,
+  "bbox_left": 4,
+  "bbox_right": 59,
+  "bbox_top": 2,
   "bboxMode": 0,
   "collisionKind": 4,
   "collisionTolerance": 0,
@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"89f1c98f-0aeb-4225-acdc-3e979b4421b4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"730997ba-a22b-47e6-8f32-0cda4f29e95e",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"10de1298-4709-4ab3-9e33-d4c837ffd43c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"34d3ed56-551d-48c9-b622-7dcc00edbbc0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Ships",
+    "path": "folders/Sprites/Ships.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"89f1c98f-0aeb-4225-acdc-3e979b4421b4","path":"sprites/spr_ship/spr_ship.yy",},},},"Disabled":false,"id":"36893a4b-6f3f-4ad3-8ee5-bfcf3f1c6c91","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"730997ba-a22b-47e6-8f32-0cda4f29e95e","path":"sprites/spr_ship/spr_ship.yy",},},},"Disabled":false,"id":"81713687-06e6-42d2-9c6e-6ecde2d66751","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

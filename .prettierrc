@@ -1,10 +1,13 @@
 {
+  "plugins": ["prettier-plugin-gml"],
   "overrides": [
     {
       "files": "*.gml",
       "options": {
-        "parser": "typescript",
-        "semi": true
+        "parser": "gml-parse",
+        "semi": true,
+        "printWidth": 120,
+        "trailingComma": "none"
       }
     }
   ]
