@@ -7,7 +7,7 @@ keyboard_controlled = true;
 min_speed = 0.1;
 max_speed = 1;
 target_angle = 0;
-rotation_speed = 1;
+turn_speed = 2;
 can_shoot = true;
 
 // updated by Step event

@@ -5,23 +5,24 @@ image_yscale = image_xscale;
 angular_offset = 5;
 
 // boid speeds
-turn_speed = 0.5;
-speed_min = 0.3;
 speed_max = 0.5;
+speed_min = 0.3;
+turn_speed = 0.5;
 
 // padding around other boids or obstacles before action is taken
-enemy_padding = 25;
-friend_padding = 50;
-obstacle_padding = 10;
-attack_padding = 100;
-retreat_padding = attack_padding / 2;
+attack_radius = 100;
+enemy_radius = 25;
+friend_radius = 50;
+obstacle_radius = 10;
+retreat_angular_threshold = 45;
+retreat_radius = attack_radius / 2;
 
-// how quickly boid should avoid / align obstacles or other boids
-obstacle_avoidance_weight = 3;
+// how quickly boid should turn to avoid / align obstacles or other boids
+attack_weight = 3;
 enemy_avoidance_weight = 2;
 friend_alignment_weight = 1;
 friend_center_weight = 1;
-attack_weight = 3;
+obstacle_avoidance_weight = 3;
 retreat_weight = 3;
 
 // in your game this would be the dimensions of the spawn port padded by a certain amount
@@ -31,11 +32,11 @@ area_x2 = obj_space_camera.spawn_port_max_x - 50;
 area_y2 = obj_space_camera.spawn_port_max_y - 50;
 
 // adds some sin noise to the enemy ship movement
-noise_magnitude = 30;
-noise_frequency = 50000;
+noise_direction = choose(-1, 1); // controls left or right in sin wave
 noise_elapsed = 0;
-noise_elapsed_max = 600;
-noise_direction = choose(-1, 1);
+noise_elapsed_max = 600; // prevents this value from becoming to large and adversly effecting movement as opposed to current_time
+noise_frequency = 50000;
+noise_magnitude = 30;
 
 speed = random_range(speed_min, speed_max);
 direction = irandom(360);

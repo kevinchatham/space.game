@@ -22,12 +22,12 @@ if (_down) {
 }
 
 if (_right && keyboard_controlled) {
-  image_angle -= rotation_speed;
+  image_angle -= turn_speed;
   motion_set(image_angle, speed);
 }
 
 if (_left && keyboard_controlled) {
-  image_angle += rotation_speed;
+  image_angle += turn_speed;
   motion_set(image_angle, speed);
 }
 
@@ -50,7 +50,7 @@ if (_shoot && can_shoot) {
 if (!keyboard_controlled) {
   var _dead_zone = 5;
 
-  var _target_angle = point_direction(x, y, mouse_x, mouse_y);
+  var _target_angle = point_direction(x, y, mouse_x, mouse_y) + 180;
   var _diff = angle_difference(image_angle, _target_angle);
 
   var _can_turn = abs(_diff) + _dead_zone < 180 || abs(_diff) - _dead_zone > 180;
@@ -59,10 +59,10 @@ if (!keyboard_controlled) {
 
   if (_can_turn) {
     if (_turning_left) {
-      image_angle += rotation_speed;
+      image_angle += turn_speed;
       motion_set(image_angle, speed);
     } else if (_turning_right) {
-      image_angle -= rotation_speed;
+      image_angle -= turn_speed;
       motion_set(image_angle, speed);
     }
   }
