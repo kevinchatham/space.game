@@ -9,6 +9,7 @@ max_speed = 1;
 target_angle = 0;
 turn_speed = 2;
 can_shoot = true;
+fire_rate = 10; // per second
 
 // updated by Step event
 // shared with Draw event

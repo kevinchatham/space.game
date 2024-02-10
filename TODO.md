@@ -7,6 +7,10 @@
 💪 Enhancement
 ```
 
+🐞 Fix mouse control so it is separated from opening the inventory. You should be able to fly around with mouse control even if the inventory is open.
+
+- Also, generally speaking, mouse control is much better because aiming is hard if you don't have it.
+
 💪 Enemies need to shoot at player?
 
 💪 Enemy balancing / tuning.
@@ -115,3 +119,5 @@
 ✅💪 Add some noise to enemy movement... maybe based on sin wave, perlin noise, etc.
 
 - This could probably be better but I'm tired of messing with sin functions.
+
+✅💪 Allow zooming with mouse wheel and cleanup of camera code.

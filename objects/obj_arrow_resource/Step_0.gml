@@ -1,6 +1,9 @@
+image_xscale = obj_space_camera.min_window_scale / obj_space_camera.window_scale;
+image_yscale = image_xscale;
+
 var _camera_padding = 25;
-x = obj_space_camera.view_port_max_x - _camera_padding;
-y = obj_space_camera.view_port_min_y + _camera_padding;
+x = obj_space_camera.view_port_max_x - _camera_padding * image_xscale;
+y = obj_space_camera.view_port_min_y + _camera_padding * image_yscale;
 
 var _rotation_speed = 50; // higher is slower
 var _closest_distance = -1;

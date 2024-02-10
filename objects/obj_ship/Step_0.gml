@@ -31,18 +31,15 @@ if (_left && keyboard_controlled) {
   motion_set(image_angle, speed);
 }
 
-var _fire_rate = 5; // per second
-
 if (_shoot && can_shoot) {
   audio_play_sound(snd_blaster, 1, false, global.effect_volume);
   instance_create_layer(x, y, global.main_layer, obj_bullet, {
-    speed: 3,
     image_angle: image_angle,
     image_xscale: 0.25,
     image_yscale: 0.25
   });
   can_shoot = false;
-  alarm[1] = round(60 / _fire_rate);
+  alarm[1] = round(60 / fire_rate);
 }
 
 // This allows the ship to smoothly follow the mouse cursor.
