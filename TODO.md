@@ -7,7 +7,9 @@
 💪 Enhancement
 ```
 
-💪 Add some noise to enemy movement... maybe based on sin wave, perlin noise, etc.
+💪 Enemies need to shoot at player?
+
+💪 Enemy balancing / tuning.
 
 💪 Add UI for ship energy and health.
 
@@ -109,3 +111,7 @@
 ✅💪 Add enemy spawning.
 
 ✅💪 Add arrow for nearest offscreen enemy.
+
+✅💪 Add some noise to enemy movement... maybe based on sin wave, perlin noise, etc.
+
+- This could probably be better but I'm tired of messing with sin functions.

@@ -1,14 +1,16 @@
-/// @arg {Real} _new_angle
-/// @arg {Real} _change_speed
-/// @arg {Real} _angular_threshold
-function change_direction(_new_angle, _change_speed, _angular_threshold) {
-  var _ang_dif = angle_difference(direction, _new_angle);
+var _player_distance = distance_to_point(obj_ship.x, obj_ship.y);
 
-  if (_ang_dif > _angular_threshold) {
-    direction -= _change_speed;
-  } else if (_ang_dif < _angular_threshold) {
-    direction += _change_speed;
-  }
+// attack the cursor
+if (_player_distance < attack_padding && _player_distance > retreat_padding) {
+  var _goto_dir = point_direction(x, y, obj_ship.x, obj_ship.y);
+  change_direction(_goto_dir, turn_speed * attack_weight, angular_offset);
+}
+
+// retreat from the cursor
+if (_player_distance < retreat_padding) {
+  // TODO ONLY RETREAT IF THE PLAYER IS FACING
+  var _goto_dir = point_direction(x, y, obj_ship.x, obj_ship.y) + 180;
+  change_direction(_goto_dir, turn_speed * retreat_weight, 0);
 }
 
 // Find friends
@@ -86,7 +88,7 @@ if (_enemies_count > 0) {
 // stay in the area
 if (!point_in_rectangle(x, y, area_x1, area_y1, area_x2, area_y2)) {
   // I'm off the screen
-  var _goto_dir = point_direction(x, y, room_width / 2, room_height / 2);
+  var _goto_dir = point_direction(x, y, obj_ship.x, obj_ship.y);
   change_direction(_goto_dir, obstacle_avoidance_weight * turn_speed, angular_offset);
 }
 
@@ -98,18 +100,13 @@ if (_asteroid_distance < obstacle_padding) {
   change_direction(_goto_dir, obstacle_avoidance_weight * turn_speed, angular_offset);
 }
 
-// attack the cursor
-var _player_distance = distance_to_point(obj_ship.x, obj_ship.y);
-if (_player_distance < attack_padding) {
-  var _goto_dir = point_direction(x, y, obj_ship.x, obj_ship.y);
-  change_direction(_goto_dir, attack_weight * turn_speed, angular_offset);
+// add noise
+noise_elapsed++;
+if (noise_elapsed == noise_elapsed_max) {
+  noise_elapsed = 0;
+  noise_direction *= -1;
 }
-
-// this needs a little bit of work but you need to be able to determine the player direction first
-// retreat from the cursor
-if (_player_distance < retreat_padding) {
-  var _goto_dir = point_direction(x, y, obj_ship.x, obj_ship.y) + 180;
-  change_direction(_goto_dir, attack_weight * turn_speed * retreat_weight, angular_offset);
-}
+direction += noise_magnitude * sin(noise_elapsed / noise_frequency) * noise_direction;
+direction = direction % 360;
 
 image_angle = direction;
