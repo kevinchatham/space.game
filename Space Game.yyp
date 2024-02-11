@@ -45,6 +45,7 @@
     {"id":{"name":"obj_star","path":"objects/obj_star/obj_star.yy",},},
     {"id":{"name":"obj_arrow_resource","path":"objects/obj_arrow_resource/obj_arrow_resource.yy",},},
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},},
+    {"id":{"name":"spr_none","path":"sprites/spr_none/spr_none.yy",},},
     {"id":{"name":"obj_planet","path":"objects/obj_planet/obj_planet.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"snd_ambiance","path":"sounds/snd_ambiance/snd_ambiance.yy",},},

@@ -47,8 +47,6 @@
 
 💪 Allow swapping between different ships.
 
-🐞 You should be able to move an inventory item into an empty slot. Currently it dumps out in the world.
-
 ### Enemy
 
 💪 Enemy ships should spawn on a layer above or a layer below the player ship / astroid layer so it looks like they are flying under or over it.
@@ -126,6 +124,14 @@
 - Also, generally speaking, mouse control is much better because aiming is hard if you don't have it.
 
 - Moved inventory to I and mouse control to Tab
+
+✅🐞 You should be able to move an inventory item into an empty slot. Currently it dumps out in the world.
+
+- I added an empty inventory item to pad out the array. This way an inventory is filled with empty slots and you can swap a real slot with any empty slot to move an item around the inventory.
+
+- Then I made it impossible to drag around or highlight an empty item so the inventory behaves naturally.
+
+- Empty slots are never written to the save file. The inventory is just padded out on load to fill the maximum count of slots. This will have to be slightly refactored when different inventories are introduced.
 
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 
