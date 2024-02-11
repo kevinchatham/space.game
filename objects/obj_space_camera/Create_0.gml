@@ -52,7 +52,7 @@ function spawn_inside_view_port(_obj, _count, _object_padding, _layer) {
       _colliding = too_close(_x, _y, _obj, _object_padding) || too_close(_x, _y, obj_ship, 100);
       if (_c > 500) {
         _colliding = false;
-        log("spawn limit reached on", object_get_name(_obj));
+        log("Spawn limit reached on", object_get_name(_obj));
       }
       _c++;
     }
@@ -69,8 +69,6 @@ function spawn_inside_view_port(_obj, _count, _object_padding, _layer) {
 /// @param {Real} _view_port_padding
 function spawn_at_random(_obj, _count, _object_padding, _layer, _view_port_padding = 100) {
   for (var _i = 0; _i < _count; _i++) {
-    log("Spawning:", object_get_name(_obj), _i);
-
     var _colliding = true;
     var _x = 0;
     var _y = 0;
@@ -83,7 +81,7 @@ function spawn_at_random(_obj, _count, _object_padding, _layer, _view_port_paddi
         inside_view_port(_x, _y, _view_port_padding) || too_close(_x, _y, _obj, _object_padding);
       if (_c > 500) {
         _colliding = false;
-        log("spawn limit reached on", object_get_name(_obj));
+        log("Spawn limit reached on", object_get_name(_obj));
       }
       _c++;
     }
@@ -106,7 +104,6 @@ function safely_despawn() {
   for (var _i = 0; _i < array_length(_destroyable) - 1; _i++) {
     with (_destroyable[_i]) {
       if (other.outside_spawn_port(x, y)) {
-        log("Destroyed:", object_get_name(_destroyable[_i]));
         instance_destroy(id);
       }
     }
@@ -172,7 +169,7 @@ function outside_spawn_port(_x, _y, _padding) {
 }
 
 draw_port_padding = 5;
-draw_view_port = true;
+draw_view_port = false;
 draw_particle_emitter_regions = false;
 
 camera = view_camera[0];

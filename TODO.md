@@ -21,6 +21,8 @@
 
 🐞 Sometimes duplicate planets spawn near each other. Maybe change the algorithm so it always picks a new planet by remembering the last few planets spawned?
 
+🐞 Enemies should not be able to fly behind plants. Generally this isn't working correctly even though the code seems to be ok. Maybe switch to using depth instead of layers? Really it's quite odd.
+
 ### Camera
 
 💪 Create a minimap alongside the arrow navigation system.
@@ -51,19 +53,13 @@
 
 💪 Balance enemy spawning so the player is never overwhelmed.
 
-💪 Enemy ships should gradually speed up when attacking / retreating from the player.
-
 💪 Enemy ships need particles.
 
 💪 Enemy spawner should alternate between spawning single units and small groups.
 
 💪 Enemy ships need to have animated explosions.
 
-💪 Enemy ships need to damage player when the player runs into them.
-
 💪 Enemies need to shoot at player?
-
-💪 Enemy balancing / tuning.
 
 💪 Better ship art and animations for explosion.
 
@@ -131,7 +127,7 @@
 
 - Empty slots are never written to the save file. The inventory is just padded out on load to fill the maximum count of slots. This will have to be slightly refactored when different inventories are introduced.
 
-🐞 Bugs with camera and spawning system.
+✅🐞 Bugs with camera and spawning system.
 
 - Fade in on game load instead of camera pan.
 
@@ -205,3 +201,13 @@
 ✅💪 Allow zooming with mouse wheel and cleanup of camera code.
 
 ✅💪 Move all camera and spawn related code from script into obj_space_camera so it is all self contained.
+
+✅💪 Enemy ships should gradually speed up when attacking / retreating from the player.
+
+✅💪 Make speed of enemy based on speed of ship.
+
+✅💪 Detonate enemies after a certain period of attacking so they don't chase you for forever.
+
+✅💪 Enemy balancing / tuning.
+
+✅💪 Enemy ships need to damage player when the player runs into them.

@@ -8,13 +8,13 @@ with (obj_space_camera) {
     obj_star,
     other.max_star_count / 10,
     other.min_distance_between_stars,
-    global.main_layer
+    global.background_layer
   );
 
   spawn_inside_view_port(
     obj_planet,
     other.max_planet_count / 10,
     other.min_distance_between_planets,
-    global.main_layer
+    global.background_layer
   );
 }

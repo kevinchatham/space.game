@@ -15,3 +15,5 @@ with (obj_ship) {
     draw_circle(center_x, center_y, emitter_radius, true);
   }
 }
+
+draw_reset();
