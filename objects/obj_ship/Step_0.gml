@@ -73,7 +73,6 @@ if (keyboard_controlled) {
   cursor_sprite = spr_cursor;
 }
 
-
 // ! Particles
 // Calculate the offset from the ship's center to the bottom center with horizontal adjustment
 offset_x = lengthdir_x(sprite_width / 2 + base_offset, image_angle);

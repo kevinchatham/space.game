@@ -50,10 +50,10 @@ function build_objects() {
   var _ui_layer_id = layer_get_id(global.ui_layer);
 
   var _space_camera_id = room_instance_add(rm_space, 0, 0, obj_space_camera);
-  var _rock_spawner_id = room_instance_add(rm_space, 0, 0, obj_asteroid_spawner);
-  var _star_spawner_id = room_instance_add(rm_space, 0, 0, obj_background_spawner);
-  var _enemy_spawner_id = room_instance_add(rm_space, 0, 0, obj_enemy_spawner);
-  var _worm_hole_spawner_id = room_instance_add(rm_space, 0, 0, obj_worm_hole_spawner);
+  var _rock_spawner_id = room_instance_add(rm_space, 0, 0, obj_spawner_asteroid);
+  var _star_spawner_id = room_instance_add(rm_space, 0, 0, obj_spawner_background);
+  var _enemy_spawner_id = room_instance_add(rm_space, 0, 0, obj_spawner_enemy);
+  var _worm_hole_spawner_id = room_instance_add(rm_space, 0, 0, obj_spawner_worm_hole);
   var _resource_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_resource);
   var _worm_hole_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_worm_hole);
   var _enemy_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_enemy);

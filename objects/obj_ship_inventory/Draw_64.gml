@@ -5,7 +5,14 @@ if (visible) {
   var _my = device_mouse_y_to_gui(0);
 
   // draw inventory box
-  draw_sprite_stretched(spr_inventory_box, 0, window_padding_x, window_padding_y, inventory_width, inventory_height);
+  draw_sprite_stretched(
+    spr_inventory_box,
+    0,
+    window_padding_x,
+    window_padding_y,
+    inventory_width,
+    inventory_height
+  );
 
   for (var _row = 0; _row < inventory_rows; _row++) {
     for (var _column = 0; _column < inventory_columns; _column++) {
@@ -32,7 +39,11 @@ if (visible) {
           text_align(fa_center, fa_middle);
           draw_set_font(fnt_default);
           draw_set(c_white, 1);
-          draw_text(_counter_position_x, _counter_position_y, inventory_items[_inventory_index].quantity);
+          draw_text(
+            _counter_position_x,
+            _counter_position_y,
+            inventory_items[_inventory_index].quantity
+          );
 
           // highlight inventory slot if hovering
           if (is_between(_mx, _pos_x, _pos_x + slot_sprite_w)) {

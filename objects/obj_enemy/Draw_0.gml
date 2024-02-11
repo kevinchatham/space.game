@@ -1,4 +1,5 @@
 draw_self();
+
 if (current_health < max_health) {
   var _bar_width = sprite_width;
   var _bar_height = 6;
@@ -10,6 +11,8 @@ if (current_health < max_health) {
 
   draw_roundrect(_x, _y, _w, _h, false);
 }
+
+draw_reset();
 
 //draw_set_color(c_yellow);
 //draw_circle(x, y, enemy_padding, true);
