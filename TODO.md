@@ -131,6 +131,18 @@
 
 - Empty slots are never written to the save file. The inventory is just padded out on load to fill the maximum count of slots. This will have to be slightly refactored when different inventories are introduced.
 
+🐞 Bugs with camera and spawning system.
+
+- Fade in on game load instead of camera pan.
+
+- Space color slightly changed.
+
+- Spawning fixes that allows for more consistent spawning as well as control over initial viewport spawning.
+
+- By default you are zoomed out now.
+
+- Game window starts relative to display width and height.
+
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 
 ✅💪 Make asteroid death spawn a certain resource by expanding asteroid type.
