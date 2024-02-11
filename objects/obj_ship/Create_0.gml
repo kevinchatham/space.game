@@ -3,7 +3,7 @@ current_health = max_health;
 
 acceleration = 0.01;
 deceleration = 0.01;
-keyboard_controlled = true;
+keyboard_controlled = false;
 min_speed = 0.1;
 max_speed = 1;
 target_angle = 0;

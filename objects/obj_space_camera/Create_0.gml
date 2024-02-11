@@ -28,13 +28,13 @@ function refresh_view_port(_scale, _pan = false) {
   view_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera);
 
   spawn_port_min_x = camera_get_view_x(camera) - camera_get_view_width(camera);
-  spawn_port_max_x = camera_get_view_x(camera) + camera_get_view_width(camera) * 3;
+  spawn_port_max_x = camera_get_view_x(camera) + camera_get_view_width(camera) * spawn_port_scale;
   spawn_port_min_y = camera_get_view_y(camera) - camera_get_view_height(camera);
-  spawn_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera) * 3;
+  spawn_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera) * spawn_port_scale;
 }
 
-draw_view_port = false;
-draw_spawn_port = false;
+draw_port_padding = 5;
+draw_view_port = true;
 draw_particle_emitter_regions = false;
 
 camera = view_camera[0];
@@ -43,6 +43,7 @@ default_view_width = 1920;
 default_view_height = 1080;
 min_window_scale = 3; // higher is zoomed in
 max_window_scale = 1; // lower is zoomed out
+spawn_port_scale = 3;
 
 // these are updated dynamically
 window_scale = 0;

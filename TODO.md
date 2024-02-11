@@ -1,5 +1,3 @@
-# TODO
-
 ```
 ✅ Done
 🧪 Needs Testing
@@ -7,25 +5,81 @@
 💪 Enhancement
 ```
 
-🐞 Fix mouse control so it is separated from opening the inventory. You should be able to fly around with mouse control even if the inventory is open.
+# TODO
 
-- Also, generally speaking, mouse control is much better because aiming is hard if you don't have it.
+### Environment
+
+💪 Asteroids need to damage player when the player runs into them.
+
+💪 More planets.
+
+💪 Add an iron asteroid type.
+
+💪 Better asteroid art and animations.
+
+🐞 Stars should be behind planets layer wise.
+
+🐞 Sometimes duplicate planets spawn near each other. Maybe change the algorithm so it always picks a new planet by remembering the last few planets spawned?
+
+### Camera
+
+💪 Move all camera and spawn related code from script into obj_space_camera so it is all self contained.
+
+💪 Create a minimap alongside the arrow navigation system.
+
+### Player
+
+💪 Clean up inventory object code.
+
+💪 Clean up mouse object code.
+
+💪 Create a max count for inventory items.
+
+💪 Add ammo count to player ship.
+
+💪 Implement player death and a restart / inventory loss system.
+
+💪 Add a fuel system to the player ship.
+
+💪 Add UI for ship fuel and health.
+
+💪 Better ship art and animations for explosion.
+
+💪 Allow swapping between different ships.
+
+🐞 You should be able to move an inventory item into an empty slot. Currently it dumps out in the world.
+
+### Enemy
+
+💪 Enemy ships should spawn on a layer above or a layer below the player ship / astroid layer so it looks like they are flying under or over it.
+
+💪 Balance enemy spawning so the player is never overwhelmed.
+
+💪 Enemy ships should gradually speed up when attacking / retreating from the player.
+
+💪 Enemy ships need particles.
+
+💪 Enemy spawner should alternate between spawning single units and small groups.
+
+💪 Enemy ships need to have animated explosions.
+
+💪 Enemy ships need to damage player when the player runs into them.
 
 💪 Enemies need to shoot at player?
 
 💪 Enemy balancing / tuning.
 
-💪 Add UI for ship energy and health.
+💪 Better ship art and animations for explosion.
 
-💪 Make a cooler ship.
+### Game
 
-💪 Allow swapping between different ships.
+💪 Implement timer based periodic save because saving on escape is annoying.
 
 💪 Add pause feature.
 
 💪 Add main menu.
 
----
+# DONE
 
 ✅🐞 Collision sound plays multiple times and is very annoying.
 
@@ -60,6 +114,18 @@
 ✅🐞 Planets sometimes spawn inside of view port.
 
 - Added optional padding to `inside_view_port()` function.
+
+✅🐞 Fix object spawning.
+
+- The inside_view_port() function was all out of whack. Now it corresponds directly to the view port as it should.
+
+- Also the padding variable was all out of whack and not applying correctly. Now positive padding value pad away from the viewport and not inside of it. Meaning you don't have to provide negative values everywhere.
+
+✅🐞 Fix mouse control so it is separated from opening the inventory. You should be able to fly around with mouse control even if the inventory is open.
+
+- Also, generally speaking, mouse control is much better because aiming is hard if you don't have it.
+
+- Moved inventory to I and mouse control to Tab
 
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 
