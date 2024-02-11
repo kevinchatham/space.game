@@ -1,5 +1,5 @@
-if (asteroid.max_health > 0 && asteroid.max_health < max_health) {
-  asteroid.max_health += 1;
+if (asteroid.current_health > 0 && asteroid.current_health < asteroid.max_health) {
+  asteroid.current_health += 1;
 }
 
 alarm[0] = 120;

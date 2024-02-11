@@ -67,7 +67,6 @@
     {"id":{"name":"obj_ship_inventory","path":"objects/obj_ship_inventory/obj_ship_inventory.yy",},},
     {"id":{"name":"obj_fade","path":"objects/obj_fade/obj_fade.yy",},},
     {"id":{"name":"draw_set","path":"scripts/draw_set/draw_set.yy",},},
-    {"id":{"name":"spawn","path":"scripts/spawn/spawn.yy",},},
     {"id":{"name":"spr_planet_black_hole_light_blue","path":"sprites/spr_planet_black_hole_light_blue/spr_planet_black_hole_light_blue.yy",},},
     {"id":{"name":"spr_star_shine_blue_mini","path":"sprites/spr_star_shine_blue_mini/spr_star_shine_blue_mini.yy",},},
     {"id":{"name":"spr_planet_lava_3","path":"sprites/spr_planet_lava_3/spr_planet_lava_3.yy",},},

@@ -33,7 +33,6 @@
     {"name":"obj_ship_inventory","order":5,"path":"objects/obj_ship_inventory/obj_ship_inventory.yy",},
     {"name":"obj_fade","order":7,"path":"objects/obj_fade/obj_fade.yy",},
     {"name":"draw_set","order":5,"path":"scripts/draw_set/draw_set.yy",},
-    {"name":"spawn","order":1,"path":"scripts/spawn/spawn.yy",},
     {"name":"spr_planet_black_hole_light_blue","order":7,"path":"sprites/spr_planet_black_hole_light_blue/spr_planet_black_hole_light_blue.yy",},
     {"name":"spr_star_shine_blue_mini","order":1,"path":"sprites/spr_star_shine_blue_mini/spr_star_shine_blue_mini.yy",},
     {"name":"spr_planet_lava_3","order":2,"path":"sprites/spr_planet_lava_3/spr_planet_lava_3.yy",},

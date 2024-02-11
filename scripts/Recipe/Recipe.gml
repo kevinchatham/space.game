@@ -1,4 +1,4 @@
-function Recipe() : Inventory() constructor {
+function Recipe() : Inventory(4) constructor {
   _recipies = [];
 
   recipe_find = function (_name) {

@@ -1,5 +1,3 @@
-/// @param {Real} _width
-/// @param {Real} _height
 /// @param {Real} _scale
 /// @param {Bool} _pan
 function refresh_view_port(_scale, _pan = false) {

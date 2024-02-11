@@ -7,7 +7,7 @@ var _animation_finished = image_index >= image_number - 1;
 if (
   obj_space_camera.inside_view_port(x, y) &&
   !_animation_finished &&
-  asteroid.max_health <= 0 &&
+  asteroid.current_health <= 0 &&
   !playing_sound
 ) {
   playing_sound = true;
@@ -15,7 +15,7 @@ if (
   audio_play_sound(sounds[_i], 1, false, global.effect_volume);
 }
 
-if (_animation_finished && asteroid.max_health <= 0) {
+if (_animation_finished && asteroid.current_health <= 0) {
   for (var _i = 0; _i < asteroid.next_spawn.count; _i++) {
     var _x = x + irandom(20);
     var _y = y + irandom(20);

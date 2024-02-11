@@ -120,8 +120,8 @@ function Inventory(_slot_count) constructor {
   };
 
   /// @description This method is internal and should not be used anywhere outside of this script.
-  is_not_empty_slot = function (element, index) {
-    return !string_starts_with(element.name, "empty");
+  is_not_empty_slot = function (_element, _index) {
+    return !string_starts_with(_element.name, "empty");
   };
 
   /// @description Loads the json inventory from the local file system. Loads an empty item into every remaining slot.

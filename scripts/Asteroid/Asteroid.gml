@@ -30,6 +30,8 @@ function Asteroid(_this) constructor {
   animation_sprite_index = _this.animation;
   /// @type {Real}
   max_health = _this.max_health;
+  /// @type {Real}
+  current_health = _this.max_health;
   /// @type {Struct}
   next_spawn = {
     /// @type {Asset.GMSprite}

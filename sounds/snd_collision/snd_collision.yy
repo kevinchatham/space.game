@@ -4,7 +4,7 @@
   "name": "snd_collision",
   "audioGroupId": {
     "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default"
+    "path": "audiogroups/audiogroup_default",
   },
   "bitDepth": 1,
   "bitRate": 128,
@@ -13,11 +13,11 @@
   "duration": 1.242268,
   "parent": {
     "name": "Sounds",
-    "path": "folders/Sounds.yy"
+    "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "snd_collision.wav",
   "type": 0,
-  "volume": 1.0
+  "volume": 1.0,
 }

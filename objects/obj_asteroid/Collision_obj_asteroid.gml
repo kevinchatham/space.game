@@ -7,5 +7,5 @@ if (obj_space_camera.inside_view_port(x, y) && !playing_sound) {
   audio_play_sound(sounds[_i], 1, false, global.effect_volume);
 }
 
-asteroid.max_health = 0;
+asteroid.current_health = 0;
 sprite_index = asteroid.animation_sprite_index;
