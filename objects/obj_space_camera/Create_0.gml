@@ -72,8 +72,10 @@ function safely_despawn() {
   ];
 
   for (var _i = 0; _i < array_length(_destroyable) - 1; _i++) {
+    log("Checking:", object_get_name(_destroyable[_i]));
     with (_destroyable[_i]) {
       if (other.outside_spawn_port(x, y)) {
+        log("Destroyed:", object_get_name(_destroyable[_i]));
         instance_destroy(id);
       }
     }
@@ -142,8 +144,8 @@ draw_particle_emitter_regions = false;
 
 camera = view_camera[0];
 camera_speed = 0.015;
-default_view_width = 1920;
-default_view_height = 1080;
+default_view_width = 1280;
+default_view_height = 720;
 min_window_scale = 3; // higher is zoomed in
 max_window_scale = 1; // lower is zoomed out
 spawn_port_scale = 3;

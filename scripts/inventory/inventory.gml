@@ -107,21 +107,15 @@ function Inventory(_slot_count) constructor {
     log(json_stringify(inventory_items));
   };
 
-  /// @description Saves the inventory as json to the local file system. Excludes any empty slots from the json array.
+  /// @description Saves the inventory as json to the local file system.
   save = function () {
-    var _items = array_filter(inventory_items, is_not_empty_slot);
-    var _json_string = json_stringify(_items);
+    var _json_string = json_stringify(inventory_items);
     var _buffer = buffer_create(string_byte_length(_json_string) + 1, buffer_fixed, 1);
     buffer_write(_buffer, buffer_string, _json_string);
     buffer_save(_buffer, inventory_save_file_name);
     buffer_delete(_buffer);
 
-    log("Saved:", json_stringify(_items));
-  };
-
-  /// @description This method is internal and should not be used anywhere outside of this script.
-  is_not_empty_slot = function (_element, _index) {
-    return !string_starts_with(_element.name, "empty");
+    log("Saved:", json_stringify(inventory_items));
   };
 
   /// @description Loads the json inventory from the local file system. Loads an empty item into every remaining slot.

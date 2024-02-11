@@ -13,6 +13,6 @@ with (obj_space_camera) {
     _planet_respawn_count,
     other.min_distance_between_planets,
     global.background_layer,
-    200
+    300
   );
 }
