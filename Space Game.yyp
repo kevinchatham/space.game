@@ -121,7 +121,6 @@
     {"id":{"name":"pth_enemy_idle_1","path":"paths/pth_enemy_idle_1/pth_enemy_idle_1.yy",},},
     {"id":{"name":"obj_enemy_bullet","path":"objects/obj_enemy_bullet/obj_enemy_bullet.yy",},},
     {"id":{"name":"obj_background_spawner","path":"objects/obj_background_spawner/obj_background_spawner.yy",},},
-    {"id":{"name":"view_port","path":"scripts/view_port/view_port.yy",},},
     {"id":{"name":"spr_compass_arrow_worm_hole","path":"sprites/spr_compass_arrow_worm_hole/spr_compass_arrow_worm_hole.yy",},},
     {"id":{"name":"spr_asteroid","path":"sprites/spr_asteroid/spr_asteroid.yy",},},
     {"id":{"name":"room_change","path":"scripts/room_change/room_change.yy",},},

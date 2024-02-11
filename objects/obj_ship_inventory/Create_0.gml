@@ -18,8 +18,8 @@ display_set_gui_size(
 g_width = display_get_gui_width();
 g_height = display_get_gui_height();
 
-inventory_columns = 5;
-inventory_rows = 5;
+inventory_columns = 2;
+inventory_rows = 2;
 window_padding_x = 32;
 window_padding_y = 32;
 sprite_padding_x = 16;

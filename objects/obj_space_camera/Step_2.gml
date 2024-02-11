@@ -12,13 +12,13 @@ var _lerp_y = lerp(_cur_y, _y, camera_speed);
 
 camera_set_view_pos(camera, _lerp_x, _lerp_y);
 
-// update global variables
+// update distributed variables
 view_port_min_x = camera_get_view_x(camera);
 view_port_max_x = camera_get_view_x(camera) + camera_get_view_width(camera);
 view_port_min_y = camera_get_view_y(camera);
 view_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera);
 
 spawn_port_min_x = camera_get_view_x(camera) - camera_get_view_width(camera);
-spawn_port_max_x = camera_get_view_x(camera) + camera_get_view_width(camera) * 3;
+spawn_port_max_x = camera_get_view_x(camera) + camera_get_view_width(camera) * spawn_port_scale;
 spawn_port_min_y = camera_get_view_y(camera) - camera_get_view_height(camera);
-spawn_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera) * 3;
+spawn_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera) * spawn_port_scale;

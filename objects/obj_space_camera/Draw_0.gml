@@ -1,5 +1,13 @@
+draw_set_color(c_red);
+
 if (draw_view_port) {
-  draw_rectangle(view_port_min_x + 1, view_port_min_y + 1, view_port_max_x - 2, view_port_max_y - 2, true);
+  draw_rectangle(
+    view_port_min_x + draw_port_padding,
+    view_port_min_y + draw_port_padding,
+    view_port_max_x - draw_port_padding,
+    view_port_max_y - draw_port_padding,
+    true
+  );
 }
 
 with (obj_ship) {
@@ -7,3 +15,5 @@ with (obj_ship) {
     draw_circle(center_x, center_y, emitter_radius, true);
   }
 }
+
+draw_reset();

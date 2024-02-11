@@ -65,6 +65,15 @@ if (!keyboard_controlled) {
   }
 }
 
+if (keyboard_controlled) {
+  window_set_cursor(cr_none);
+  cursor_sprite = cr_none;
+} else {
+  window_set_cursor(cr_none);
+  cursor_sprite = spr_cursor;
+}
+
+
 // ! Particles
 // Calculate the offset from the ship's center to the bottom center with horizontal adjustment
 offset_x = lengthdir_x(sprite_width / 2 + base_offset, image_angle);
