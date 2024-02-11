@@ -46,7 +46,13 @@ max_health = irandom_range(5, 10);
 current_health = max_health;
 can_shoot = true;
 
-sounds = [snd_asteroid_hit_0, snd_asteroid_hit_1, snd_asteroid_hit_2, snd_asteroid_hit_3, snd_asteroid_hit_4];
+sounds = [
+  snd_asteroid_hit_0,
+  snd_asteroid_hit_1,
+  snd_asteroid_hit_2,
+  snd_asteroid_hit_3,
+  snd_asteroid_hit_4
+];
 
 /// @arg {Real} _new_angle
 /// @arg {Real} _change_speed

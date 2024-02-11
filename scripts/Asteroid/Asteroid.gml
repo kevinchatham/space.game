@@ -51,7 +51,7 @@ function Asteroid(_this) constructor {
 
 function create_random_asteroid() {
   var _i;
-  
+
   //The function tries to generate a random asteroid type up to X times
   //If it succeeds in finding a valid asteroid type based on the rarity condition, it returns a new Asteroid.
   //If no valid asteroid type is found, it defaults to returning an asteroid of the first type in the array.

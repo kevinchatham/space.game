@@ -6,7 +6,7 @@
       "options": {
         "parser": "gml-parse",
         "semi": true,
-        "printWidth": 120,
+        "printWidth": 100,
         "trailingComma": "none"
       }
     }

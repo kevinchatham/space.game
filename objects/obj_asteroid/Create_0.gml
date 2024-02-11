@@ -1,4 +1,10 @@
-sounds = [snd_asteroid_hit_0, snd_asteroid_hit_1, snd_asteroid_hit_2, snd_asteroid_hit_3, snd_asteroid_hit_4];
+sounds = [
+  snd_asteroid_hit_0,
+  snd_asteroid_hit_1,
+  snd_asteroid_hit_2,
+  snd_asteroid_hit_3,
+  snd_asteroid_hit_4
+];
 
 asteroid = create_random_asteroid();
 max_health = asteroid.max_health;

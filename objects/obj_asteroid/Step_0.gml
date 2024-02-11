@@ -5,7 +5,7 @@ image_angle += asteroid.rotation_speed;
 var _animation_finished = image_index >= image_number - 1;
 
 if (
-  inside_view_port(obj_space_camera.camera, x, y) &&
+  obj_space_camera.inside_view_port(x, y) &&
   !_animation_finished &&
   asteroid.max_health <= 0 &&
   !playing_sound

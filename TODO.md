@@ -23,8 +23,6 @@
 
 ### Camera
 
-💪 Move all camera and spawn related code from script into obj_space_camera so it is all self contained.
-
 💪 Create a minimap alongside the arrow navigation system.
 
 ### Player
@@ -193,3 +191,5 @@
 - This could probably be better but I'm tired of messing with sin functions.
 
 ✅💪 Allow zooming with mouse wheel and cleanup of camera code.
+
+✅💪 Move all camera and spawn related code from script into obj_space_camera so it is all self contained.
