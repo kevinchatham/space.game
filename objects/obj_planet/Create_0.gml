@@ -14,10 +14,17 @@ sprites = [
   spr_planet_clouds_only_4_purple
 ];
 
-index = irandom(array_length(sprites) - 1);
 rotation_speed = choose(1, -1) * random_range(0.01, 0.025); // left or right
-scale = random_range(0.5, 1.75);
 
-image_xscale = scale;
-image_yscale = scale;
+image_xscale = random_range(0.5, 1.75);
+image_yscale = image_xscale;
+
+index = irandom(array_length(sprites) - 1);
+while (
+  instance_nearest(x, y, obj_planet) != -1 &&
+  instance_nearest(x, y, obj_planet).sprite_index == index
+) {
+  index = irandom(array_length(sprites) - 1);
+}
+
 sprite_index = sprites[index];

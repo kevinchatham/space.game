@@ -9,23 +9,17 @@
 
 ### Environment
 
-💪 Asteroids need to damage player when the player runs into them.
-
 💪 More planets.
 
 💪 Add an iron asteroid type.
 
 💪 Better asteroid art and animations.
 
-🐞 Stars should be behind planets layer wise.
-
-🐞 Sometimes duplicate planets spawn near each other. Maybe change the algorithm so it always picks a new planet by remembering the last few planets spawned?
-
-🐞 Enemies should not be able to fly behind plants. Generally this isn't working correctly even though the code seems to be ok. Maybe switch to using depth instead of layers? Really it's quite odd.
-
 ### Camera
 
 💪 Create a minimap alongside the arrow navigation system.
+
+💪 Alternatively, create a radar system similar to Satisfactory.
 
 ### Player
 
@@ -46,6 +40,8 @@
 💪 Better ship art and animations for explosion.
 
 💪 Allow swapping between different ships.
+
+🐞 It's possible to select and drag an inventory item when the inventory isn't visible.
 
 ### Enemy
 
@@ -139,6 +135,20 @@
 
 - Game window starts relative to display width and height.
 
+✅🐞 Enemies should not be able to fly behind plants. Generally this isn't working correctly even though the code seems to be ok. Maybe switch to using depth instead of layers? Really it's quite odd.
+
+- Layer depth manually set on room initialization.
+
+✅🐞 Stars should be behind planets layer wise.
+
+✅🐞 Sometimes duplicate planets spawn near each other. Maybe change the algorithm so it always picks a new planet by remembering the last few planets spawned?
+
+- Used while instance_nearest() to keep looping through planet sprites until the sprite is not equal to the nearest planet.
+
+✅🐞 Planets cause the spawn port limiter to hit its max and then the planet often spawns randomly in the view port.
+
+- Here I'm just returning early so the planet doesn't spawn at all. I also decreased the amount of planets in the spawn port which is more realistic.
+
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 
 ✅💪 Make asteroid death spawn a certain resource by expanding asteroid type.
@@ -211,3 +221,5 @@
 ✅💪 Enemy balancing / tuning.
 
 ✅💪 Enemy ships need to damage player when the player runs into them.
+
+✅💪 Asteroids need to damage player when the player runs into them.

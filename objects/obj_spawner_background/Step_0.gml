@@ -6,13 +6,13 @@ with (obj_space_camera) {
     obj_star,
     _star_respawn_count,
     other.min_distance_between_stars,
-    global.background_layer
+    global.star_layer
   );
   spawn_at_random(
     obj_planet,
     _planet_respawn_count,
     other.min_distance_between_planets,
-    global.background_layer,
+    global.planet_layer,
     300
   );
 }

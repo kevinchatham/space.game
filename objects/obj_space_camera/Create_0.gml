@@ -79,9 +79,9 @@ function spawn_at_random(_obj, _count, _object_padding, _layer, _view_port_paddi
       _y = irandom_range(spawn_port_min_y, spawn_port_max_y);
       _colliding =
         inside_view_port(_x, _y, _view_port_padding) || too_close(_x, _y, _obj, _object_padding);
-      if (_c > 500) {
-        _colliding = false;
+      if (_c == 500) {
         log("Spawn limit reached on", object_get_name(_obj));
+        return;
       }
       _c++;
     }

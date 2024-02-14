@@ -1,9 +1,3 @@
-function build_layer_info() {
-  global.ui_layer = "UI";
-  global.main_layer = "Main";
-  global.background_layer = "Background";
-}
-
 function build_options() {
   global.despawn_lifetime = 60;
   global.thruster_particle_emitter_particle_count = 3;
@@ -44,10 +38,13 @@ function build_rm_space(_size) {
   room_set_height(rm_space, _size);
 }
 
-function build_objects() {
+function build_layers_and_instances() {
   layer_set_target_room(rm_space);
-  var _main_layer_id = layer_get_id(global.main_layer);
-  var _ui_layer_id = layer_get_id(global.ui_layer);
+
+  global.ui_layer = layer_create(-1, "UI");
+  global.main_layer = layer_create(0, "Main");
+  global.planet_layer = layer_create(1, "Planets");
+  global.star_layer = layer_create(2, "Stars");
 
   var _space_camera_id = room_instance_add(rm_space, 0, 0, obj_space_camera);
   var _rock_spawner_id = room_instance_add(rm_space, 0, 0, obj_spawner_asteroid);
@@ -61,11 +58,11 @@ function build_objects() {
   var _ship_inventory_id = room_instance_add(rm_space, 0, 0, obj_ship_inventory);
   var _mouse_id = room_instance_add(rm_space, 0, 0, obj_mouse);
 
-  layer_add_instance(_main_layer_id, _ship_id);
-  layer_add_instance(_ui_layer_id, _resource_arrow_id);
-  layer_add_instance(_ui_layer_id, _worm_hole_arrow_id);
-  layer_add_instance(_ui_layer_id, _enemy_arrow_id);
-  layer_add_instance(_ui_layer_id, _ship_inventory_id);
+  layer_add_instance(global.main_layer, _ship_id);
+  layer_add_instance(global.ui_layer, _resource_arrow_id);
+  layer_add_instance(global.ui_layer, _worm_hole_arrow_id);
+  layer_add_instance(global.ui_layer, _enemy_arrow_id);
+  layer_add_instance(global.ui_layer, _ship_inventory_id);
 
   layer_reset_target_room();
 }
