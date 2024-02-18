@@ -6,10 +6,8 @@ if (!playing_sound) {
 }
 
 if (sprite_index != asteroid.animation_sprite_index) {
-  with (obj_ship) {
-    current_health -= other.damage;
-    log(current_health);
-  }
+  other.current_health -= damage;
+  log(string(current_health));
   asteroid.current_health = 0;
   sprite_index = asteroid.animation_sprite_index;
 }

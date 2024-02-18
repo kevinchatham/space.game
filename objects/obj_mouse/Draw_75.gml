@@ -6,7 +6,7 @@ var _my = device_mouse_y_to_gui(0);
 
 if (item_drag != -1) {
   var _item = inventory_items[slot_drag];
-  if ((_item = -1)) return;
+  if (_item == undefined) return;
   draw_set_alpha(0.5);
   draw_roundrect_color(
     _mx - obj_ship_inventory.slot_sprite_w / 2,

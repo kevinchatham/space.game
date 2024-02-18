@@ -6,21 +6,25 @@ This documents holds the foundational resources that can be collected from aster
 
 ### Common
 
-![cobalt](sprites/cobalt.png)
+![cobalt](resources/sprites/cobalt.png)
+
+![cobalt-asteroid](asteroids/sprites/cobalt.png)
 
 - **Cobalt**
 
   - Akin to iron, this is the most common metal.
   - Used in various industrial processes, cobalt could be valuable for crafting specialized machinery and tools.
 
-![silicon](sprites/silicon.png)
+![silicon](resources/sprites/silicon.png)
+
+![silicon-asteroid](asteroids/sprites/silicon.png)
 
 - **Silicon**
 
   - Essential for electronics manufacturing, silicon could be used in crafting advanced computer systems, sensors, and communication devices.
   - Also useful for making glass.
 
-![copper](sprites/copper.png)
+![copper](resources/sprites/copper.png)
 
 - **Copper**
 
@@ -28,13 +32,13 @@ This documents holds the foundational resources that can be collected from aster
 
 ### Uncommon
 
-![titanium](sprites/titanium.png)
+![titanium](resources/sprites/titanium.png)
 
 - **Titanium**
 
   - A strong, lightweight metal often used for spacecraft construction and advanced equipment.
 
-![lanthanum](sprites/lanthanum.png)
+![lanthanum](resources/sprites/lanthanum.png)
 
 - **Lanthanum**
 
@@ -42,19 +46,19 @@ This documents holds the foundational resources that can be collected from aster
 
 ### Rare
 
-![platinum](sprites/platinum.png)
+![platinum](resources/sprites/platinum.png)
 
 - **Platinum**
 
   - Spacecraft components and high-tech equipment.
 
-![gold](sprites/gold.png)
+![gold](resources/sprites/gold.png)
 
 - **Gold**
 
   - Another precious metal with applications in electronics, catalytic converters, and hydrogen storage, among others.
 
-![beryllium](sprites/beryllium.png)
+![beryllium](resources/sprites/beryllium.png)
 
 - **Beryllium**
 
@@ -64,19 +68,19 @@ This documents holds the foundational resources that can be collected from aster
 
 ### Common
 
-![carbon](sprites/carbon.png)
+![carbon](resources/sprites/carbon.png)
 
 - **Carbon**
 
   - The most basic fuel source.
 
-![lithium](sprites/lithium.png)
+![lithium](resources/sprites/lithium.png)
 
 - **Lithium**
 
   - A crucial component in batteries for storing energy.
 
-![hydrocarbons](sprites/hydrocarbons.png)
+![hydrocarbons](resources/sprites/hydrocarbons.png)
 
 - **Hydrocarbons**
 
@@ -84,13 +88,13 @@ This documents holds the foundational resources that can be collected from aster
 
 ### Uncommon
 
-![organic-matter](sprites/organic-matter.png)
+![organic-matter](resources/sprites/organic-matter.png)
 
 - **Organic Matter**
 
   - Made into soil, fungus, plants, etc.
 
-![neodymium](sprites/neodymium.png)
+![neodymium](resources/sprites/neodymium.png)
 
 - **Neodymium**
 
@@ -98,13 +102,13 @@ This documents holds the foundational resources that can be collected from aster
 
 ### Rare
 
-![uranium](sprites/uranium.png)
+![uranium](resources/sprites/uranium.png)
 
 - **Uranium**
 
   - A valuable radioactive element used as fuel for nuclear reactors, providing powerful energy sources for advanced technology.
 
-![plutonium](sprites/plutonium.png)
+![plutonium](resources/sprites/plutonium.png)
 
 - **Plutonium**
 
@@ -114,21 +118,25 @@ This documents holds the foundational resources that can be collected from aster
 
 #### Common
 
-![solid-hydrogen](sprites/solid-hydrogen.png)
+![solid-hydrogen](resources/sprites/solid-hydrogen.png)
+
+![solid-hydrogen-asteroid](asteroids/sprites/solid-hydrogen.png)
 
 - **Solid Hydrogen**
 
   - Can be used as gas, fuel, or water.
 
-![solid-oxygen](sprites/solid-oxygen.png)
+![solid-oxygen](resources/sprites/solid-oxygen.png)
+
+![solid-oxygen-asteroid](asteroids/sprites/solid-oxygen.png)
 
 - **Solid Oxygen**
 
   - Can be used as gas, fuel, or water.
 
-![alien-heart](sprites/alien-heart.png)
-![alien-loin](sprites/alien-loin.png)
-![alien-crawlers](sprites/alien-crawlers.png)
+![alien-heart](resources/sprites/alien-heart.png)
+![alien-loin](resources/sprites/alien-loin.png)
+![alien-crawlers](resources/sprites/alien-crawlers.png)
 
 - **Alien Meat**
 

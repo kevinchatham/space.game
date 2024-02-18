@@ -1,8 +1,8 @@
 inventory_hover = -1;
 slot_hover = -1;
-inventory_drag = -1;
+inventory_drag = undefined;
 slot_drag = -1;
-item_drag = -1;
+item_drag = undefined;
 inventory_items = obj_ship_inventory.inventory.get_all_items();
 hovering_inventory = false;
 
@@ -40,7 +40,7 @@ function state_free() {
   if (
     mouse_check_button(mb_left) &&
     slot_hover != -1 &&
-    inventory_items[slot_hover] != -1 &&
+    inventory_items[slot_hover] != undefined &&
     inventory_items[slot_hover].quantity != 0
   ) {
     state = state_drag;

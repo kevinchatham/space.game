@@ -6,7 +6,7 @@ function build_options() {
   global.effect_volume = 0.2 * global.master_volume;
 
   window_set_cursor(cr_none);
-  cursor_sprite = cr_none;
+  cursor_sprite = spr_none;
 
   audio_play_sound(snd_ambiance, 1, true, global.music_volume);
 }

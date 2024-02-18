@@ -11,4 +11,4 @@ instance_destroy();
 
 other.current_health -= 10;
 
-log(other.current_health);
+log(string(other.current_health));

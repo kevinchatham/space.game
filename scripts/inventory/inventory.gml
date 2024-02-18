@@ -1,15 +1,23 @@
+/// @param {String} _name
+/// @param {Real} _quantity
+/// @param {Asset.GMSprite} _sprite
+function InventoryItem(_name, _quantity, _sprite) constructor {
+  name = _name;
+  quantity = _quantity;
+  sprite = _sprite;
+}
+
 /// @param {Real} _slot_count
 function Inventory(_slot_count) constructor {
+  /// @type {Array<Struct.InventoryItem>}
   inventory_items = [];
   slot_count = _slot_count;
   empty_slot_name = "empty-slot-";
   inventory_save_file_name = "inventory.json";
 
   /// @description Add an item directly to the inventory in its own slot.
-  /// @param {String} _name
-  /// @param {Real} _quantity
-  /// @param {Asset.GMSprite} _sprite
-  item_set = function (_name, _quantity, _sprite) {
+  /// @param {Struct.InventoryItem} _item
+  item_set = function (_item) {
     var _empty_slot = item_find(empty_slot_name);
 
     if (_empty_slot == -1) {
@@ -18,9 +26,9 @@ function Inventory(_slot_count) constructor {
     }
 
     inventory_items[_empty_slot] = {
-      name: _name,
-      quantity: _quantity,
-      sprite: _sprite
+      name: _item.name,
+      quantity: _item.quantity,
+      sprite: _item.sprite
     };
   };
 
@@ -37,16 +45,14 @@ function Inventory(_slot_count) constructor {
   };
 
   /// @description Add a specific item to the inventory or increase count if item already exists.
-  /// @param {String} _name
-  /// @param {Real} _quantity
-  /// @param {Asset.GMSprite} _sprite
-  item_add = function (_name, _quantity, _sprite) {
-    var _index = item_find(_name);
+ /// @param {Struct.InventoryItem} _item
+  item_add = function (_item) {
+    var _index = item_find(_item.name);
 
     if (_index >= 0) {
-      inventory_items[_index].quantity += _quantity;
+      inventory_items[_index].quantity += _item.quantity;
     } else {
-      item_set(_name, _quantity, _sprite);
+      item_set(_item);
     }
   };
 
@@ -97,7 +103,7 @@ function Inventory(_slot_count) constructor {
   };
 
   /// @description Returns array of inventory items.
-  /// @returns {Array<Struct>}
+  /// @returns {Array<Struct.InventoryItem>}
   get_all_items = function () {
     return inventory_items;
   };

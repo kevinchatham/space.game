@@ -57,6 +57,8 @@ sounds = [
   snd_asteroid_hit_4
 ];
 
+in_combat = false;
+
 /// @arg {Real} _new_angle
 /// @arg {Real} _change_speed
 /// @arg {Real} _angular_threshold

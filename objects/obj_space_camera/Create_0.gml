@@ -38,7 +38,7 @@ function refresh_view_port(_scale, _pan = false, _center = false) {
 /// @param {Asset.GMObject} _obj
 /// @param {Real} _count
 /// @param {Real} _object_padding
-/// @param {String} _layer
+/// @param {Id.Layer} _layer
 function spawn_inside_view_port(_obj, _count, _object_padding, _layer) {
   for (var _i = 0; _i < _count; _i++) {
     var _colliding = true;
@@ -65,8 +65,8 @@ function spawn_inside_view_port(_obj, _count, _object_padding, _layer) {
 /// @param {Asset.GMObject} _obj
 /// @param {Real} _count
 /// @param {Real} _object_padding
-/// @param {String} _layer
-/// @param {Real} _view_port_padding
+/// @param {Id.Layer} _layer
+/// @param {Real} [_view_port_padding]
 function spawn_at_random(_obj, _count, _object_padding, _layer, _view_port_padding = 100) {
   for (var _i = 0; _i < _count; _i++) {
     var _colliding = true;
@@ -163,8 +163,8 @@ function inside_spawn_port(_x, _y, _padding = 100) {
 
 /// @param {Real} _x
 /// @param {Real} _y
-/// @param {Real} _padding
-function outside_spawn_port(_x, _y, _padding) {
+/// @param {Real} [_padding]
+function outside_spawn_port(_x, _y, _padding = 0) {
   return !inside_spawn_port(_x, _y, _padding);
 }
 
@@ -194,6 +194,7 @@ spawn_port_min_x = 0;
 spawn_port_max_x = 0;
 spawn_port_min_y = 0;
 spawn_port_max_y = 0;
+alpha = 0;
 //
 
 refresh_view_port(max_window_scale, false, true);
