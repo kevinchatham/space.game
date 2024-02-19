@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_coal_ore",
-    "path": "sprites/spr_coal_ore/spr_coal_ore.yy",
+    "name": "spr_resource_coal",
+    "path": "sprites/spr_resource_coal/spr_resource_coal.yy",
   },
   "spriteMaskId": null,
   "visible": true,

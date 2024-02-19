@@ -10,6 +10,6 @@ asteroid.current_health -= other.damage;
 
 instance_destroy(other);
 
-if (asteroid.current_health <= 0 && sprite_index != asteroid.animation_sprite_index) {
-  sprite_index = asteroid.animation_sprite_index;
+if (asteroid.current_health <= 0 && image_index == 0) {
+  image_speed = 1;
 }

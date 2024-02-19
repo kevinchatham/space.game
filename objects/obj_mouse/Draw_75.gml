@@ -4,7 +4,7 @@ display_set_gui_maximise();
 var _mx = device_mouse_x_to_gui(0);
 var _my = device_mouse_y_to_gui(0);
 
-if (item_drag != -1) {
+if (item_drag != undefined) {
   var _item = inventory_items[slot_drag];
   if (_item == undefined) return;
   draw_set_alpha(0.5);

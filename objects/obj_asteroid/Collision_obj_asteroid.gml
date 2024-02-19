@@ -8,4 +8,4 @@ if (obj_space_camera.inside_view_port(x, y) && !playing_sound) {
 }
 
 asteroid.current_health = 0;
-sprite_index = asteroid.animation_sprite_index;
+image_speed = 1;

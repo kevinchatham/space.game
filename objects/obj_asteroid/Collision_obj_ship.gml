@@ -5,9 +5,9 @@ if (!playing_sound) {
   audio_play_sound(snd_collision, 1, false, global.effect_volume / 5);
 }
 
-if (sprite_index != asteroid.animation_sprite_index) {
+if (image_index == 0) {
   other.current_health -= damage;
-  log(string(current_health));
+  log(string(other.current_health));
   asteroid.current_health = 0;
-  sprite_index = asteroid.animation_sprite_index;
+  image_speed = 1;
 }

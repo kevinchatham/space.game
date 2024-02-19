@@ -24,7 +24,7 @@ function Recipes(): Inventory(4) constructor {
   recipe_find = function (_name) {
     for (var _i = 0; _i < array_length(_recipies); _i++) {
       if (_name == _recipies[_i].name) {
-        return _i;
+       return _i;
       }
     }
 

@@ -16,10 +16,18 @@ if (
 }
 
 if (_animation_finished && asteroid.current_health <= 0) {
-  for (var _i = 0; _i < asteroid.next_spawn.count; _i++) {
-    var _x = x + irandom(20);
-    var _y = y + irandom(20);
-    var _id = instance_create_layer(_x, _y, global.main_layer, obj_resource, asteroid.next_spawn);
+  for (var _i = 0; _i < array_length(asteroid.next_spawns); _i++) {
+    for (var _ii = 0; _ii < asteroid.next_spawns[_i].count; _ii++) {
+      var _x = x + irandom(20);
+      var _y = y + irandom(20);
+      var _id = instance_create_layer(
+        _x,
+        _y,
+        global.main_layer,
+        obj_resource,
+        asteroid.next_spawns[_i]
+      );
+    }
   }
   instance_destroy();
 }
