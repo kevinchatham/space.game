@@ -1,14 +1,16 @@
 inventory_hover = -1;
 slot_hover = -1;
-inventory_drag = undefined;
+inventory_drag = -1;
 slot_drag = -1;
-item_drag = undefined;
+item_drag = -1;
 inventory_items = obj_ship_inventory.inventory.get_all_items();
 hovering_inventory = false;
 
 function mouse_over() {
   slot_hover = -1;
   inventory_hover = -1;
+  hovering_inventory = false;
+
   var _mx = device_mouse_x_to_gui(0);
   var _my = device_mouse_y_to_gui(0);
 
@@ -27,7 +29,7 @@ function mouse_over() {
             slot_hover = _inventory_index;
             inventory_hover = obj_ship_inventory.id;
             hovering_inventory = true;
-          } else hovering_inventory = false;
+          }
         }
       }
     }
@@ -71,7 +73,8 @@ function state_drag() {
           sprite_index: inventory_items[slot_drag].sprite
         });
       }
-      array_delete(inventory_items, slot_drag, 1);
+
+      obj_ship_inventory.inventory.item_remove(slot_drag);
     }
 
     state = state_free;

@@ -90,7 +90,13 @@ function Inventory(_slot_count) constructor {
   /// @description Removes a given index from the inventory.
   /// @param {Real} _index
   item_remove = function (_index) {
-    array_delete(inventory_items, _index, 1);
+    var _slot_name = empty_slot_name + string_random(10);
+
+    array_set(inventory_items,_index,{
+      name: _slot_name,
+      quantity: 0,
+      sprite: spr_none
+    })
   };
 
   /// @description Swaps two inventory slots
@@ -128,7 +134,12 @@ function Inventory(_slot_count) constructor {
   load = function () {
     var _buffer = buffer_load(inventory_save_file_name);
 
-    if (_buffer == -1) return;
+    if (_buffer == -1)
+    {
+      buffer_delete(_buffer);
+      save();
+      load();
+    }
 
     var _json_string = buffer_read(_buffer, buffer_string);
 
@@ -137,7 +148,7 @@ function Inventory(_slot_count) constructor {
     var _items = json_parse(_json_string);
 
     for (var _i = array_length(_items); _i < slot_count; _i++) {
-      var _slot_name = empty_slot_name + string(_i);
+      var _slot_name = empty_slot_name + string_random(10);
       array_push(inventory_items, {
         name: _slot_name,
         quantity: 0,
@@ -149,4 +160,14 @@ function Inventory(_slot_count) constructor {
 
     log("Loaded:", json_stringify(inventory_items));
   };
+
+  /// @param {Real} _count       number of characters to return
+  function string_random(_count)
+  {
+      var _out = "";
+      repeat (_count) {
+        _out += chr(floor(random(26)) + 97); // ASCII values for lowercase letters (97-122)
+      }
+      return _out;
+  }
 }

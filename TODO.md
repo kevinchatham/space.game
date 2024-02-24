@@ -41,8 +41,6 @@
 
 💪 Allow swapping between different ships.
 
-🐞 It's possible to select and drag an inventory item when the inventory isn't visible.
-
 ### Enemy
 
 💪 Enemy ships should spawn on a layer above or a layer below the player ship / astroid layer so it looks like they are flying under or over it.
@@ -148,6 +146,10 @@
 ✅🐞 Planets cause the spawn port limiter to hit its max and then the planet often spawns randomly in the view port.
 
 - Here I'm just returning early so the planet doesn't spawn at all. I also decreased the amount of planets in the spawn port which is more realistic.
+
+✅🐞 It's possible to select and drag an inventory item when the inventory isn't visible.
+
+- You can no longer do this. Also inventory bugs were fixed pertaining to the creation of empty slots. We use a random generated string now.
 
 ✅💪 Use Tab to switch between keyboard control and mouse cursor control.
 

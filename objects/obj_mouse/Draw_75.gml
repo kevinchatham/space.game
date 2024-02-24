@@ -1,12 +1,13 @@
 /// @description Draw GUI End
 display_set_gui_maximise();
 
+if (!obj_ship_inventory.visible) return;
+
 var _mx = device_mouse_x_to_gui(0);
 var _my = device_mouse_y_to_gui(0);
 
-if (item_drag != undefined) {
+if (item_drag != -1 && slot_drag != -1) {
   var _item = inventory_items[slot_drag];
-  if (_item == undefined) return;
   draw_set_alpha(0.5);
   draw_roundrect_color(
     _mx - obj_ship_inventory.slot_sprite_w / 2,
