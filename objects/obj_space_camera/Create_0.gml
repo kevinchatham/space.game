@@ -1,40 +1,3 @@
-draw_port_padding = 5;
-draw_view_port = false;
-draw_particle_emitter_regions = false;
-
-camera = view_camera[0];
-camera_speed = 0.01;
-default_view_height = display_get_height() - 200;
-default_view_width = default_view_height * 1.6;
-min_window_scale = 4; // higher is zoomed in
-max_window_scale = 2; // lower is zoomed out
-spawn_port_scale = 3;
-
-// these are updated dynamically
-window_scale = 0;
-view_width = 0;
-view_height = 0;
-scaled_view_width = 0;
-scaled_view_height = 0;
-view_port_min_x = 0;
-view_port_max_x = 0;
-view_port_min_y = 0;
-view_port_max_y = 0;
-spawn_port_min_x = 0;
-spawn_port_max_x = 0;
-spawn_port_min_y = 0;
-spawn_port_max_y = 0;
-alpha = 0;
-//
-
-refresh_view_port(max_window_scale, false, true);
-
-// despawn items outside of camera / spawn port
-alarm[1] = global.despawn_lifetime;
-
-fade_duration = 60 * 4;
-fade_timer = fade_duration;
-
 /// @param {Real} _scale
 /// @param {Bool} _pan
 /// @param {Bool} _center
@@ -218,3 +181,40 @@ function inside_spawn_port(_x, _y, _padding = 100) {
 function outside_spawn_port(_x, _y, _padding = 0) {
   return !inside_spawn_port(_x, _y, _padding);
 }
+
+draw_port_padding = 5;
+draw_view_port = false;
+draw_particle_emitter_regions = false;
+
+fade_duration = 60 * 4;
+fade_timer = fade_duration;
+
+camera = view_camera[0];
+camera_speed = 0.01;
+default_view_height = display_get_height() - 200;
+default_view_width = default_view_height * 1.6;
+min_window_scale = 4; // higher is zoomed in
+max_window_scale = 2; // lower is zoomed out
+spawn_port_scale = 3;
+
+// these are updated dynamically
+window_scale = 0;
+view_width = 0;
+view_height = 0;
+scaled_view_width = 0;
+scaled_view_height = 0;
+view_port_min_x = 0;
+view_port_max_x = 0;
+view_port_min_y = 0;
+view_port_max_y = 0;
+spawn_port_min_x = 0;
+spawn_port_max_x = 0;
+spawn_port_min_y = 0;
+spawn_port_max_y = 0;
+alpha = 0;
+//
+
+refresh_view_port(max_window_scale, false, true);
+
+// despawn items outside of camera / spawn port
+alarm[1] = global.despawn_lifetime;
