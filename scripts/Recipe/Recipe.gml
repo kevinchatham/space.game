@@ -16,14 +16,16 @@ function Recipe(_name, _requirement, _product, _sprite) constructor {
   sprite = _sprite;
 }
 
-function Recipes(): Inventory(4) constructor {
+/// @param {Array<Struct.Recipe>} _recipies
+/// @param {Real} _slot_count
+function Recipes(_recipies, _slot_count): Inventory(_slot_count) constructor {
   /// @type {Array<Struct.Recipe>}
-  _recipies = [];
+  recipies = [];
 
   /// @param {String} _name
   recipe_find = function (_name) {
-    for (var _i = 0; _i < array_length(_recipies); _i++) {
-      if (_name == _recipies[_i].name) {
+    for (var _i = 0; _i < array_length(recipies); _i++) {
+      if (_name == recipies[_i].name) {
        return _i;
       }
     }
@@ -36,7 +38,7 @@ function Recipes(): Inventory(4) constructor {
   /// @param {Struct.InventoryItem} _product
   /// @param {Asset.GMSprite} _sprite
   recipe_add = function (_name, _requirement, _product, _sprite) {
-    array_push(_recipies, {
+    array_push(recipies, {
       name: _name,
       requirements: _requirement,
       product: _product,
@@ -53,13 +55,13 @@ function Recipes(): Inventory(4) constructor {
       _can_craft = true;
       for (
         var _requirement_index = 0;
-        _requirement_index < array_length(_recipies[_index].requirements);
+        _requirement_index < array_length(recipies[_index].requirements);
         _requirement_index++
       ) {
         if (
           item_has(
-            _recipies[_index].requirements[_requirement_index].name,
-            _recipies[_index].requirements[_requirement_index].quantity
+            recipies[_index].requirements[_requirement_index].name,
+            recipies[_index].requirements[_requirement_index].quantity
           ) == false
         ) {
           _can_craft = false;
@@ -79,19 +81,19 @@ function Recipes(): Inventory(4) constructor {
       if (recipe_has(_name)) {
         for (
           var _requirement_index = 0;
-          _requirement_index < array_length(_recipies[_index].requirements);
+          _requirement_index < array_length(recipies[_index].requirements);
           _requirement_index++
         ) {
           item_subtract(
-            _recipies[_index].requirements[_requirement_index].name,
-            _recipies[_index].requirements[_requirement_index].quantity
+            recipies[_index].requirements[_requirement_index].name,
+            recipies[_index].requirements[_requirement_index].quantity
           );
         }
 
         var _item = new InventoryItem(
-          _recipies[_index].product.name,
-          _recipies[_index].product.quantity,
-          _recipies[_index].product.sprite
+          recipies[_index].product.name,
+          recipies[_index].product.quantity,
+          recipies[_index].product.sprite
         );
         item_add(_item);
       }
@@ -100,6 +102,6 @@ function Recipes(): Inventory(4) constructor {
 
   /// @returns {Array<Struct.Recipe>}
   recipe_get = function () {
-    return _recipies;
+    return recipies;
   };
 }

@@ -1,0 +1,9 @@
+max_asteroid_count = 100;
+max_enemy_count = 50;
+max_planet_count = 10;
+max_star_count = 1000;
+min_asteroid_distance_between = 100;
+min_enemy_distance_between = 20;
+min_planet_distance_between = 200;
+min_star_distance_between = 20;
+allow_in_view_port = true;

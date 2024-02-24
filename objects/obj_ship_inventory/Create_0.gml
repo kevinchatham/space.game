@@ -1,5 +1,10 @@
 visible = false;
 
+requirement = new RecipeRequirement("req1", 5);
+product = new InventoryItem("Thing", 1, spr_resource_coal);
+recipe = new Recipe("Thing", requirement, product, spr_resource_coal);
+recipes = new Recipes([recipe], 4);
+
 g_width = display_get_gui_width();
 g_height = display_get_gui_height();
 

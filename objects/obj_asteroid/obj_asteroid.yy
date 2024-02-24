@@ -33,7 +33,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_asteroid",
+    "path": "sprites/spr_asteroid/spr_asteroid.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
