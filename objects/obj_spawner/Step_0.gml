@@ -29,7 +29,7 @@ with (obj_space_camera) {
     other.min_asteroid_distance_between,
     global.main_layer,
     0,
-    other.allow_in_view_port
+    false
   );
 
   spawn_at_random(
@@ -38,7 +38,7 @@ with (obj_space_camera) {
     other.min_enemy_distance_between,
     global.main_layer,
     0,
-    other.allow_in_view_port
+    false
   );
 
   spawn_at_random(

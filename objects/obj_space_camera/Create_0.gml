@@ -83,8 +83,8 @@ function spawn_at_random(
     var _c = 0;
 
     while (_colliding) {
-      _x = irandom_range(spawn_port_min_x, spawn_port_max_x);
-      _y = irandom_range(spawn_port_min_y, spawn_port_max_y);
+      _x = irandom_range(obj_space_camera.spawn_port_min_x, obj_space_camera.spawn_port_max_x);
+      _y = irandom_range(obj_space_camera.spawn_port_min_y, obj_space_camera.spawn_port_max_y);
 
       if (_allow_in_view_port) {
         _colliding = too_close(_x, _y, _obj, _object_padding);

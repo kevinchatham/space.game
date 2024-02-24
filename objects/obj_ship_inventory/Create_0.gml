@@ -1,9 +1,4 @@
-visible = false;
-
-requirement = new RecipeRequirement("req1", 5);
-product = new InventoryItem("Thing", 1, spr_resource_coal);
-recipe = new Recipe("Thing", requirement, product, spr_resource_coal);
-recipes = new Recipes([recipe], 4);
+is_visible = false;
 
 g_width = display_get_gui_width();
 g_height = display_get_gui_height();
@@ -28,10 +23,13 @@ inventory_height =
 
 inventory = new Inventory(inventory_columns * inventory_rows);
 
-inventory.load();
+inventory.inventory_load();
 
 // * TESTING ONLY
 show_debug_message(inventory);
 // *
 
-inventory_items = inventory.get_all_items();
+product = new InventoryItem("DISPLAYNAME", spr_resource_coal, 1);
+requirement = new InventoryItem("DISPLAYNAME", spr_resource_cobalt, 1);
+recipe = new Recipe("DISPLAYNAME", [requirement], [product], spr_resource_coal);
+station = new Station([recipe]);

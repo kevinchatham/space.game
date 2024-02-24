@@ -1,3 +1,3 @@
-if (!obj_ship_inventory.visible) return;
+if (!obj_ship_inventory.is_visible) return;
 
 state();

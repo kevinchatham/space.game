@@ -1,6 +1,6 @@
 display_set_gui_maximise();
 
-if (visible) {
+if (is_visible) {
   var _mx = device_mouse_x_to_gui(0);
   var _my = device_mouse_y_to_gui(0);
 
@@ -23,17 +23,22 @@ if (visible) {
 
       // draw inventory sprite
       var _inventory_index = _row * inventory_columns + _column;
-      if (_inventory_index <= array_length(inventory_items) - 1) {
+      if (_inventory_index <= array_length(inventory.inventory_list()) - 1) {
         var _item_pos_x = _pos_x + slot_sprite_w / 2;
         var _item_pos_y = _pos_y + slot_sprite_h / 2;
-        draw_sprite(inventory_items[_inventory_index].sprite, 0, _item_pos_x, _item_pos_y);
+        draw_sprite(
+          inventory.inventory_list()[_inventory_index].sprite,
+          0,
+          _item_pos_x,
+          _item_pos_y
+        );
 
         // draw counter / text
         var _counter_position_x = _pos_x + slot_sprite_w;
         var _counter_position_y = _pos_y + slot_sprite_h;
         var _counter_radius = slot_sprite_w / 3;
         // if the inventory slot quantity is 0 that means it's empty and we don't want to highlight it
-        if (inventory_items[_inventory_index].quantity != 0) {
+        if (inventory.inventory_list()[_inventory_index].quantity != 0) {
           draw_set(c_black, 1);
           draw_circle(_counter_position_x, _counter_position_y, _counter_radius, false);
           text_align(fa_center, fa_middle);
@@ -42,7 +47,7 @@ if (visible) {
           draw_text(
             _counter_position_x,
             _counter_position_y,
-            inventory_items[_inventory_index].quantity
+            inventory.inventory_list()[_inventory_index].quantity
           );
 
           // highlight inventory slot if hovering

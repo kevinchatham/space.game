@@ -43,6 +43,7 @@
     {"name":"snd_asteroid_hit_2","order":6,"path":"sounds/snd_asteroid_hit_2/snd_asteroid_hit_2.yy",},
     {"name":"snd_pickup","order":3,"path":"sounds/snd_pickup/snd_pickup.yy",},
     {"name":"spr_planet_ring_2","order":10,"path":"sprites/spr_planet_ring_2/spr_planet_ring_2.yy",},
+    {"name":"random_string","order":11,"path":"scripts/random_string/random_string.yy",},
     {"name":"log","order":10,"path":"scripts/log/log.yy",},
     {"name":"spr_star_shine_pink_mini","order":7,"path":"sprites/spr_star_shine_pink_mini/spr_star_shine_pink_mini.yy",},
     {"name":"snd_collision","order":1,"path":"sounds/snd_collision/snd_collision.yy",},
