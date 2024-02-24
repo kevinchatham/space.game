@@ -134,6 +134,7 @@ function Inventory(_slot_count) constructor {
   load = function () {
     var _buffer = buffer_load(inventory_save_file_name);
 
+    // creates the inventory save file if it doesn't exist
     if (_buffer == -1)
     {
       buffer_delete(_buffer);
