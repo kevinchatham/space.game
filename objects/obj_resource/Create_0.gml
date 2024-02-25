@@ -1,5 +1,9 @@
-/// @type {Struct.Item|Undefined}
-item = item;
+/// @description Declared in object variable definition. Used to initialize Item.
+/// @type {String}
+init_json = init_json;
+
+/// @type {Struct.Item}
+item = json_parse(init_json);
 
 sprite_index = item.sprite;
 

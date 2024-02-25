@@ -22,7 +22,7 @@ if (_animation_finished && asteroid.current_health <= 0) {
       var _x = x + irandom(20);
       var _y = y + irandom(20);
       var _id = instance_create_layer(_x, _y, global.main_layer, obj_resource, {
-        item: asteroid.next_spawns[_i].item
+        init_json: json_stringify(asteroid.next_spawns[_i].item)
       });
     }
   }

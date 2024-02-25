@@ -76,7 +76,7 @@ function state_drag() {
         var _x = x + irandom(20);
         var _y = y + irandom(20);
         var _id = instance_create_layer(mouse_x, mouse_y, global.main_layer, obj_resource, {
-          item: inventory.inventory_list()[slot_drag_index].item
+          init_json: json_stringify(inventory.inventory_list()[slot_drag_index].item)
         });
       }
 
