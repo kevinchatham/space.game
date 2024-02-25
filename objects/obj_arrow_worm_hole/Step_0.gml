@@ -15,7 +15,9 @@ with (obj_worm_hole) {
   _closest_id = id;
 }
 
-if (_closest_id == noone) return;
+if (_closest_id == noone) {
+  return;
+}
 
 var _angle_to_closest = point_direction(x, y, _closest_id.x, _closest_id.y);
 

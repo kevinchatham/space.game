@@ -1,3 +1,6 @@
 {
-  "recommendations": ["bscotch.bscotch-stitch-vscode"]
+  "recommendations": [
+    "bscotch.bscotch-stitch-vscode",
+    "emeraldwalk.runonsave"
+  ]
 }

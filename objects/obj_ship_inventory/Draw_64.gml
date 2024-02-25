@@ -63,7 +63,12 @@ if (is_visible) {
                 _counter_radius,
                 false
               );
-              draw_circle(_counter_position_x, _counter_position_y, _counter_radius, false);
+              draw_circle(
+                _counter_position_x,
+                _counter_position_y,
+                _counter_radius,
+                false
+              );
               draw_reset();
             }
           }

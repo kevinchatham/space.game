@@ -5,3 +5,4 @@
 *.pal binary
 *.wav binary
 *.zip binary
+*.exe binary

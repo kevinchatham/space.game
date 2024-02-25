@@ -24,11 +24,12 @@ function mouse_over() {
   for (var _row = 0; _row < obj_ship_inventory.inventory_rows; _row++) {
     for (var _column = 0; _column < obj_ship_inventory.inventory_columns; _column++) {
       var _pos_x =
-        obj_ship_inventory.initial_padding_x +
-        (obj_ship_inventory.slot_sprite_w + obj_ship_inventory.sprite_padding_x) * _column;
+        obj_ship_inventory.initial_padding_x
+        + (obj_ship_inventory.slot_sprite_w + obj_ship_inventory.sprite_padding_x)
+          * _column;
       var _pos_y =
-        obj_ship_inventory.initial_padding_y +
-        (obj_ship_inventory.slot_sprite_h + obj_ship_inventory.sprite_padding_y) * _row;
+        obj_ship_inventory.initial_padding_y
+        + (obj_ship_inventory.slot_sprite_h + obj_ship_inventory.sprite_padding_y) * _row;
       if (is_between(_mx, _pos_x, _pos_x + obj_ship_inventory.inventory_width)) {
         if (is_between(_my, _pos_y, _pos_y + obj_ship_inventory.inventory_height)) {
           var _inventory_index = _row * obj_ship_inventory.inventory_columns + _column;
@@ -46,10 +47,10 @@ function mouse_over() {
 function state_free() {
   mouse_over();
   var _draggable =
-    mouse_check_button(mb_left) &&
-    slot_hover_index != -1 &&
-    inventory.inventory_list()[slot_hover_index] != undefined &&
-    inventory.inventory_list()[slot_hover_index].quantity != 0;
+    mouse_check_button(mb_left)
+    && slot_hover_index != -1
+    && inventory.inventory_list()[slot_hover_index] != undefined
+    && inventory.inventory_list()[slot_hover_index].quantity != 0;
 
   if (_draggable) {
     state = state_drag;
@@ -75,14 +76,18 @@ function state_drag() {
       for (var _i = 0; _i < inventory.inventory_list()[slot_drag_index].quantity; _i++) {
         var _x = x + irandom(20);
         var _y = y + irandom(20);
-        var _id = instance_create_layer(mouse_x, mouse_y, global.main_layer, obj_resource, {
-          init_json: json_stringify(inventory.inventory_list()[slot_drag_index].item)
-        });
+        var _id = instance_create_layer(
+          mouse_x,
+          mouse_y,
+          global.main_layer,
+          obj_resource,
+          {init_json: json_stringify(inventory.inventory_list()[slot_drag_index].item)}
+        );
       }
 
-      obj_ship_inventory.inventory.inventory_remove(
-        inventory.inventory_list()[slot_drag_index].item
-      );
+      obj_ship_inventory
+        .inventory
+        .inventory_remove(inventory.inventory_list()[slot_drag_index].item);
     }
 
     state = state_free;

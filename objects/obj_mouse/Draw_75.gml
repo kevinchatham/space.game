@@ -1,7 +1,9 @@
 /// @description Draw GUI End
 display_set_gui_maximise();
 
-if (!obj_ship_inventory.is_visible) return;
+if (!obj_ship_inventory.is_visible) {
+  return;
+}
 
 var _mx = device_mouse_x_to_gui(0);
 var _my = device_mouse_y_to_gui(0);

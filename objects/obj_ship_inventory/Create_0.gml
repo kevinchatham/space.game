@@ -15,11 +15,13 @@ slot_sprite_h = sprite_get_height(spr_inventory_slot);
 initial_padding_x = window_padding_x + sprite_padding_x;
 initial_padding_y = window_padding_y + sprite_padding_y;
 inventory_width =
-  window_padding_x +
-  sprite_padding_x * (inventory_columns + 1) +
-  slot_sprite_w * (inventory_columns - 1);
+  window_padding_x
+  + sprite_padding_x * (inventory_columns + 1)
+  + slot_sprite_w * (inventory_columns - 1);
 inventory_height =
-  window_padding_y + sprite_padding_y * (inventory_rows + 1) + slot_sprite_h * (inventory_rows - 1);
+  window_padding_y
+  + sprite_padding_y * (inventory_rows + 1)
+  + slot_sprite_h * (inventory_rows - 1);
 
 inventory = new Inventory(inventory_columns * inventory_rows);
 inventory.inventory_load();

@@ -10,7 +10,9 @@ var _closest_distance = -1;
 var _closest_id = noone;
 
 with (obj_asteroid) {
-  if (obj_space_camera.inside_view_port(x, y)) continue;
+  if (obj_space_camera.inside_view_port(x, y)) {
+    continue;
+  }
 
   var _distance = point_distance(x, y, obj_ship.x, obj_ship.y);
 
@@ -21,7 +23,9 @@ with (obj_asteroid) {
   }
 }
 
-if (_closest_id == noone) return;
+if (_closest_id == noone) {
+  return;
+}
 
 var _angle_to_closest = point_direction(x, y, _closest_id.x, _closest_id.y);
 

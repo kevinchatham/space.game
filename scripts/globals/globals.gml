@@ -9,34 +9,19 @@ function build_items() {
       sprite_index: spr_asteroid,
       max_health: 5,
       spawn_chance: 100,
-      next_spawns: [
-        {
-          item: global.item_coal,
-          quantity: irandom_range(1, 5)
-        }
-      ]
+      next_spawns: [{item: global.item_coal, quantity: irandom_range(1, 5)}],
     },
     {
       sprite_index: spr_asteroid_ice,
       max_health: 5,
       spawn_chance: 10,
-      next_spawns: [
-        {
-          item: global.item_ice,
-          quantity: irandom_range(1, 5)
-        }
-      ]
+      next_spawns: [{item: global.item_ice, quantity: irandom_range(1, 5)}],
     },
     {
       sprite_index: spr_asteroid_cobalt,
       max_health: 5,
       spawn_chance: 100,
-      next_spawns: [
-        {
-          item: global.item_cobalt,
-          quantity: irandom_range(1, 5)
-        }
-      ]
+      next_spawns: [{item: global.item_cobalt, quantity: irandom_range(1, 5)}],
     }
   ];
 }
@@ -110,4 +95,4 @@ function build_layers_and_instances() {
 // ! Destroy particle systems
 // part_type_destroy(global.thruster_particle_type);
 // part_emitter_destroy(global.particle_system, global.thruster_particle_emitter);
-// part_system_destroy(global.particle_system);
+// part_system_destroy(global.particle_system); 

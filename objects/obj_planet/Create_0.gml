@@ -21,8 +21,8 @@ image_yscale = image_xscale;
 
 index = irandom(array_length(sprites) - 1);
 while (
-  instance_nearest(x, y, obj_planet) != -1 &&
-  instance_nearest(x, y, obj_planet).sprite_index == sprites[index]
+  instance_nearest(x, y, obj_planet) != -1
+  && instance_nearest(x, y, obj_planet).sprite_index == sprites[index]
 ) {
   index = irandom(array_length(sprites) - 1);
 }

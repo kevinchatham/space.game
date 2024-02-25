@@ -23,25 +23,27 @@ function Inventory(_slot_count) constructor {
   /// @description Add an item directly to the inventory in its own slot.
   /// @param {Struct.InventoryItem} _item
   /// @param {Real} _quantity
-  inventory_set = function (_item, _quantity) {
+  inventory_set = function(_item, _quantity) {
     var _empty_slot = inventory_find_empty_index();
-    if (_empty_slot == -1) return;
-    inventory_items[_empty_slot] = new InventoryItem(_item,_quantity);
+    if (_empty_slot == -1) {
+      return;
+    }
+    inventory_items[_empty_slot] = new InventoryItem(_item, _quantity);
     inventory_save();
   };
 
-  inventory_find_empty_index = function (){
+  inventory_find_empty_index = function() {
     for (var _i = 0; _i < array_length(inventory_items); _i++) {
       if (string_starts_with(inventory_items[_i].item.display_name, empty_slot_name)) {
         return _i;
       }
     }
     return -1;
-  }
+  };
 
   /// @description Find an item in the inventory by name. This method uses string_starts_with() under the hood.
   /// @param {Struct.Item} _item
-  inventory_find_index = function (_item) {
+  inventory_find_index = function(_item) {
     for (var _i = 0; _i < array_length(inventory_items); _i++) {
       if (inventory_items[_i].item.sprite == _item.sprite) {
         return _i;
@@ -53,7 +55,7 @@ function Inventory(_slot_count) constructor {
   /// @description Add a specific item to the inventory or increase count if item already exists.
   /// @param {Struct.Item} _item
   /// @param {Real} _quantity
-  inventory_add = function (_item, _quantity) {
+  inventory_add = function(_item, _quantity) {
     var _index = inventory_find_index(_item);
     if (_index >= 0) {
       inventory_items[_index].quantity += _quantity;
@@ -66,12 +68,16 @@ function Inventory(_slot_count) constructor {
   /// @description Remove a certain amount of an item from the player's inventory.
   /// @param {Struct.Item} _item
   /// @param {Real} _quantity
-  inventory_subtract = function (_item, _quantity) {
+  inventory_subtract = function(_item, _quantity) {
     var _index = inventory_find_index(_item);
-    if(_index == -1) return;
+    if (_index == -1) {
+      return;
+    }
     if (inventory_has(_item, _quantity)) {
       inventory_items[_index].quantity -= _quantity;
-      if (inventory_items[_index].quantity <= 0) inventory_remove(_item);
+      if (inventory_items[_index].quantity <= 0) {
+        inventory_remove(_item);
+      }
       inventory_save();
     }
   };
@@ -80,15 +86,17 @@ function Inventory(_slot_count) constructor {
   /// @param {Struct.Item} _item
   /// @param {Real} _quantity
   /// @returns {Bool}
-  inventory_has = function (_item, _quantity) {
+  inventory_has = function(_item, _quantity) {
     var _index = inventory_find_index(_item);
-    if (_index >= 0) return inventory_items[_index].quantity >= _quantity;
+    if (_index >= 0) {
+      return inventory_items[_index].quantity >= _quantity;
+    }
     return false;
   };
 
   /// @description Removes a given index from the inventory.
   /// @param {Struct.Item} _item
-  inventory_remove = function (_item) {
+  inventory_remove = function(_item) {
     var _index = inventory_find_index(_item);
     var _slot_name = empty_slot_name + random_string(10);
     var _empty_item = new Item(_slot_name, spr_none);
@@ -99,7 +107,7 @@ function Inventory(_slot_count) constructor {
   /// @description Swaps two inventory slots
   /// @param {Real} _from_index
   /// @param {Real} _to_index
-  inventory_swap = function (_from_index, _to_index) {
+  inventory_swap = function(_from_index, _to_index) {
     var _item_from = inventory_items[_from_index];
     inventory_items[_from_index] = inventory_items[_to_index];
     inventory_items[_to_index] = _item_from;
@@ -108,25 +116,25 @@ function Inventory(_slot_count) constructor {
 
   /// @description Returns array of inventory items.
   /// @returns {Array<Struct.InventoryItem>}
-  inventory_list = function () {
+  inventory_list = function() {
     return inventory_items;
   };
 
   /// @description Print inventory items to console.
-  inventory_log_to_console = function () {
+  inventory_log_to_console = function() {
     log(json_stringify(inventory_items));
   };
 
   /// @description Saves the inventory as json to the local file system.
-  inventory_save = function () {
+  inventory_save = function() {
     var _json_string = json_stringify(inventory_items);
     var _file = file_text_open_write(inventory_save_file_name);
-    file_text_write_string(_file,json_stringify(inventory_items));
+    file_text_write_string(_file, json_stringify(inventory_items));
     file_text_close(_file);
   };
 
   /// @description Loads the json inventory from the local file system. Loads an empty item into every remaining slot.
-  inventory_load = function () {
+  inventory_load = function() {
     var _file = file_text_open_read(inventory_save_file_name);
 
     // creates the inventory save file if it doesn't exist

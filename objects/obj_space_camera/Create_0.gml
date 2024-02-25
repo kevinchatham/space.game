@@ -19,7 +19,11 @@ function refresh_view_port(_scale, _pan = false, _center = false) {
   if (_pan) {
     camera_set_view_pos(camera, obj_ship.x, obj_ship.y);
   } else {
-    camera_set_view_pos(camera, obj_ship.x - view_width / 2, obj_ship.y - view_height / 2);
+    camera_set_view_pos(
+      camera,
+      obj_ship.x - view_width / 2,
+      obj_ship.y - view_height / 2
+    );
   }
 
   // these are updated every end step
@@ -29,9 +33,13 @@ function refresh_view_port(_scale, _pan = false, _center = false) {
   view_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera);
 
   spawn_port_min_x = camera_get_view_x(camera) - camera_get_view_width(camera);
-  spawn_port_max_x = camera_get_view_x(camera) + camera_get_view_width(camera) * spawn_port_scale;
+  spawn_port_max_x =
+    camera_get_view_x(camera)
+    + camera_get_view_width(camera) * spawn_port_scale;
   spawn_port_min_y = camera_get_view_y(camera) - camera_get_view_height(camera);
-  spawn_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera) * spawn_port_scale;
+  spawn_port_max_y =
+    camera_get_view_y(camera)
+    + camera_get_view_height(camera) * spawn_port_scale;
 }
 
 /// @description Spawn any number of an object within the spawn port, outside of the view port.
@@ -49,7 +57,8 @@ function spawn_inside_view_port(_obj, _count, _object_padding, _layer) {
     while (_colliding) {
       _x = irandom_range(view_port_min_x, view_port_max_x);
       _y = irandom_range(view_port_min_y, view_port_max_y);
-      _colliding = too_close(_x, _y, _obj, _object_padding) || too_close(_x, _y, obj_ship, 100);
+      _colliding =
+        too_close(_x, _y, _obj, _object_padding) || too_close(_x, _y, obj_ship, 100);
       if (_c > 500) {
         _colliding = false;
         log("Spawn limit reached on", object_get_name(_obj));
@@ -83,14 +92,21 @@ function spawn_at_random(
     var _c = 0;
 
     while (_colliding) {
-      _x = irandom_range(obj_space_camera.spawn_port_min_x, obj_space_camera.spawn_port_max_x);
-      _y = irandom_range(obj_space_camera.spawn_port_min_y, obj_space_camera.spawn_port_max_y);
+      _x = irandom_range(
+        obj_space_camera.spawn_port_min_x,
+        obj_space_camera.spawn_port_max_x
+      );
+      _y = irandom_range(
+        obj_space_camera.spawn_port_min_y,
+        obj_space_camera.spawn_port_max_y
+      );
 
       if (_allow_in_view_port) {
         _colliding = too_close(_x, _y, _obj, _object_padding);
       } else {
         _colliding =
-          inside_view_port(_x, _y, _view_port_padding) || too_close(_x, _y, _obj, _object_padding);
+          inside_view_port(_x, _y, _view_port_padding)
+          || too_close(_x, _y, _obj, _object_padding);
       }
 
       if (_c == 500) {
@@ -131,7 +147,9 @@ function safely_despawn() {
 function too_close(_x, _y, _obj, _padding) {
   var _closest = instance_nearest(_x, _y, _obj);
 
-  if (_closest == noone) return false;
+  if (_closest == noone) {
+    return false;
+  }
 
   if (point_distance(_x, _y, _closest.x, _closest.y) <= _padding) {
     return true;
