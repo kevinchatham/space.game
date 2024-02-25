@@ -17,6 +17,7 @@
     {"name":"spr_planet_sand_1","order":9,"path":"sprites/spr_planet_sand_1/spr_planet_sand_1.yy",},
     {"name":"spr_star_shine_orange","order":4,"path":"sprites/spr_star_shine_orange/spr_star_shine_orange.yy",},
     {"name":"obj_star","order":4,"path":"objects/obj_star/obj_star.yy",},
+    {"name":"array_count","order":12,"path":"scripts/array_count/array_count.yy",},
     {"name":"obj_arrow_resource","order":1,"path":"objects/obj_arrow_resource/obj_arrow_resource.yy",},
     {"name":"spr_none","order":33,"path":"sprites/spr_none/spr_none.yy",},
     {"name":"obj_planet","order":13,"path":"objects/obj_planet/obj_planet.yy",},

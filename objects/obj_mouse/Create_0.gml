@@ -68,10 +68,7 @@ function state_drag() {
   if (!mouse_check_button(mb_left)) {
     // swap if you are hovering over another item
     if (slot_hover_index != -1) {
-      obj_ship_inventory.inventory.inventory_swap(
-        inventory.inventory_list()[slot_drag_index],
-        inventory.inventory_list()[slot_hover_index]
-      );
+      inventory.inventory_swap(slot_drag_index, slot_hover_index);
     }
     // if not hovering the inventory, spawn the items in space to throw them away
     if (!inventory_is_hovering) {
@@ -79,11 +76,13 @@ function state_drag() {
         var _x = x + irandom(20);
         var _y = y + irandom(20);
         var _id = instance_create_layer(mouse_x, mouse_y, global.main_layer, obj_resource, {
-          sprite_index: inventory.inventory_list()[slot_drag_index].sprite
+          item: inventory.inventory_list()[slot_drag_index].item
         });
       }
 
-      obj_ship_inventory.inventory.inventory_remove(slot_drag_index);
+      obj_ship_inventory.inventory.inventory_remove(
+        inventory.inventory_list()[slot_drag_index].item
+      );
     }
 
     state = state_free;

@@ -11,23 +11,19 @@ if (
   !playing_sound
 ) {
   playing_sound = true;
-  var _i = irandom(array_length(sounds) - 1);
+  var _i = irandom(array_count(sounds));
   audio_play_sound(sounds[_i], 1, false, global.effect_volume);
 }
 
 if (_animation_finished && asteroid.current_health <= 0) {
   for (var _i = 0; _i < array_length(asteroid.next_spawns); _i++) {
-	var _c = asteroid.next_spawns[_i].count;
+    var _c = asteroid.next_spawns[_i].quantity;
     for (var _ii = 0; _ii < _c; _ii++) {
       var _x = x + irandom(20);
       var _y = y + irandom(20);
-      var _id = instance_create_layer(
-        _x,
-        _y,
-        global.main_layer,
-        obj_resource,
-        asteroid.next_spawns[_i]
-      );
+      var _id = instance_create_layer(_x, _y, global.main_layer, obj_resource, {
+        item: asteroid.next_spawns[_i].item
+      });
     }
   }
   instance_destroy();

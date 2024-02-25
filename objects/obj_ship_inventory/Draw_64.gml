@@ -27,7 +27,7 @@ if (is_visible) {
         var _item_pos_x = _pos_x + slot_sprite_w / 2;
         var _item_pos_y = _pos_y + slot_sprite_h / 2;
         draw_sprite(
-          inventory.inventory_list()[_inventory_index].sprite,
+          inventory.inventory_list()[_inventory_index].item.sprite,
           0,
           _item_pos_x,
           _item_pos_y

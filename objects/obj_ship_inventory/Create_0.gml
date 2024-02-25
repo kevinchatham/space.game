@@ -22,14 +22,13 @@ inventory_height =
   window_padding_y + sprite_padding_y * (inventory_rows + 1) + slot_sprite_h * (inventory_rows - 1);
 
 inventory = new Inventory(inventory_columns * inventory_rows);
-
 inventory.inventory_load();
 
-// * TESTING ONLY
-show_debug_message(inventory);
-// *
+recipe = new Recipe(
+  "DISPLAYNAME",
+  [new InventoryItem(global.item_cobalt, 1)],
+  [new InventoryItem(global.item_coal, 1)],
+  spr_resource_coal
+);
 
-product = new InventoryItem("DISPLAYNAME", spr_resource_coal, 1);
-requirement = new InventoryItem("DISPLAYNAME", spr_resource_cobalt, 1);
-recipe = new Recipe("DISPLAYNAME", [requirement], [product], spr_resource_coal);
 station = new Station([recipe]);

@@ -1,3 +1,46 @@
+function build_items() {
+  global.item_coal = new Item("Coal", spr_resource_coal);
+  global.item_ice = new Item("Ice", spr_resource_ice);
+  global.item_cobalt = new Item("Cobalt", spr_resource_cobalt);
+
+  /// @type {Array<Struct.AsteroidType>}
+  global.asteroid_types = [
+    {
+      sprite_index: spr_asteroid,
+      max_health: 5,
+      spawn_chance: 100,
+      next_spawns: [
+        {
+          item: global.item_coal,
+          quantity: irandom_range(1, 5)
+        }
+      ]
+    },
+    {
+      sprite_index: spr_asteroid_ice,
+      max_health: 5,
+      spawn_chance: 10,
+      next_spawns: [
+        {
+          item: global.item_ice,
+          quantity: irandom_range(1, 5)
+        }
+      ]
+    },
+    {
+      sprite_index: spr_asteroid_cobalt,
+      max_health: 5,
+      spawn_chance: 100,
+      next_spawns: [
+        {
+          item: global.item_cobalt,
+          quantity: irandom_range(1, 5)
+        }
+      ]
+    }
+  ];
+}
+
 function build_options() {
   global.despawn_lifetime = 60;
   global.thruster_particle_emitter_particle_count = 3;
@@ -68,56 +111,3 @@ function build_layers_and_instances() {
 // part_type_destroy(global.thruster_particle_type);
 // part_emitter_destroy(global.particle_system, global.thruster_particle_emitter);
 // part_system_destroy(global.particle_system);
-
-/// @type {Array<Struct.AsteroidType>}
-global.asteroid_types = [
-  {
-    sprite_index: spr_asteroid,
-    max_health: 5,
-    spawn_chance: 100,
-    next_spawns: [
-      {
-        sprite_index: spr_resource_coal,
-        count: irandom_range(1, 5)
-      }
-    ]
-  },
-  {
-    sprite_index: spr_asteroid_ice,
-    max_health: 5,
-    spawn_chance: 10,
-    next_spawns: [
-      {
-        sprite_index: spr_resource_ice,
-        count: irandom_range(1, 5)
-      }
-    ]
-  },
-  {
-    sprite_index: spr_asteroid_cobalt,
-    max_health: 5,
-    spawn_chance: 100,
-    next_spawns: [
-      {
-        sprite_index: spr_resource_cobalt,
-        count: irandom_range(1, 5)
-      }
-    ]
-  },
-];
-
-function create_random_asteroid() {
-  var _i;
-
-  //The function tries to generate a random asteroid type up to X times
-  //If it succeeds in finding a valid asteroid type based on the rarity condition, it returns a new Asteroid.
-  //If no valid asteroid type is found, it defaults to returning an asteroid of the first type in the array.
-  repeat (10) {
-    _i = irandom(array_length(global.asteroid_types) - 1);
-    if (irandom(100) <= global.asteroid_types[_i].spawn_chance) {
-      return new Asteroid(global.asteroid_types[_i]);
-    }
-  }
-
-  return new Asteroid(global.asteroid_types[_i]);
-}

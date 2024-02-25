@@ -34,22 +34,22 @@ function Station(_recipies) constructor {
   /// @param {Struct.Inventory>} _inventory
   recipe_craft = function (_recipe, _inventory) {
     var _meets_requirements = false;
-    for (var _i = 0; _i < array_length(_recipe.requirements) - 1; _i++) {
+    for (var _i = 0; _i < array_length(_recipe.requirements); _i++) {
       var _requirement = _recipe.requirements[_i];
-      _meets_requirements = _inventory.inventory_has(_requirement, _requirement.quantity);
+      _meets_requirements = _inventory.inventory_has(_requirement.item, _requirement.quantity);
       if (!_meets_requirements) break;
     }
 
     if (_meets_requirements) {
       for (var _i = 0; _i < array_length(_recipe.requirements); _i++) {
         _inventory.inventory_subtract(
-          _recipe.requirements[_i],
+          _recipe.requirements[_i].item,
           _recipe.requirements[_i].quantity
         );
       }
 
-      for (var _i = 0; _i < array_length(_recipe.products) - 1; _i++) {
-        _inventory.inventory_add(_recipe.products[_i]);
+      for (var _i = 0; _i < array_length(_recipe.products); _i++) {
+        _inventory.inventory_add(_recipe.products[_i].item, _recipe.products[_i].quantity);
       }
     }
 

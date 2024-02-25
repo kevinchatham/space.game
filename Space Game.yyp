@@ -42,6 +42,7 @@
     {"id":{"name":"spr_planet_sand_1","path":"sprites/spr_planet_sand_1/spr_planet_sand_1.yy",},},
     {"id":{"name":"spr_star_shine_orange","path":"sprites/spr_star_shine_orange/spr_star_shine_orange.yy",},},
     {"id":{"name":"obj_star","path":"objects/obj_star/obj_star.yy",},},
+    {"id":{"name":"array_count","path":"scripts/array_count/array_count.yy",},},
     {"id":{"name":"obj_arrow_resource","path":"objects/obj_arrow_resource/obj_arrow_resource.yy",},},
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},},
     {"id":{"name":"spr_none","path":"sprites/spr_none/spr_none.yy",},},
