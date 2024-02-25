@@ -1,9 +1,4 @@
 {
-  "files.trimTrailingWhitespace": true,
-  "prettier.documentSelectors": ["**/*.gml"],
-  "[gml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "cSpell.enableFiletypes": ["gml-gms2"],
   "cSpell.words": [
     "despawn",
@@ -26,5 +21,13 @@
     "yport",
     "yscale",
     "yview"
-  ]
+  ],
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.gml$",
+        "cmd": ".\\gobo.exe ${file}"
+      }
+    ]
+  }
 }

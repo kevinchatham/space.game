@@ -19,9 +19,13 @@ view_port_min_y = camera_get_view_y(camera);
 view_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera);
 
 spawn_port_min_x = camera_get_view_x(camera) - camera_get_view_width(camera);
-spawn_port_max_x = camera_get_view_x(camera) + camera_get_view_width(camera) * spawn_port_scale;
+spawn_port_max_x =
+  camera_get_view_x(camera)
+  + camera_get_view_width(camera) * spawn_port_scale;
 spawn_port_min_y = camera_get_view_y(camera) - camera_get_view_height(camera);
-spawn_port_max_y = camera_get_view_y(camera) + camera_get_view_height(camera) * spawn_port_scale;
+spawn_port_max_y =
+  camera_get_view_y(camera)
+  + camera_get_view_height(camera) * spawn_port_scale;
 
 if (fade_timer > 0) {
   fade_timer--;

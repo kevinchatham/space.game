@@ -1,3 +1,3 @@
 /// @description I Up
-visible = !visible;
+is_visible = !is_visible;
 obj_ship.can_shoot = true;

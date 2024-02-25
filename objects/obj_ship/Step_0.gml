@@ -33,11 +33,13 @@ if (_left && keyboard_controlled) {
 
 if (_shoot && can_shoot) {
   audio_play_sound(snd_blaster, 1, false, global.effect_volume);
-  instance_create_layer(x, y, global.main_layer, obj_bullet, {
-    image_angle: image_angle,
-    image_xscale: 0.25,
-    image_yscale: 0.25
-  });
+  instance_create_layer(
+    x,
+    y,
+    global.main_layer,
+    obj_bullet,
+    {image_angle: image_angle, image_xscale: 0.25, image_yscale: 0.25}
+  );
   can_shoot = false;
   alarm[1] = round(60 / fire_rate);
 }
@@ -88,7 +90,13 @@ emitter_right = center_x + emitter_radius;
 emitter_top = center_y - emitter_radius;
 emitter_bottom = center_y + emitter_radius;
 
-part_type_direction(global.thruster_particle_type, image_angle + 180, image_angle + 180, 0, 0);
+part_type_direction(
+  global.thruster_particle_type,
+  image_angle + 180,
+  image_angle + 180,
+  0,
+  0
+);
 
 part_emitter_region(
   global.particle_system,

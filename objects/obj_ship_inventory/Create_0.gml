@@ -1,9 +1,4 @@
-visible = false;
-
-requirement = new RecipeRequirement("req1", 5);
-product = new InventoryItem("Thing", 1, spr_resource_coal);
-recipe = new Recipe("Thing", requirement, product, spr_resource_coal);
-recipes = new Recipes([recipe], 4);
+is_visible = false;
 
 g_width = display_get_gui_width();
 g_height = display_get_gui_height();
@@ -20,18 +15,22 @@ slot_sprite_h = sprite_get_height(spr_inventory_slot);
 initial_padding_x = window_padding_x + sprite_padding_x;
 initial_padding_y = window_padding_y + sprite_padding_y;
 inventory_width =
-  window_padding_x +
-  sprite_padding_x * (inventory_columns + 1) +
-  slot_sprite_w * (inventory_columns - 1);
+  window_padding_x
+  + sprite_padding_x * (inventory_columns + 1)
+  + slot_sprite_w * (inventory_columns - 1);
 inventory_height =
-  window_padding_y + sprite_padding_y * (inventory_rows + 1) + slot_sprite_h * (inventory_rows - 1);
+  window_padding_y
+  + sprite_padding_y * (inventory_rows + 1)
+  + slot_sprite_h * (inventory_rows - 1);
 
 inventory = new Inventory(inventory_columns * inventory_rows);
+inventory.inventory_load();
 
-inventory.load();
+recipe = new Recipe(
+  "DISPLAYNAME",
+  [new InventoryItem(global.item_cobalt, 1)],
+  [new InventoryItem(global.item_coal, 1)],
+  spr_resource_coal
+);
 
-// * TESTING ONLY
-show_debug_message(inventory);
-// *
-
-inventory_items = inventory.get_all_items();
+station = new Station([recipe]);

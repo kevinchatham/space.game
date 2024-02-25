@@ -1,12 +1,21 @@
-if (visible) {
-  obj_ship.can_shoot = !visible;
+if (is_visible) {
+  obj_ship.can_shoot = !is_visible;
 }
 
+var _craft = keyboard_check_pressed(ord("C"));
+
+if (_craft) {
+  log("Crafting", recipe.display_name);
+  obj_ship_inventory.inventory = station.recipe_craft(
+    recipe,
+    obj_ship_inventory.inventory
+  );
+}
+
+// * check if you're clicking an item, i think
 // var _mx = device_mouse_x_to_gui(0);
 // var _my = device_mouse_y_to_gui(0);
-
 // var _inventory_items = inventory.get_all_items();
-
 // check if you're clicking an item
 // if (mouse_check_button_released(mb_left) && visible) {
 //   for (var _row = 0; _row < inventory_rows; _row++) {
@@ -26,4 +35,4 @@ if (visible) {
 //       }
 //     }
 //   }
-// }
+// } 

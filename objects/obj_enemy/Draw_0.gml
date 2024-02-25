@@ -14,14 +14,14 @@ if (current_health < max_health) {
 
 draw_reset();
 
-//draw_set_color(c_yellow);
-//draw_circle(x, y, enemy_padding, true);
-//draw_set_color(c_green);
-//draw_circle(x, y, friend_padding, true);
-//draw_set_color(c_orange);
-//draw_circle(x, y, obstacle_padding, true);
-//draw_set_color(c_red);
-//draw_circle(x, y, attack_padding, true);
-//draw_set_color(c_blue);
-//draw_circle(x, y, retreat_padding, true);
-//draw_set_color(c_white);
+// draw_set_color(c_yellow);
+// draw_circle(x, y, enemy_padding, true);
+// draw_set_color(c_green);
+// draw_circle(x, y, friend_padding, true);
+// draw_set_color(c_orange);
+// draw_circle(x, y, obstacle_padding, true);
+// draw_set_color(c_red);
+// draw_circle(x, y, attack_padding, true);
+// draw_set_color(c_blue);
+// draw_circle(x, y, retreat_padding, true);
+// draw_set_color(c_white); 
