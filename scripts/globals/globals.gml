@@ -3,26 +3,35 @@ function build_items() {
   global.item_ice = new Item("Ice", spr_resource_ice);
   global.item_cobalt = new Item("Cobalt", spr_resource_cobalt);
 
-  /// @type {Array<Struct.AsteroidType>}
+  global.asteroid_type_coal = new AsteroidOptions(
+    spr_asteroid,
+    5, // health
+    100, // spawn chance
+    // next spawns
+    [{item: global.item_coal, quantity: 3}]
+  );
+
+  global.asteroid_type_cobalt = new AsteroidOptions(
+    spr_asteroid_cobalt,
+    5, // health
+    100, // spawn chance
+    // next spawns
+    [{item: global.item_cobalt, quantity: 3}]
+  );
+
+  global.asteroid_type_ice = new AsteroidOptions(
+    spr_asteroid_ice,
+    5, // health
+    100, // spawn chance
+    // next spawns
+    [{item: global.item_ice, quantity: 3}]
+  );
+
+  /// @type {Array<Struct.AsteroidOptions>}
   global.asteroid_types = [
-    {
-      sprite_index: spr_asteroid,
-      max_health: 5,
-      spawn_chance: 100,
-      next_spawns: [{item: global.item_coal, quantity: irandom_range(1, 5)}],
-    },
-    {
-      sprite_index: spr_asteroid_ice,
-      max_health: 5,
-      spawn_chance: 10,
-      next_spawns: [{item: global.item_ice, quantity: irandom_range(1, 5)}],
-    },
-    {
-      sprite_index: spr_asteroid_cobalt,
-      max_health: 5,
-      spawn_chance: 100,
-      next_spawns: [{item: global.item_cobalt, quantity: irandom_range(1, 5)}],
-    }
+    global.asteroid_type_coal,
+    global.asteroid_type_cobalt,
+    global.asteroid_type_ice
   ];
 }
 

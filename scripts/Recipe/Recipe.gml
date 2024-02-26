@@ -32,7 +32,7 @@ function Station(_recipies) constructor {
 
   /// @param {Struct.Recipe} _recipe
   /// @param {Struct.Inventory>} _inventory
-  recipe_craft = function(_recipe, _inventory) {
+  recipe_meets_requirements = function(_recipe, _inventory) {
     var _meets_requirements = false;
     for (var _i = 0; _i < array_length(_recipe.requirements); _i++) {
       var _requirement = _recipe.requirements[_i];
@@ -44,21 +44,26 @@ function Station(_recipies) constructor {
         break;
       }
     }
+    return _meets_requirements;
+  };
 
-    if (_meets_requirements) {
-      for (var _i = 0; _i < array_length(_recipe.requirements); _i++) {
-        _inventory.inventory_subtract(
-          _recipe.requirements[_i].item,
-          _recipe.requirements[_i].quantity
-        );
-      }
+  /// @param {Struct.Recipe} _recipe
+  /// @param {Struct.Inventory>} _inventory
+  recipe_craft = function(_recipe, _inventory) {
+    if (!recipe_meets_requirements(_recipe, _inventory)) {
+      return _inventory;
+    }
 
-      for (var _i = 0; _i < array_length(_recipe.products); _i++) {
-        _inventory.inventory_add(
-          _recipe.products[_i].item,
-          _recipe.products[_i].quantity
-        );
-      }
+    for (var _i = 0; _i < array_length(_recipe.requirements); _i++) {
+      var _item = _recipe.requirements[_i].item;
+      var _quantity = _recipe.requirements[_i].quantity;
+      _inventory.inventory_subtract(_item, _quantity);
+    }
+
+    for (var _i = 0; _i < array_length(_recipe.products); _i++) {
+      var _item = _recipe.products[_i].item;
+      var _quantity = _recipe.products[_i].quantity;
+      _inventory.inventory_add(_item, _quantity);
     }
 
     return _inventory;
