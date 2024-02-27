@@ -25,12 +25,3 @@ inventory_height =
 
 inventory = new Inventory(inventory_columns * inventory_rows);
 inventory.inventory_load();
-
-recipe = new Recipe(
-  "DISPLAYNAME",
-  [new InventoryItem(global.item_cobalt, 1)],
-  [new InventoryItem(global.item_coal, 1)],
-  spr_resource_coal
-);
-
-station = new Station([recipe]);
