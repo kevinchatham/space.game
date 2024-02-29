@@ -2,6 +2,8 @@ if (is_visible) {
   obj_ship.can_shoot = !is_visible;
 }
 
+state();
+
 // var _craft = keyboard_check_pressed(ord("C"));
 
 // if (_craft) {

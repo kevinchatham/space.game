@@ -36,10 +36,7 @@ function Station(_recipies) constructor {
     var _meets_requirements = false;
     for (var _i = 0; _i < array_length(_recipe.requirements); _i++) {
       var _requirement = _recipe.requirements[_i];
-      _meets_requirements = _inventory.inventory_has(
-        _requirement.item,
-        _requirement.quantity
-      );
+      _meets_requirements = _inventory.has(_requirement.item, _requirement.quantity);
       if (!_meets_requirements) {
         break;
       }
@@ -57,13 +54,13 @@ function Station(_recipies) constructor {
     for (var _i = 0; _i < array_length(_recipe.requirements); _i++) {
       var _item = _recipe.requirements[_i].item;
       var _quantity = _recipe.requirements[_i].quantity;
-      _inventory.inventory_subtract(_item, _quantity);
+      _inventory.subtract(_item, _quantity);
     }
 
     for (var _i = 0; _i < array_length(_recipe.products); _i++) {
       var _item = _recipe.products[_i].item;
       var _quantity = _recipe.products[_i].quantity;
-      _inventory.inventory_add(_item, _quantity);
+      _inventory.add(_item, _quantity);
     }
 
     return _inventory;
