@@ -36,7 +36,7 @@ inventory_drag = undefined;
 /// @type {Struct.Inventory}
 inventory_hover = undefined;
 /// @type {Bool}
-is_hovering = false;
+is_hovering_inventory = false;
 /// @type {Struct.InventoryItem}
 item_drag = undefined;
 /// @type {Real}
@@ -59,7 +59,7 @@ function is_within(_mx, _my, _x_min, _x_max, _y_min, _y_max) {
 function mouse_over() {
   slot_hover_index = -1;
   inventory_hover = -1;
-  is_hovering = false;
+  is_hovering_inventory = false;
 
   var _mx = device_mouse_x_to_gui(0);
   var _my = device_mouse_y_to_gui(0);
@@ -85,7 +85,7 @@ function mouse_over() {
       if (_loop_index < inventory.length()) {
         slot_hover_index = _loop_index;
         inventory_hover = obj_ship_inventory;
-        is_hovering = true;
+        is_hovering_inventory = true;
       }
     }
   }
@@ -115,35 +115,37 @@ function state_free() {
 function state_drag() {
   mouse_over();
 
-  // if the mouse button is released
-  if (!mouse_check_button(mb_left)) {
-    // swap if you are hovering over another item
-    if (slot_hover_index != -1) {
-      inventory.swap(slot_drag_index, slot_hover_index);
-    }
-    // if not hovering the inventory, spawn the items in space to throw them away
-    if (!is_hovering) {
-      for (var _i = 0; _i < inventory.find(slot_drag_index).quantity; _i++) {
-        var _x = x + irandom(20);
-        var _y = y + irandom(20);
-        var _id = instance_create_layer(
-          mouse_x,
-          mouse_y,
-          global.main_layer,
-          obj_resource,
-          {init_json: json_stringify(inventory.find(slot_drag_index).item)}
-        );
-      }
-
-      var _item = inventory.find(slot_drag_index).item;
-      inventory.remove(_item);
-    }
-
-    state = state_free;
-    item_drag = undefined;
-    inventory_drag = inventory;
-    slot_drag_index = -1;
+  if (mouse_check_button(mb_left)) {
+    return;
   }
+
+  // swap if you are hovering over another item
+  if (slot_hover_index != -1) {
+    inventory.swap(slot_drag_index, slot_hover_index);
+  }
+
+  // if not hovering the inventory, spawn the items in space to throw them away
+  if (!is_hovering_inventory) {
+    for (var _i = 0; _i < inventory.find(slot_drag_index).quantity; _i++) {
+      var _x = x + irandom(20);
+      var _y = y + irandom(20);
+      var _id = instance_create_layer(
+        mouse_x,
+        mouse_y,
+        global.main_layer,
+        obj_resource,
+        {init_json: json_stringify(inventory.find(slot_drag_index).item)}
+      );
+    }
+
+    var _item = inventory.find(slot_drag_index).item;
+    inventory.remove(_item);
+  }
+
+  state = state_free;
+  item_drag = undefined;
+  inventory_drag = inventory;
+  slot_drag_index = -1;
 }
 
 state = state_free;
