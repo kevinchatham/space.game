@@ -4,14 +4,20 @@
   "name": "obj_station_furnace",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":67,"eventType":10,"isDnD":false,},
   ],
   "managed": true,
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_inventory","path":"objects/obj_inventory/obj_inventory.yy",},"propertyId":{"name":"name","path":"objects/obj_inventory/obj_inventory.yy",},"value":"furnace",},
+  ],
   "parent": {
     "name": "Stations",
     "path": "folders/Objects/Stations.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_inventory",
+    "path": "objects/obj_inventory/obj_inventory.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

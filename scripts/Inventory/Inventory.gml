@@ -13,12 +13,14 @@ function InventoryItem(_item, _quantity) constructor {
 }
 
 /// @param {Real} _slot_count
-function Inventory(_slot_count) constructor {
+/// @param {String} _name
+function Inventory(_slot_count, _name) constructor {
   /// @type {Array<Struct.InventoryItem>}
   items = [];
   slot_count = _slot_count;
   empty_slot_name = "empty-slot-";
-  save_file_name = "inventory.json";
+  name = _name;
+  save_file_name = _name + "." + "inventory.json";
 
   /// @description Add an item directly to the inventory in its own slot.
   /// @param {Struct.InventoryItem} _item

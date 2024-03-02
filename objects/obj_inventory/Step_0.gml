@@ -8,9 +8,9 @@ state();
 
 // if (_craft) {
 //   log("Crafting", recipe.display_name);
-//   obj_ship_inventory.inventory = station.recipe_craft(
+//   obj_inventory_ship.inventory = station.recipe_craft(
 //     recipe,
-//     obj_ship_inventory.inventory
+//     obj_inventory_ship.inventory
 //   );
 // }
 

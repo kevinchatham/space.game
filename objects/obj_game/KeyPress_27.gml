@@ -1,4 +1,4 @@
 /// @description Esc Close Game
-obj_ship_inventory.inventory.save();
+obj_inventory_ship.inventory.save();
 
 game_end();

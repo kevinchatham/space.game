@@ -117,7 +117,7 @@ function Game() constructor {
     var _worm_hole_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_worm_hole);
     var _enemy_arrow_id = room_instance_add(rm_space, 0, 0, obj_arrow_enemy);
     var _ship_id = room_instance_add(rm_space, room_height / 2, room_width / 2, obj_ship);
-    var _ship_inventory_id = room_instance_add(rm_space, 0, 0, obj_ship_inventory);
+    var _ship_inventory_id = room_instance_add(rm_space, 0, 0, obj_inventory_ship);
     var _station_furnace_id = room_instance_add(
       rm_space,
       room_height / 2,

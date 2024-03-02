@@ -1,14 +1,15 @@
-// * custom options
-columns = 2;
-rows = 2;
-window_padding_x = 32;
-window_padding_y = 32;
-sprite_padding_x = 16;
-sprite_padding_y = 16;
+// * GM Variable Definitions
+columns = columns;
+rows = rows;
+window_padding_x = window_padding_x;
+window_padding_y = window_padding_y;
+sprite_padding_x = sprite_padding_x;
+sprite_padding_y = sprite_padding_y;
+name = name;
 // *
 
 // * the inventory itself
-inventory = new Inventory(columns * rows);
+inventory = new Inventory(columns * rows, name);
 inventory.load();
 // *
 
@@ -20,14 +21,8 @@ slot_sprite_w = sprite_get_width(spr_inventory_slot);
 slot_sprite_h = sprite_get_height(spr_inventory_slot);
 initial_padding_x = window_padding_x + sprite_padding_x;
 initial_padding_y = window_padding_y + sprite_padding_y;
-inventory_width =
-  window_padding_x
-  + sprite_padding_x * (columns + 1)
-  + slot_sprite_w * (columns - 1);
-inventory_height =
-  window_padding_y
-  + sprite_padding_y * (rows + 1)
-  + slot_sprite_h * (rows - 1);
+inventory_width = sprite_padding_x * (columns + 1) + slot_sprite_w * columns;
+inventory_height = sprite_padding_y * (rows + 1) + slot_sprite_h * rows;
 // *
 
 // * hovering / dragging / state
@@ -66,16 +61,16 @@ function mouse_over() {
 
   for (var _row = 0; _row < rows; _row++) {
     for (var _column = 0; _column < columns; _column++) {
-      var _x_min = initial_padding_x + (slot_sprite_w + sprite_padding_x) * _column;
-      var _y_min = initial_padding_y + (slot_sprite_h + sprite_padding_y) * _row;
-      var _x_max =
-        initial_padding_x
-        + (slot_sprite_w + sprite_padding_x) * _column
-        + inventory_width;
-      var _y_max =
-        initial_padding_y
-        + (slot_sprite_h + sprite_padding_y) * _row
-        + inventory_height;
+      var _x_min =
+        window_padding_x
+        + sprite_padding_x
+        + (slot_sprite_w + sprite_padding_x) * _column;
+      var _y_min =
+        window_padding_y
+        + sprite_padding_y
+        + (slot_sprite_h + sprite_padding_y) * _row;
+      var _x_max = _x_min + slot_sprite_w;
+      var _y_max = _y_min + slot_sprite_h;
 
       if (!is_within(_mx, _my, _x_min, _x_max, _y_min, _y_max)) {
         continue;
@@ -84,7 +79,7 @@ function mouse_over() {
       var _loop_index = _row * columns + _column;
       if (_loop_index < inventory.length()) {
         slot_hover_index = _loop_index;
-        inventory_hover = obj_ship_inventory;
+        inventory_hover = inventory;
         is_hovering_inventory = true;
       }
     }
@@ -116,8 +111,12 @@ function state_drag() {
   mouse_over();
 
   if (mouse_check_button(mb_left)) {
-    return;
+    return; // if user still holding mb
   }
+
+  // TODO IF HOVERING ANOTHER INVENTORY?!??!??!??!?!
+  // I'm really not sure how to do this but...
+  // I need to allow dragging and dropping items between different inventories
 
   // swap if you are hovering over another item
   if (slot_hover_index != -1) {
