@@ -37,12 +37,6 @@ slot_drag_index = -1;
 /// @type {Real}
 slot_hover_index = -1;
 
-// *
-
-/// ! remove
-/// ! @type {Struct.Inventory}
-/// ! inventory_drag = undefined;
-
 /// @param {Real} _mx
 /// @param {Real} _my
 /// @param {Real} _x_min
@@ -60,18 +54,29 @@ function mouse_over() {
   var _mx = device_mouse_x_to_gui(0);
   var _my = device_mouse_y_to_gui(0);
 
-  // TODO determine if you are hovering the inventory
-  var _obj = asset_get_index(name);
-  var _name = object_get_name(_obj);
-  var _nearest = instance_nearest(_mx, _my, _obj);
-  if (_name != name) {
-    layer_add_instance(global.ui_focus_layer, _nearest);
-  } else {
-    layer_add_instance(global.ui_layer, _nearest);
+  is_hovering_inventory = is_within(
+    _mx,
+    _my,
+    window_padding_x,
+    window_padding_x + inventory_width,
+    window_padding_y,
+    window_padding_y + inventory_height
+  );
+
+  // this means an item being dragged is never rendered behind another inventory
+  // it transitions the inventory between ui layers
+  // the focus layer is for the inventory the mouse is currently over
+  // otherwise the object should be on the main ui layer
+  if (is_hovering_inventory) {
+    var _obj = asset_get_index(name);
+    var _name = object_get_name(_obj);
+    var _nearest = instance_nearest(_mx, _my, _obj);
+    if (_name == name) {
+      layer_add_instance(global.ui_layer, _nearest);
+    } else {
+      layer_add_instance(global.ui_focus_layer, _nearest);
+    }
   }
-  is_hovering_inventory = true;
-  is_hovering_inventory = false;
-  // TODO
 
   for (var _row = 0; _row < rows; _row++) {
     for (var _column = 0; _column < columns; _column++) {
