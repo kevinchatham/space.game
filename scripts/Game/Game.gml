@@ -106,11 +106,11 @@ function Game() constructor {
   build_layers_and_instances = function() {
     layer_set_target_room(rm_space);
 
-    global.ui_focus_layer = layer_create(-2, "Focus");
-    global.ui_layer = layer_create(-1, "UI");
-    global.main_layer = layer_create(0, "Main");
-    global.planet_layer = layer_create(1, "Planets");
-    global.star_layer = layer_create(2, "Stars");
+    global.ui_focus_layer = layer_create(-2, "ui_focus_layer");
+    global.ui_main_layer = layer_create(-1, "ui_main_layer");
+    global.main_layer = layer_create(0, "main_layer");
+    global.background_planet_layer = layer_create(1, "background_planet_layer");
+    global.background_star_layer = layer_create(2, "background_star_layer");
 
     var _space_camera_id = room_instance_add(rm_space, 0, 0, obj_space_camera);
     var _spawner_id = room_instance_add(rm_space, 0, 0, obj_spawner);
@@ -128,11 +128,11 @@ function Game() constructor {
 
     layer_add_instance(global.main_layer, _ship_id);
     layer_add_instance(global.main_layer, _station_furnace_id);
-    layer_add_instance(global.ui_layer, _resource_arrow_id);
-    layer_add_instance(global.ui_layer, _worm_hole_arrow_id);
-    layer_add_instance(global.ui_layer, _enemy_arrow_id);
-    layer_add_instance(global.ui_layer, _ship_inventory_id);
-    layer_add_instance(global.ui_layer, _station_furnace_id);
+    layer_add_instance(global.ui_main_layer, _resource_arrow_id);
+    layer_add_instance(global.ui_main_layer, _worm_hole_arrow_id);
+    layer_add_instance(global.ui_main_layer, _enemy_arrow_id);
+    layer_add_instance(global.ui_main_layer, _ship_inventory_id);
+    layer_add_instance(global.ui_main_layer, _station_furnace_id);
 
     layer_reset_target_room();
   };

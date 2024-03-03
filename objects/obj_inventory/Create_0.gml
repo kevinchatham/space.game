@@ -72,7 +72,7 @@ function mouse_over() {
     var _name = object_get_name(_obj);
     var _nearest = instance_nearest(_mx, _my, _obj);
     if (_name == name) {
-      layer_add_instance(global.ui_layer, _nearest);
+      layer_add_instance(global.ui_main_layer, _nearest);
     } else {
       layer_add_instance(global.ui_focus_layer, _nearest);
     }

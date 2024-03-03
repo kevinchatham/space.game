@@ -9,7 +9,7 @@ with (obj_space_camera) {
     obj_star,
     _star_respawn_count,
     other.min_star_distance_between,
-    global.star_layer,
+    global.background_star_layer,
     0,
     other.allow_in_view_port
   );
@@ -18,7 +18,7 @@ with (obj_space_camera) {
     obj_planet,
     _planet_respawn_count,
     other.min_planet_distance_between,
-    global.planet_layer,
+    global.background_planet_layer,
     300,
     other.allow_in_view_port
   );
