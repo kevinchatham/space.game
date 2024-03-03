@@ -1,3 +1,6 @@
+/// @type {Struct.Inventory}
+global.inventory_drag = undefined;
+
 /// @param {String} _display_name
 /// @param {Asset.GMSprite} _sprite
 function Item(_display_name, _sprite) constructor {

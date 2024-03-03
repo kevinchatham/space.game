@@ -106,6 +106,7 @@ function Game() constructor {
   build_layers_and_instances = function() {
     layer_set_target_room(rm_space);
 
+    global.ui_focus_layer = layer_create(-2, "Focus");
     global.ui_layer = layer_create(-1, "UI");
     global.main_layer = layer_create(0, "Main");
     global.planet_layer = layer_create(1, "Planets");
@@ -131,6 +132,7 @@ function Game() constructor {
     layer_add_instance(global.ui_layer, _worm_hole_arrow_id);
     layer_add_instance(global.ui_layer, _enemy_arrow_id);
     layer_add_instance(global.ui_layer, _ship_inventory_id);
+    layer_add_instance(global.ui_layer, _station_furnace_id);
 
     layer_reset_target_room();
   };

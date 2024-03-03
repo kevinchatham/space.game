@@ -27,8 +27,6 @@ inventory_height = sprite_padding_y * (rows + 1) + slot_sprite_h * rows;
 
 // * hovering / dragging / state
 /// @type {Struct.Inventory}
-inventory_drag = undefined;
-/// @type {Struct.Inventory}
 inventory_hover = undefined;
 /// @type {Bool}
 is_hovering_inventory = false;
@@ -40,6 +38,10 @@ slot_drag_index = -1;
 slot_hover_index = -1;
 
 // *
+
+/// ! remove
+/// ! @type {Struct.Inventory}
+/// ! inventory_drag = undefined;
 
 /// @param {Real} _mx
 /// @param {Real} _my
@@ -54,10 +56,22 @@ function is_within(_mx, _my, _x_min, _x_max, _y_min, _y_max) {
 function mouse_over() {
   slot_hover_index = -1;
   inventory_hover = -1;
-  is_hovering_inventory = false;
 
   var _mx = device_mouse_x_to_gui(0);
   var _my = device_mouse_y_to_gui(0);
+
+  // TODO determine if you are hovering the inventory
+  var _obj = asset_get_index(name);
+  var _name = object_get_name(_obj);
+  var _nearest = instance_nearest(_mx, _my, _obj);
+  if (_name != name) {
+    layer_add_instance(global.ui_focus_layer, _nearest);
+  } else {
+    layer_add_instance(global.ui_layer, _nearest);
+  }
+  is_hovering_inventory = true;
+  is_hovering_inventory = false;
+  // TODO
 
   for (var _row = 0; _row < rows; _row++) {
     for (var _column = 0; _column < columns; _column++) {
@@ -80,7 +94,7 @@ function mouse_over() {
       if (_loop_index < inventory.length()) {
         slot_hover_index = _loop_index;
         inventory_hover = inventory;
-        is_hovering_inventory = true;
+        global.inventory_drag = inventory;
       }
     }
   }
@@ -102,7 +116,6 @@ function state_free() {
   }
 
   item_drag = _item;
-  inventory_drag = inventory;
   slot_drag_index = slot_hover_index;
   state = state_drag;
 }
@@ -114,9 +127,11 @@ function state_drag() {
     return; // if user still holding mb
   }
 
-  // TODO IF HOVERING ANOTHER INVENTORY?!??!??!??!?!
-  // I'm really not sure how to do this but...
-  // I need to allow dragging and dropping items between different inventories
+  if (global.inventory_drag != undefined && inventory.name != global.inventory_drag.name) {
+    var _inventory_item = inventory.find(slot_drag_index);
+    global.inventory_drag.add(_inventory_item.item, _inventory_item.quantity);
+    inventory.remove(_inventory_item.item);
+  }
 
   // swap if you are hovering over another item
   if (slot_hover_index != -1) {
@@ -143,7 +158,6 @@ function state_drag() {
 
   state = state_free;
   item_drag = undefined;
-  inventory_drag = inventory;
   slot_drag_index = -1;
 }
 

@@ -7,7 +7,7 @@
   ],
   "managed": true,
   "overriddenProperties": [
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_inventory","path":"objects/obj_inventory/obj_inventory.yy",},"propertyId":{"name":"name","path":"objects/obj_inventory/obj_inventory.yy",},"value":"ship",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_inventory","path":"objects/obj_inventory/obj_inventory.yy",},"propertyId":{"name":"name","path":"objects/obj_inventory/obj_inventory.yy",},"value":"obj_inventory_ship",},
   ],
   "parent": {
     "name": "Global",
