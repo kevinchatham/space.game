@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "Station",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs",
-    "path": "folders/Scripts/Structs.yy",
+  "$GMScript":"",
+  "%Name":"Station",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Station",
+  "parent":{
+    "name":"Structs",
+    "path":"folders/Scripts/Structs.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

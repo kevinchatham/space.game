@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "Asteroid",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs",
-    "path": "folders/Scripts/Structs.yy",
+  "$GMScript":"",
+  "%Name":"Asteroid",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Asteroid",
+  "parent":{
+    "name":"Structs",
+    "path":"folders/Scripts/Structs.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

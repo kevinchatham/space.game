@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "draw_set",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Utils",
-    "path": "folders/Scripts/Utils.yy",
+  "$GMScript":"",
+  "%Name":"draw_set",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_set",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/Scripts/Utils.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

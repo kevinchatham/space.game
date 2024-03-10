@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "text_align",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Utils",
-    "path": "folders/Scripts/Utils.yy",
+  "$GMScript":"",
+  "%Name":"text_align",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"text_align",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/Scripts/Utils.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

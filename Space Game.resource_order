@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Global","order":9,"path":"folders/Objects/Global.yy",},
     {"name":"Stations","order":20,"path":"folders/Objects/Stations.yy",},
     {"name":"Arrows","order":24,"path":"folders/Sprites/Arrows.yy",},
@@ -13,7 +13,7 @@
     {"name":"Stars","order":28,"path":"folders/Sprites/Stars.yy",},
     {"name":"Worm Holes","order":26,"path":"folders/Sprites/Worm Holes.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"spr_planet_sand_1","order":9,"path":"sprites/spr_planet_sand_1/spr_planet_sand_1.yy",},
     {"name":"spr_star_shine_orange","order":4,"path":"sprites/spr_star_shine_orange/spr_star_shine_orange.yy",},
     {"name":"obj_star","order":4,"path":"objects/obj_star/obj_star.yy",},
